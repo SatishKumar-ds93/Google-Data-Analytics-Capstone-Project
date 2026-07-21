@@ -41,5 +41,19 @@ The Director of Marketing aims to drive future growth by converting existing cas
 2. Why casual riders would transition to an annual membership.
 3. How digital media can influence this target audience.
 
+There are 6 Phases
+
+1. Phase 1: **Ask**
+2. Phase 2: **Prepare**
+3. Phase 3: **Process**
+4. Phase 4: **Analyze**
+5. Phase 5: **Share**
+6. Phase 6: **Act**
+
+## Phase 1: Ask
+*The primary goal of the "Ask" phase is to clearly articulate the problem that needs to be solved and identify who will use the insights generated from the analysis.*
+
+
+
 
 
