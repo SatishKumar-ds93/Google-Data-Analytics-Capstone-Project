@@ -484,7 +484,9 @@ Noted: *Stored those data for future use those have Zero Durations, Not removed 
 ### Results
 
 Total Rows Count ride_ID (raw data or before data cleaning): 5719787
+
 Final Rows Count after Data Cleaning (including 0 duration ride_ID): **5373822**
+
 Final Rows Count after Data Cleaning (excluding 0 duration ride_lD): **5288107**
 
 
