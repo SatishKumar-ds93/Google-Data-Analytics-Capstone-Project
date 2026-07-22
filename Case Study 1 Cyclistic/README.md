@@ -57,13 +57,13 @@ There are 6 Phases
 
 Guiding questions
 
-● What is the problem you are trying to solve?
+##### ● What is the problem you are trying to solve?
 
 **Problem Statement**
 
 The core problem to solve is that while Cyclistic has strong general awareness and a healthy user base, annual members are significantly more profitable than casual riders (single-ride and full-day pass users). The company's future growth depends on maximizing these profitable annual memberships. Rather than seeking entirely new customers, the strategy focuses on converting existing casual riders who are already familiar with the service.
 
-● How can your insights drive business decisions?
+##### ● How can your insights drive business decisions?
 
 **Impact on Business Decisions**
 
@@ -82,7 +82,7 @@ The business objective is to design marketing strategies aimed at converting exi
 
 The specific data analysis task assigned is to determine:
  
-“How do annual members and casual riders use Cyclist bikes differently?”
+##### - “How do annual members and casual riders use Cyclist bikes differently?”
 
 The findings from this analysis will serve as the foundation for answering the subsequent questions: "Why would casual riders buy Cyclistic annual memberships?" and "How can Cyclistic use digital media to influence casual riders to become members?"
 
@@ -91,15 +91,15 @@ The findings from this analysis will serve as the foundation for answering the s
 
 The following stakeholders have vested interests in the outcome of this analysis:
 
-- Director of Marketing	**Lily Moreno**	Needs data-driven insights to develop and justify a targeted marketing campaign for converting casual riders into members. She is the direct manager and primary audience for the initial report.
+- Director of Marketing:	**Lily Moreno**	Needs data-driven insights to develop and justify a targeted marketing campaign for converting casual riders into members. She is the direct manager and primary audience for the initial report.
 
-- Junior Data Analyst	**Me**	Responsible for executing the analysis, producing reliable insights, visualizations, and recommendations to support the marketing strategy.
+- Junior Data Analyst:	**Me**	Responsible for executing the analysis, producing reliable insights, visualizations, and recommendations to support the marketing strategy.
 
-- Marketing Analytics Team	N/A	The team collaborating on the project, using the analysis to guide the overall marketing strategy.
+- Marketing Analytics Team:	N/A	The team collaborating on the project, using the analysis to guide the overall marketing strategy.
 
-- Cyclistic Executive Team	N/A	The final decision-makers who must approve the recommended marketing program. They require compelling, data-backed evidence and professional visualizations to sign off on new initiatives.
+- Cyclistic Executive Team:	N/A	The final decision-makers who must approve the recommended marketing program. They require compelling, data-backed evidence and professional visualizations to sign off on new initiatives.
 
-- Cyclistic Finance Analysts	N/A	Provide the core business context that annual members are more profitable, which drives the entire project's premise.
+- Cyclistic Finance Analysts:	N/A	Provide the core business context that annual members are more profitable, which drives the entire project's premise.
 
 This analysis will provide the necessary insights to move into the data preparation phase.
 
