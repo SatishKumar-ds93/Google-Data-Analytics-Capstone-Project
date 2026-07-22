@@ -57,13 +57,13 @@ There are 6 Phases
 
 Guiding questions
 
-##### ● What is the problem you are trying to solve?
+### ● What is the problem you are trying to solve?
 
 **Problem Statement**
 
 The core problem to solve is that while Cyclistic has strong general awareness and a healthy user base, annual members are significantly more profitable than casual riders (single-ride and full-day pass users). The company's future growth depends on maximizing these profitable annual memberships. Rather than seeking entirely new customers, the strategy focuses on converting existing casual riders who are already familiar with the service.
 
-##### ● How can your insights drive business decisions?
+### ● How can your insights drive business decisions?
 
 **Impact on Business Decisions**
 
@@ -82,7 +82,7 @@ The business objective is to design marketing strategies aimed at converting exi
 
 The specific data analysis task assigned is to determine:
  
-##### - “How do annual members and casual riders use Cyclist bikes differently?”
+ **“How do annual members and casual riders use Cyclist bikes differently?”**
 
 The findings from this analysis will serve as the foundation for answering the subsequent questions: "Why would casual riders buy Cyclistic annual memberships?" and "How can Cyclistic use digital media to influence casual riders to become members?"
 
@@ -130,7 +130,7 @@ The data used for this case study is Cyclistic's historical trip data, which has
 
 Download the most recent consecutive annual data here (which will be 12 files):
 
-![Tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html)
+[Tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html)
 
 **Data Selection**
 
@@ -154,21 +154,33 @@ The data is structured and organized into individual monthly CSV files. Each fil
 
 - Key columns relevant to the analysis include: Total 13 Columns
 
-•	ride_id: A unique identifier for each trip.
-•	rideable_type: The type of bike used (e.g., classic bike, electric bike, docked bike).
-•	started_at: Datetime stamps for the start of the ride.
-•	ended_at: Datetime stamps for the end of the ride.
-•	start_station_name: Name of the start stations.
-•	start_station_id: Start Stations ID
-•	end_station_name: Name of the end stations
-•	end_station_id: End Stations ID
-•	start_lat: Latitudes Geographical coordinates for start mapping routes. 
-•	start_lng: Longitudes Geographical coordinates for end mapping routes. 
-•	end_lat: Latitudes Geographical coordinates for end mapping routes. 
-•	end_lng: Longitudes Geographical coordinates for end mapping routes
-•	member_casual: The primary variable identifying the user type as either "member" (annual) or "casual" (single/day pass).
+•	ride_id: A unique identifier for each trip
 
-● Are there issues with bias or credibility in this data? Does your data ROCCC? 
+•	rideable_type: The type of bike used (e.g., classic bike, electric bike, docked bike)
+
+•	started_at: Datetime stamps for the start of the ride
+
+•	ended_at: Datetime stamps for the end of the ride
+
+•	start_station_name: Name of the start stations
+
+•	start_station_id: Start Stations ID
+
+•	end_station_name: Name of the end stations
+
+•	end_station_id: End Stations ID
+
+•	start_lat: Latitudes Geographical coordinates for start mapping routes
+
+•	start_lng: Longitudes Geographical coordinates for end mapping routes
+
+•	end_lat: Latitudes Geographical coordinates for end mapping routes
+
+•	end_lng: Longitudes Geographical coordinates for end mapping routes
+
+•	member_casual: The primary variable identifying the user type as either "member" (annual) or "casual" (single/day pass)
+
+#### ● Are there issues with bias or credibility in this data? Does your data ROCCC? 
 
 **Data Credibility and Bias Assessment (ROCCC)**
 
@@ -194,7 +206,285 @@ The data meets the criteria for high-quality data (ROCCC - Reliable, Original, C
 
 •	This data does not contain data about the use of reclining bikes, hand tricycles, and cargo bikes. It is said that about 8% of total riders use assistive options.
 
+● How are you addressing licensing, privacy, security, and accessibility? 
+
+Licensing, Privacy, and Security
+
+•	Privacy: PII (names, addresses, credit card info) has already been removed from the public dataset to comply with privacy issues. The available data fields (gender, member) are aggregated categorical data that do not directly identify an individual rider in a way that violates the licence agreement.
+
+•	Licensing: The data is provided under a specific license. This agreement allows for analysis and use as source material in reports for non-commercial purposes but prohibits redistributing the data as a standalone product or attempting to correlate the data with user identities.
+
+**Link**: ![](https://divvybikes.com/data-license-agreement)
+
+•	Security & Accessibility: The data will be stored securely on a local machine or a private cloud drive. It is accessible to the analysis team members collaborating on the project.
 
 
+- How did you verify the data’s integrity? 
+
+To verify the integrity of the data using the specific schema provided (which includes fields like **rideable_type**, **started_at**, and **member_casual**), 
+
+I performed the following validation steps:
+
+1.	Structure and Consistency Checks
+
+•	**Schema Conformance**: I ensured all data files (e.g., monthly CSVs) adhered strictly to the provided column structure (ride_id, rideable_type, started_at, ended_at, etc.). Consistency in naming and data types across all source files was essential before merging the annual data into a single dataset.
+
+•	**Completeness of Key Variables**: I checked for null or missing values in critical columns such as ride_id, started_at, ended_at, and member_casual. Records with missing primary identifiers or user types were flagged, as they cannot contribute to the core analysis of usage differences.
+
+•	**Uniqueness of Identifiers**: I verified that the ride_id was unique for every single observation in the consolidated dataset, confirming that each row represented a distinct trip event and preventing double-counting.
+
+
+- How does it help you answer your question? 
+
+The dataset, once verified and prepared, directly enables the answering of the core business question: **"How do annual members and casual riders use Cyclistic bikes differently?"**
+
+The data helps answer this question by providing specific metrics that allow for a direct, quantitative comparison between the two user types across several key dimensions:
+
+#### **1. Direct Segmentation**
+
+The member_casual column is the primary classification variable. It allows the data to be cleanly segmented into the two target populations ("member" and "casual"), making head-to-head comparisons possible across all other fields.
+
+#### **2. Usage Patterns (Time and Frequency)**
+
+By utilizing the time-related data, we can uncover behavioral patterns:
+
+•	**Frequency and Consistency**: Aggregating data by month, week, day of the week, and hour allows us to see when each group rides. We expect members to ride frequently (likely during weekday commute hours) while casual riders might exhibit weekend or holiday peaks.
+
+•	**Trip Duration** (started_at, ended_at): Calculating the average trip_duration for members vs. casual riders is a critical metric. Casual riders typically take much longer, leisurely trips, whereas members take shorter, utilitarian trips. This difference is a key insight into their motivation.
+
+#### **3. Service Preferences (Bike Type and Location)**
+
+The spatial and equipment data provides insight into how the service is used:
+
+•	**Bike Type** (rideable_type): Analyzing which bike types (classic vs. electric) are preferred by which user group helps tailor inventory management and marketing around specific offerings.
+
+•	**Location** (start_station_name/end_station_name, lat/lng): Geospatial analysis helps identify where each group starts and ends their journeys.
+
+o	**Members** likely use stations near residential areas and central business districts (commuter routes).
+
+o	**Casual Riders** likely use stations near tourist hotspots, parks, and leisure areas.
+
+o	This pinpoints specific locations where marketing efforts to convert casual riders might be most effective.
+
+By analyzing these variables side-by-side for both groups, we gain the compelling data insights required to form targeted marketing strategies and recommendations that will eventually be presented to the Cyclistic executive team.
+
+- Are there any problems with the data? 
+
+Based on the provided data schema and case study prompt, there are a few problems and significant limitations inherent in the public dataset that must be acknowledged during the analysis:
+
+#### 1. Data Anonymization Limits Deeper Analysis
+
+The primary limitation, as highlighted in the case study scenario, relates to data privacy:
+
+•	**Inability to Link Casual Rider Behavior**: Due to data-privacy rules, personally identifiable information (PII) is removed. We cannot connect a single casual rider’s multiple, individual one-day passes across time. This means we cannot track the lifetime value of an individual "casual" user or proactively identify a specific person who is almost frequent enough to warrant a membership. We can only analyze aggregated behavior.
+
+### 2. Potential for Outliers and Inaccurate Records
+
+Even after initial integrity checks, raw operational data often contains anomalies:
+
+•	**Erroneous Trip Durations**: The dataset might contain trips with extremely short durations (near zero seconds) that represent failed docking attempts, or extremely long durations (multiple days) which often indicate a bike that was lost, stolen, or improperly docked and logged as a single continuous trip. These outliers must be filtered out during the "Process" phase to avoid skewing average trip duration calculations.
+
+•	**Missing Location Data**: There might be instances where start_station_name or end_station_name fields are null or generic (e.g., "Divvy Valet"), especially if the system includes dockless bikes. This slightly limits precise location-based analysis for those specific trips.
+
+#### 3. Data Schema Inconsistencies and Aging Fields
+
+The use of older 2023 data presents some structural issues compared to modern datasets:
+
+•	**Inconsistent Column Names (Potential)**: While the schema looks consistent in the prompt, merging real-world quarterly CSV files from an operational system often reveals minor naming discrepancies (e.g., rideable_type vs. rideabletype or capitalization differences) that require cleaning.
+
+•	**Presence of Sensitive Demographics**: The presence of location start_lng/end_lng and start_lat/end_lat fields might pose ethical considerations depending on how the final analysis is shared, even if they are within the bounds of the license agreement. A modern data analyst might choose to exclude these fields entirely to adhere to best practices in data minimization and fairness.
+
+### Key tasks
+
+● Download data and store it appropriately.
+
+Download the file from this link [](https://divvy-tripdata.s3.amazonaws.com/index.html)
+
+As per the case study instructions, I will use the previous **12 months** of data (typically encompassing monthly zip files, for example, from **Jan 2023 to Dec 2023**, depending on the current date of execution) to capture recent trends and seasonality.
+
+•	Unzip all **12 files**.
+•	Separate **CSV** data into another folder
+
+
+● Identify how it’s organized.
+
+The data is **structured** and **organized** into individual monthly CSV files. Each file represents a large table where every row is a single bike trip. The columns provide specific details about each ride. 
+
+It has **total 13 Columns**.
+
+
+
+### ● Sort and filter the data.
+
+In MS-Excel, after applying Filter in all 12 datasets, I found some **Blank Cells** in some columns.
+
+#### Columns name having Blank Cells:
+
+•	start_station_name: Name of the start stations
+
+•	start_station_id: Start Stations ID
+
+•	end_station_name: Name of the end stations
+
+•	end_station_id: End Stations ID
+
+•	end_lat: Latitudes Geographical coordinates for end mapping routes
+
+•	end_lng: Longitudes Geographical coordinates for end mapping
+
+### Filter
+
+**Missing Values**:
+
+•	ride_id: A unique identifier for each trip and delete the missing and bad data rows from ride_ID.
+
+● Determine the credibility of the data. 
+
+The data meets the criteria for high-quality data (ROCCC - Reliable, Original, Current, Cited, Comprehensive) for the purposes of this case study:
+ 
+•	**Reliable & Original**: The data is internally sourced from Motivate International Inc., the actual operators of the Chicago bike-share system, making it a trustworthy primary source.
+
+•	**Current**: Using the most recent 12 months ensures the data reflects current user behavior and market conditions.
+
+•	**Cited**: The source is clearly cited as Motivate International Inc. under an open data license.
+
+•	**Comprehensive**: It contains all necessary fields (member or casual), trip duration data, location) to answer the business question of how user types differ in their usage patterns.
+
+### Limitations:
+
+•	The **financial information** such as each **Ride Id ticket fare is not available**.
+
+•	This data does not contain data about the use of **reclining bikes, hand tricycles**, and **cargo bikes**.
+
+•	Demographic details like gender and location not available in the given dataset.
+
+•	Geographical map analysis not possible because of blank cells in the start and end columns.
+
+
+### Deliverable
+
+● A description of all data sources used
+
+The data meets the criteria, downloaded the annual data (12 zip files) and stored into new folder and save as into **.CSV format** for data organising and future use of data transformation and data cleaning.
+
+
+## Phase 3:  Process: combining the 12 files into 1 for data transformation and cleaning.
+
+
+### Case Study Roadmap - Process
+
+Guiding questions 
+
+● What tools are you choosing and why? 
+
+Excel was used for the initial "Prepare" inspection and initial data cleaning and transformation steps, but it cannot handle the combined volume of 12 months of data (which typically exceeds **5 million rows**). SQL/R allows for efficient merging (UNION), handling of null values, and complex transformations that would crash standard spreadsheet software.
+
+**Data Information**
+
+- Unzip all 12 divvy trip data Files into CSV
+- Dataset 12 Month: January to December
+- Total Count of Rows(ride_ID) after **Delete Rows** ‘Bad Data’: **5719897**
+
+Tools Used: **MS-Excel and Power Query Editor**
+
+● Have you ensured your data’s integrity? 
+
+**To maintain integrity during processing**:
+
+•	Verified that ride_id remains the primary key (check duplicates, irregular, missing, null values).
+
+•	**No Duplicates found** in data set (In excel, Select Column ride_ID, Goto Data>Remove Duplicates).
+
+•	Confirmed that data types are consistent across all 12 files (e.g., ensuring started_at is recognized as a TIMESTAMP/DATETIME) in correct FORMAT.
+
+•	Maintained a "Raw Data" backup, performing all cleaning on a separate working table.
+
+
+## MS-Excel & Power Query Editor
+
+
+● What steps have you taken to ensure that your data is clean? 
+
+### Data Cleaning & Transformation Steps
+
+#### A.	Data Consolidation/Collecting
+
+•	Unzip 12 individual files into CSV files (Jan 2023 – Dec 2023) and store into new folder.
+•	After Filtering in Prepare phase, **Remove Bad Data** in ride_ID column, **DELETE** those rows.
+
+**Data Combining**
+•	Open 2023 01(Jan) data in Excel & Launch into Power Query Editor for data cleaning.
+
+#### B.	Handling Missing & Null Values
+
+•	**Station Names/IDs**: Identified significant "NULL" values in start_station_name and end_station_name. Since these are essential for location analysis but cannot be reliably guessed, these specific rows will be excluded from any "Popular Station" or "Route Analysis," but kept for "Trip Duration" and "Time of Day" analysis to avoid losing volume data.
+
+•	**Lat/Lng Coordinates**: Rows with missing end_lat or end_lng were found to ensure any mapping attempts, for analysis, data save for future use and to avoid losing volume.
+
+#### C.	Data Transformation & Cleaning
+
+**Add Column (DATE ONLY)**
+
+•	**Separate Date and Time in another Column**: in column **started_at & end_at** the date and time information in the same column, separate DATE (01-01-2023) and TIME (HH:MM: SS).
+
+•	**date**: date of started_at column added
+
+•	**time of started_at**: time of started at column separated from date.
+
+#### ROUND 2 Decimal
+
+•	Round upto 2 Decimal in start_lat or end_lat and start_lng or end_lng
+
+As per the given instructions, I created the following calculated fields:
+
+#### ADD CUSTOM COLUMN
+
+1.	**ride_length**: Calculated the difference between ended_at and started_at (result in HH:MM:SS). Go to Add Column>Custom Column. Put formula =[ended_at]-[tarted_at]
+
+2.	**Remove errors**: Negative Durations, removed any rows where ended_at was before to started_at. (e.g., 1 minute to 24 hours). Remove Errors in **ride_length** column.
+
+Noted: *Stored those data for future use those have Zero Durations, Not removed rows where ended_at was equal to started_. [00:00:00]*
+
+3.	**ride_length_minute**: convert ride_length [01:30:00] format into minute [75] by putting formula in Custom Column. Go to Add>Custom Column. Put formula, = ride_length * 1440
+
+4.**minute**: extracted to identify peak commute times vs. leisure times.
+
+5.**hour**: extracted to identify peak commute times vs. leisure times.
+
+
+#### ADD NEW COLUMN with DATE EXTRACTION
+
+6.	**month/month_name**: extracted to analyze seasonality by started_at DATE column.
+
+#### REMOVE COLUMNS
+
+7.	**Remove Bad Data Columns**: start_station_id and end_station_id , end_date.
+
+8.	**Remove date from ended_at column**: time of ended _at column separated from time.
+
+#### D.	Close & Apply Load to Excel Spreadsheet
+
+9.	**day_of_week**: Extracted the day of the week from the started_at column (e.g., 1 = Sunday, 7 = Saturday). Put formula in excel cell in column day_of_week, =WEEKDAY(F2, 1).
+
+10.	**day**: name of the weekday (Monday, Sunday). Using formula =TEXT(day_of_week, “dddd”).
+
+● How can you verify that your data is clean and ready to analyse? 
+
+ **Verification of Cleanliness**
+
+•	Ran COUNT(ride_id) to ensure no duplicates.
+
+•	Ran MIN and MAX on ride_length to ensure all values are positive and within a realistic range (e.g., 1 minute to 24 hours).
+
+•	Checked DISTINCT (member_casual) to ensure only "member" and "casual" exist in the final dataset.
+
+● Have you documented your cleaning process so you can review and share those results?
+
+
+### Results
+
+Total Rows Count ride_ID (raw data or before data cleaning): 5719787
+Final Rows Count after Data Cleaning (including 0 duration ride_ID): **5373822**
+Final Rows Count after Data Cleaning (excluding 0 duration ride_lD): **5288107**
 
 
