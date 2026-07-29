@@ -66,7 +66,7 @@ db12 <- read_csv(paste0(folder_path, "/202312-divvy-tripdata.csv"))
 #=======
 
 head(db01)
-```
+
 
 #===============================================
 # 2. DATA WRANGLE AND COMBINE INTO A SINGLE FILE
@@ -77,13 +77,15 @@ head(db01)
 library(dplyr)
 
 # Stack individual data frames into one big data frame
+
 all_trips <- bind_rows(db01,db02,db03,db04,db05,db06,db07,db08,db09,db10,db11,db12)
 
 # Verify the results by Refresh in the Environment pane
 
 # To get the total row count (length)
+
 nrow(all_trips)
-```
+
 
 ::: {.output .display_data}
 5719787
@@ -101,13 +103,16 @@ library(tidyverse)
 library(lubridate)
 
 # Keep only rows where the start and end dates are exactly the same
+
 all_trips_clean <- all_trips %>%
   filter(as.Date(started_at, format="%d-%m-%Y") == as.Date(ended_at, format="%d-%m-%Y"))
 
 # Preview the first few rows and total row/column count
+
 all_trips_clean
 
 # See a vertical summary of all columns and data types
+
 glimpse(all_trips_clean)
 
 ::: {.output .stream .stdout}
@@ -145,6 +150,7 @@ all_trips_clean <- all_trips_clean %>%
   )
 
 # Preview the calculated ride lengths side-by-side
+
 all_trips_clean %>% 
   select(started_at, ended_at, ride_length) %>% 
   head(10)
@@ -155,10 +161,12 @@ all_trips_clean %>%
 library(tidyverse)
 
 # Filter for ride_length greater than or equal to 60 seconds (1 minute)
+
 all_trips_v2 <- all_trips_clean %>%
   filter(ride_length >= 60)
 
 # Check the results
+
 all_trips_v2 %>% 
   select(started_at, ended_at, ride_length) %>% 
   head(10)
@@ -175,14 +183,16 @@ all_trips_v2$ride_length_min <- as.numeric(as.difftime(all_trips_v2$ride_length,
 
 
 # Divide the existing column by 60 to convert from 660 to 11
+
 all_trips_v2$ride_length_min <- all_trips_v2$ride_length_min / 60
 
 
 # Check the results
+
 all_trips_v2 %>% 
   select(started_at, ended_at, ride_length, ride_length_min) %>% 
   head(10)
-```
+
 
 ::: {.output .display_data}
 
@@ -214,7 +224,7 @@ all_trips_v2 <- all_trips_v2 %>%
 all_trips_v2 %>% 
   select(started_at, start_date) %>% 
   head(10)
-```
+
 
 ::: {.output .display_data}
 
@@ -240,13 +250,14 @@ library(tidyverse)
 library(lubridate)
 
 # Create the day_of_week column
+
 all_trips_v2 <- all_trips_v2 %>%
   mutate(day_of_week = wday(started_at))
 
 
 # Create a column day
 
-#library(tidyverse)
+# library(tidyverse)
 
 all_trips_v2 <- all_trips_v2 %>%
   mutate(day = recode(day_of_week,
@@ -268,7 +279,7 @@ all_trips_v2 %>%
 
 all_trips_v2 %>% 
   count(day_of_week, day)
-```
+
 
 ::: {.output .display_data}
 
@@ -331,7 +342,7 @@ all_trips_v2 %>%
 # Total Rows
 all_trips_v2 %>% 
   count()
-```
+
 
 ::: {.output .display_data}
 
@@ -349,9 +360,9 @@ A tibble: 10 × 3
 | 2023-01-25 10:49:00 | 1 | January |
 | 2023-01-25 20:49:00 | 1 | January |
 | 2023-01-06 16:37:00 | 1 | January |
-:::
 
-::: {.output .display_data}
+
+{.output .display_data}
 
 A tibble: 12 × 3
 
@@ -382,11 +393,12 @@ A tibble: 1 × 1
 
 ### Results
 
-**Initial Data Cleaning on MS-Excel CSV**
+** Initial Data Cleaning on MS-Excel CSV**
 
 -   Actual Data Total Row Counts: 5719896
 
-**After Remove Duplicate or Unecessary Values Total Row Counts:**
+** After Remove Duplicate or Unecessary Values Total Row Counts:**
+
 5719787
 
 **After Data Cleaning Total Row Counts:**
@@ -487,7 +499,7 @@ A tibble: 1 × 4
 summary(all_trips_v2$ride_length_min)
 
 #Min 1 Median 10 Mean 14.73 Max 1373
-```
+
 
 ::: {.output .display_data}
        Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -505,7 +517,7 @@ all_trips_v2 %>%
     total_rides = n(),
     percentage = (n() / nrow(all_trips_v2)) * 100
   )
-```
+
 
 ::: {.output .display_data}
 
@@ -560,7 +572,6 @@ all_trips_v2 %>%
     Max_Minutes    = max(ride_length_min, na.rm = TRUE),
     Min_Minutes    = min(ride_length_min, na.rm = TRUE)
   )
-```
 
 ::: {.output .display_data}
 
@@ -687,7 +698,7 @@ A tibble: 14 × 4
 all_trips_v2 %>% 
   count(month_name) %>% 
   mutate(percentage = n / sum(n) * 100)
-```
+
 
 ::: {.output .display_data}
 
@@ -717,7 +728,7 @@ all_trips_v2 %>%
   count(month_name) %>% 
   mutate(percentage = n / sum(n) * 100) %>% 
   filter(n == max(n) | n == min(n))
-```
+
 
 ::: {.output .display_data}
 
@@ -739,7 +750,7 @@ library(tidyverse)
 # Get total counts of each bike type
 all_trips_v2 %>% 
   count(rideable_type)
-```
+
 
 ::: {.output .display_data}
 
@@ -764,7 +775,7 @@ monthly_bike_summary <- all_trips_v2 %>%
 
 # Print the table
 print(monthly_bike_summary)
-```
+
 
 ::: {.output .stream .stdout}
     # A tibble: 56 × 4
@@ -815,7 +826,7 @@ bike_time_summary <- all_trips_v2 %>%
 
 # View the final summary table in your notebook
 print(bike_time_summary)
-```
+
 
 ::: {.output .stream .stdout}
     # A tibble: 392 × 5
@@ -1102,7 +1113,7 @@ Tableau.*
 
 #### Dashboard: Tableau Public Link
 
-Dashboard](https://public.tableau.com/app/profile/satish.kumar6456/viz/GoogleDataAnalyticsCaseStudy1CyclisticBikeShareProjectDashboard/Dashboard1)
+[Dashboard]("https://public.tableau.com/app/profile/satish.kumar6456/viz/GoogleDataAnalyticsCaseStudy1CyclisticBikeShareProjectDashboard/Dashboard1")
 
 
 
