@@ -1,402 +1,48 @@
----
-jupyter:
-  kernelspec:
-    display_name: R
-    language: R
-    name: ir
-  language_info:
-    codemirror_mode: r
-    file_extension: .r
-    mimetype: text/x-r-source
-    name: R
-    pygments_lexer: r
-    version: 4.4.0
-  nbformat: 4
-  nbformat_minor: 5
-  papermill:
-    default_parameters: {}
-    duration: 225.751312
-    end_time: "2026-07-18T08:32:34.114130"
-    environment_variables: {}
-    input_path: \_\_notebook\_\_.ipynb
-    output_path: \_\_notebook\_\_.ipynb
-    parameters: {}
-    start_time: "2026-07-18T08:28:48.362818"
-    version: 2.6.0
----
-
-::: {#8cd99ab0 .cell .markdown papermill="{\"duration\":1.6924e-2,\"end_time\":\"2026-07-18T08:28:51.928945\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:51.912021\",\"status\":\"completed\"}" tags="[]"}
 ## **Capstone Project: Cyclistic Bike-Share Analysis using R**
 
 Case Study: How does a bike-share navigate speedy success?
-:::
 
-::: {#e2a37614 .cell .markdown papermill="{\"duration\":1.6178e-2,\"end_time\":\"2026-07-18T08:28:51.960742\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:51.944564\",\"status\":\"completed\"}" tags="[]"}
-## **Project Overview**
-:::
-
-::: {#f94ce10b .cell .markdown papermill="{\"duration\":1.5232e-2,\"end_time\":\"2026-07-18T08:28:51.991618\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:51.976386\",\"status\":\"completed\"}" tags="[]"}
-Welcome to the Cyclistic bike-share analysis case study. This case study
-is the Capstone Project of Google Data Analytics Professional
-Certificate. This project follows the structured data analysis process
-(Ask, Prepare, Process, Analyze, Share, and Act) to uncover actionable
-business insights of Cyclistic company, a fictional Chicago bike-share
-company.
-:::
-
-::: {#e6621c30 .cell .markdown papermill="{\"duration\":1.5555e-2,\"end_time\":\"2026-07-18T08:28:52.023058\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.007503\",\"status\":\"completed\"}" tags="[]"}
-**The Scenario**
-
-I am working as a Junior Data Analyst on the marketing analytics team,
-my goal is to analyze how casual riders and annual members use Cyclistic
-bikes differently. The Director of Marketing believes maximizing annual
-memberships is key to future growth. Our findings will shape a marketing
-strategy to convert casual riders into members, which must be backed by
-compelling data visualizations to win executive approval.
-:::
-
-::: {#cf5885fd .cell .markdown papermill="{\"duration\":1.5166e-2,\"end_time\":\"2026-07-18T08:28:52.053912\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.038746\",\"status\":\"completed\"}" tags="[]"}
-**Key Stakeholders & Entities**
-
--   Cyclistic: A Chicago bike-share program with 5,800+ bikes and 600+
-    stations. It features inclusive options (cargo bikes, tricycles) and
-    serves both leisure riders and daily commuters (30%).
-
--   Lily Moreno: Director of Marketing and your manager; responsible for
-    campaigns. Marketing Analytics Team: Our core team, responsible for
-    data collection and strategy.
-
--   Executive Team: The detail-oriented leadership group that must
-    approve your final recommendations.
-:::
-
-::: {#2758b9c4 .cell .markdown papermill="{\"duration\":1.4987e-2,\"end_time\":\"2026-07-18T08:28:52.083991\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.069004\",\"status\":\"completed\"}" tags="[]"}
-### **About the Company**
-:::
-
-::: {#b457b03d .cell .markdown papermill="{\"duration\":1.5032e-2,\"end_time\":\"2026-07-18T08:28:52.114343\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.099311\",\"status\":\"completed\"}" tags="[]"}
-Launched in 2016, Cyclistic operates a Chicago bike-share network with
-5,824 geo-tracked bicycles and 692 stations. The system allows users to
-unlock a bike at any station and return it to any other.
-:::
-
-::: {#1ef2c654 .cell .markdown papermill="{\"duration\":1.6725e-2,\"end_time\":\"2026-07-18T08:28:52.146221\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.129496\",\"status\":\"completed\"}" tags="[]"}
-#### **Business Problem**
-
-Historically, marketing focused on broad consumer awareness using three
-flexible pricing plans: **single-ride passes, full-day passes, and
-annual memberships.**
-
--   Casual Riders: Users buying single-ride or full-day passes.
--   Cyclistic Members: Users buying annual memberships.
-
-Finance analysts confirmed that annual members are significantly more
-profitable than casual riders.
-:::
-
-::: {#ecce2dcb .cell .markdown papermill="{\"duration\":1.5585e-2,\"end_time\":\"2026-07-18T08:28:52.177038\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.161453\",\"status\":\"completed\"}" tags="[]"}
-#### **Strategy Goal**
-
-The Director of Marketing aims to drive future growth by converting
-existing casual riders into annual members, rather than targeting
-entirely new customers. Because casual riders already know and use the
-service, they represent a strong conversion opportunity. To achieve
-this, the analytics team will analyze historical bike trip data to
-determine:
-
-1.  How casual riders and annual members use the bikes differently.
-2.  Why casual riders would transition to an annual membership.
-3.  How digital media can influence this target audience.
-:::
-
-::: {#c020c207 .cell .markdown papermill="{\"duration\":1.512e-2,\"end_time\":\"2026-07-18T08:28:52.207143\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.192023\",\"status\":\"completed\"}" tags="[]"}
-# **Phase 1: Ask**
-
-*The primary goal of the \"Ask\" phase is to clearly articulate the
-problem that needs to be solved and identify who will use the insights
-generated from the analysis.*
-:::
-
-::: {#c13edeca .cell .markdown papermill="{\"duration\":4.9586e-2,\"end_time\":\"2026-07-18T08:28:52.272491\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.222905\",\"status\":\"completed\"}" tags="[]"}
-### A. Problem Statement {#a-problem-statement}
-
-The core problem to solve is that while Cyclistic has strong general
-awareness and a healthy user base, annual members are significantly more
-profitable than casual riders (single-ride and full-day pass users). The
-company\'s future growth depends on maximizing these profitable annual
-memberships. Rather than seeking entirely new customers, the strategy
-focuses on converting existing casual riders who are already familiar
-with the service.
-:::
-
-::: {#72177a5b .cell .markdown papermill="{\"duration\":1.558e-2,\"end_time\":\"2026-07-18T08:28:52.304246\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.288666\",\"status\":\"completed\"}" tags="[]"}
-**Impact on Business Decisions**
-
-The insights gained from this analysis will directly drive the following
-business decisions:
-
-• Marketing Strategy: Understanding the differences in usage patterns
-(e.g., trip duration, time of day, day of week, start/end locations,
-bike types used) will allow the marketing team to segment casual riders.
-
-• Targeted Messaging: The findings will inform the creation of specific
-marketing messages that highlight the benefits most relevant to the
-\"high-potential\" casual rider segments.
-
-• Executive Approval: The data insights and data visualizations produced
-in the final report will be crucial for convincing the detail-oriented
-executive team to approve the proposed new marketing campaigns.
-:::
-
-::: {#094d02ff .cell .markdown papermill="{\"duration\":1.5785e-2,\"end_time\":\"2026-07-18T08:28:52.335673\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.319888\",\"status\":\"completed\"}" tags="[]"}
-### B. Business Tasks {#b-business-tasks}
-
-● Identify the business task:
-
-The business objective is to design marketing strategies aimed at
-converting existing casual riders into annual members to maximize
-company profitability and future growth.
-
-● Consider key stakeholders:
-
-The project\'s key stakeholders include Data Analysts, who provide the
-foundational premise that annual members are more profitable than casual
-riders.
-:::
-
-::: {#19337b7b .cell .markdown papermill="{\"duration\":1.542e-2,\"end_time\":\"2026-07-18T08:28:52.366792\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.351372\",\"status\":\"completed\"}" tags="[]"}
-### C. Key Characters {#c-key-characters}
-
-**Lily Moreno**: Director of Marketing who requires data-driven insights
-to build a targeted conversion campaign.
-
-**Me**: As a Junior Data Analyst, I am responsible for executing the
-analysis and building visualizations in collaboration with the Marketing
-Analytics Team.
-
-**Marketing Analytics Team**
-
-**Cyclistic Executive Team**
-:::
-
-::: {#3ed999ba .cell .markdown papermill="{\"duration\":1.541e-2,\"end_time\":\"2026-07-18T08:28:52.397682\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.382272\",\"status\":\"completed\"}" tags="[]"}
-# **Phase 2: Prepare**
-
-*A description of all data sources used*
-:::
-
-::: {#76b55139 .cell .markdown papermill="{\"duration\":1.6115e-2,\"end_time\":\"2026-07-18T08:28:52.430759\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.414644\",\"status\":\"completed\"}" tags="[]"}
-**Google Sheets won\'t open files of these sizes. Excel is the only
-option to open the data.**
-
-This document outlines the Prepare phase of the data analysis for the
-Cyclistic case study, addressing the guiding questions and key tasks
-specified in the roadmap using the provided divvy-trip data description.
-:::
-
-::: {#e5fe338e .cell .markdown papermill="{\"duration\":1.6562e-2,\"end_time\":\"2026-07-18T08:28:52.463549\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.446987\",\"status\":\"completed\"}" tags="[]"}
-### Data Sources
-:::
-
-::: {#9f0d4562 .cell .markdown papermill="{\"duration\":1.625e-2,\"end_time\":\"2026-07-18T08:28:52.495280\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.479030\",\"status\":\"completed\"}" tags="[]"}
-Download link
-
-[Divvy-tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html)
-:::
-
-::: {#d18d05cf .cell .markdown papermill="{\"duration\":1.716e-2,\"end_time\":\"2026-07-18T08:28:52.529247\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.512087\",\"status\":\"completed\"}" tags="[]"}
-Download File Path of Yera 2023
-
-[Dataset 2023](https://www.kaggle.com/datasets/satishkr93/trip-data)
-:::
-
-::: {#21cfcdcb .cell .markdown papermill="{\"duration\":1.5285e-2,\"end_time\":\"2026-07-18T08:28:52.562279\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.546994\",\"status\":\"completed\"}" tags="[]"}
-#### **Data Selection**
-
-As per the case study instructions, I will use the previous 12 months of
-data (typically encompassing monthly zip files, for example, from Jan
-2023 to Dec 2023, depending on the current date of execution) to capture
-recent trends and seasonality.
-
-• Unzip all 12 files.
-
-• Separate CSV data into another folder.
-
-• Total Count of Rows Manually (ride_ID of 12 files): 5719896
-:::
-
-::: {#42be6331 .cell .markdown papermill="{\"duration\":1.6079e-2,\"end_time\":\"2026-07-18T08:28:52.593772\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.577693\",\"status\":\"completed\"}" tags="[]"}
-**Data Storage**
-
-The individual monthly .CSV files will be easily downloaded, unzipped,
-and stored locally in a secure, organized folder structure before being
-imported into the chosen analysis tool (e.g., Excel, SQL, MS Power BI,
-Tableau, RStudio or Python) for consolidation and processing.
-
-The data is stored in CSV files. Each file contains one month data.
-Thus, a total of 12 .CSV files
-:::
-
-::: {#6ffaf9df .cell .markdown papermill="{\"duration\":1.548e-2,\"end_time\":\"2026-07-18T08:28:52.624538\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.609058\",\"status\":\"completed\"}" tags="[]"}
-### Data Organization and Structure
-
-The data is structured and organized into individual monthly CSV files.
-Each file represents a large table where every row is a single bike
-trip. The columns provide specific details about each ride.
-
-Key columns relevant to the analysis include: Total 13 Columns
-
-**• ride_id:** A unique identifier for each trip.
-
-**• rideable_type:** The type of bike used (e.g., classic bike, electric
-bike, docked bike).
-
-**• started_at:** Datetime stamps for the start of the ride.
-
-**• ended_at:** Datetime stamps for the end of the ride.
-
-**• start_station_name:** Name of the start stations.
-
-**• start_station_id:** Start Stations ID
-
-**• end_station_name:** Name of the end stations
-
-**• end_station_id:** End Stations ID
-
-**• start_lat:** Latitudes Geographical coordinates for start mapping
-routes.
-
-**• start_lng:** Longitudes Geographical coordinates for end mapping
-routes.
-
-**• end_lat:** Latitudes Geographical coordinates for end mapping
-routes.
-
-**• end_lng:** Longitudes Geographical coordinates for end mapping
-routes.
-
-**• member_casual:** The primary variable identifying the user type as
-either \"member\" (annual) or \"casual\" (single/day pass).
-:::
-
-::: {#e1c89ba3 .cell .markdown execution="{\"iopub.execute_input\":\"2026-07-15T17:17:03.308969Z\",\"iopub.status.busy\":\"2026-07-15T17:17:03.306637Z\",\"iopub.status.idle\":\"2026-07-15T17:17:03.396250Z\",\"shell.execute_reply\":\"2026-07-15T17:17:03.394378Z\"}" papermill="{\"duration\":1.5328e-2,\"end_time\":\"2026-07-18T08:28:52.655087\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.639759\",\"status\":\"completed\"}" tags="[]"}
-##### Sort and filter the data
-
-In MS-Excel, after applying Filter in all 12 datasets, I found some
-Blank Cells in some columns.
-
-Columns name having Blank Cells:
-
-**• start_station_name:** Name of the start stations.
-
-**• start_station_id:** Start Stations ID.
-
-**• end_station_name:** Name of the end stations.
-
-**• end_station_id:** End Stations ID.
-
-**• end_lat:** Latitudes Geographical coordinates for end mapping
-routes.
-
-**• end_lng:** Longitudes Geographical coordinates for end mapping.
-:::
-
-::: {#958843a0 .cell .markdown execution="{\"iopub.execute_input\":\"2026-07-15T17:18:06.255543Z\",\"iopub.status.busy\":\"2026-07-15T17:18:06.224127Z\",\"iopub.status.idle\":\"2026-07-15T17:18:06.291750Z\",\"shell.execute_reply\":\"2026-07-15T17:18:06.278224Z\"}" papermill="{\"duration\":1.5188e-2,\"end_time\":\"2026-07-18T08:28:52.685335\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.670147\",\"status\":\"completed\"}" tags="[]"}
-#### Remove Duplicate
-
-**Missing Values** and **Duplicate values:**
-
-**• ride_id:** A unique identifier for each trip and delete the
-duplicate, missing and bad data rows from ride_ID.
-:::
-
-::: {#6e5b48a3 .cell .markdown papermill="{\"duration\":1.5366e-2,\"end_time\":\"2026-07-18T08:28:52.715857\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.700491\",\"status\":\"completed\"}" tags="[]"}
-#### Initial Data Cleaning on MS-Excel
-
-Actual Data Total Row Counts: **5719896**
-
-After Data Cleaning Total Row Counts: **5719787**
-
-TOTAL Unnecessary Row: **109**
-:::
-
-::: {#abbeae12 .cell .markdown papermill="{\"duration\":1.5219e-2,\"end_time\":\"2026-07-18T08:28:52.746161\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.730942\",\"status\":\"completed\"}" tags="[]"}
-### Limitations in the dataset:
-
-• The financial information such as each Ride Id ticket fare is not
-available.
-
-• Demographic details like gender and location not available in the
-given dataset.
-
-• Geographical map analysis is challenging because of blank cells in the
-start and end columns.
-:::
-
-::: {#23baee06 .cell .markdown papermill="{\"duration\":1.5398e-2,\"end_time\":\"2026-07-18T08:28:52.776631\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.761233\",\"status\":\"completed\"}" tags="[]"}
 #### Import the important packages
-:::
 
-::: {#7e14926b .cell .code execution_count="1" execution="{\"iopub.execute_input\":\"2026-07-18T08:28:52.812017Z\",\"iopub.status.busy\":\"2026-07-18T08:28:52.809485Z\",\"iopub.status.idle\":\"2026-07-18T08:29:09.978426Z\",\"shell.execute_reply\":\"2026-07-18T08:29:09.976495Z\"}" papermill="{\"duration\":17.190499,\"end_time\":\"2026-07-18T08:29:09.982305\",\"exception\":false,\"start_time\":\"2026-07-18T08:28:52.791806\",\"status\":\"completed\"}" tags="[]"}
-``` R
 install.packages("tidyverse")
 library(tidyverse)  #helps wrangle data
 library(lubridate)  #helps wrangle date attributes
 library(ggplot2)  #helps visualize data
-```
 
-::: {.output .stream .stderr}
-    Installing package into ‘/usr/local/lib/R/site-library’
-    (as ‘lib’ is unspecified)
-:::
 
-::: {.output .stream .stderr}
-    ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-    ✔ dplyr     1.1.4     ✔ readr     2.1.5
-    ✔ forcats   1.0.0     ✔ stringr   1.5.1
-    ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-    ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-    ✔ purrr     1.0.2     
-:::
-
-::: {.output .stream .stderr}
-    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ✖ dplyr::filter() masks stats::filter()
-    ✖ dplyr::lag()    masks stats::lag()
-    ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-:::
-:::
-
-::: {#9c4330d6 .cell .markdown papermill="{\"duration\":1.5717e-2,\"end_time\":\"2026-07-18T08:29:10.014503\",\"exception\":false,\"start_time\":\"2026-07-18T08:29:09.998786\",\"status\":\"completed\"}" tags="[]"}
-# **Phase 3: Process¶**
+# **PROCESS¶**
 
 *combining the 12 csv files into 1 data frame for data transformation
 and cleaning in notebook.*
-:::
 
-::: {#fc4e8736 .cell .markdown papermill="{\"duration\":1.752e-2,\"end_time\":\"2026-07-18T08:29:10.047949\",\"exception\":false,\"start_time\":\"2026-07-18T08:29:10.030429\",\"status\":\"completed\"}" tags="[]"}
-### 1. Data Collection {#1-data-collection}
-:::
+#==========================
+# 1. DATA COLLECTION
+#===========================
 
-::: {#e865df71 .cell .markdown papermill="{\"duration\":1.5582e-2,\"end_time\":\"2026-07-18T08:29:10.079305\",\"exception\":false,\"start_time\":\"2026-07-18T08:29:10.063723\",\"status\":\"completed\"}" tags="[]"}
 -   Set your working directory to the folder containing your 12 CSV
 
 -   Read all 12 CSV files and combine them into one datafram
 
 -   All 12 files are in the same folder and have the same columns
-:::
 
-::: {#722c3f7a .cell .code execution_count="2" execution="{\"iopub.execute_input\":\"2026-07-18T08:29:10.146284Z\",\"iopub.status.busy\":\"2026-07-18T08:29:10.112697Z\",\"iopub.status.idle\":\"2026-07-18T08:29:43.511342Z\",\"shell.execute_reply\":\"2026-07-18T08:29:43.509279Z\"}" papermill="{\"duration\":33.419491,\"end_time\":\"2026-07-18T08:29:43.514435\",\"exception\":false,\"start_time\":\"2026-07-18T08:29:10.094944\",\"status\":\"completed\"}" tags="[]"}
-``` R
+
+#=======
 # Step 1: Import the library
+#=======
+
 
 library(tidyverse)
 
+#=======
 # Step 2: Import the File Path
+#=======
 
-folder_path <- "/kaggle/input/datasets/satishkr93/trip-data"
+folder_path <- "/users/yourname/desktop/folder/trip-data"
 
+
+#======
 # STEP 3: UPLOAD DATA
+#======
 
 # Upload Cyclistic datasets (csv files) here
 
@@ -415,246 +61,25 @@ db10 <- read_csv(paste0(folder_path, "/202310-divvy-tripdata.csv"))
 db11 <- read_csv(paste0(folder_path, "/202311-divvy-tripdata.csv"))
 db12 <- read_csv(paste0(folder_path, "/202312-divvy-tripdata.csv"))
 
+#=======
 # Step 4: Verify the first file loaded properly
+#=======
 
 head(db01)
 ```
 
-::: {.output .stream .stderr}
-    Rows: 190296 Columns: 13
-:::
+#===============================================
+# 2. DATA WRANGLE AND COMBINE INTO A SINGLE FILE
+#===============================================
 
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (9): ride_id, rideable_type, started_at, ended_at, start_station_name, s...
-    dbl (4): start_lat, start_lng, end_lat, end_lng
-:::
+# Combined 12 csv files into 1 big files
 
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stderr}
-    Rows: 190443 Columns: 13
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (9): ride_id, rideable_type, started_at, ended_at, start_station_name, s...
-    dbl (4): start_lat, start_lng, end_lat, end_lng
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stderr}
-    Rows: 258671 Columns: 13
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (9): ride_id, rideable_type, started_at, ended_at, start_station_name, s...
-    dbl (4): start_lat, start_lng, end_lat, end_lng
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stderr}
-    Rows: 426582 Columns: 13
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (9): ride_id, rideable_type, started_at, ended_at, start_station_name, s...
-    dbl (4): start_lat, start_lng, end_lat, end_lng
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stderr}
-    Rows: 604818 Columns: 13
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (9): ride_id, rideable_type, started_at, ended_at, start_station_name, s...
-    dbl (4): start_lat, start_lng, end_lat, end_lng
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stderr}
-    Rows: 719600 Columns: 13
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (9): ride_id, rideable_type, started_at, ended_at, start_station_name, s...
-    dbl (4): start_lat, start_lng, end_lat, end_lng
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stderr}
-    Rows: 767646 Columns: 13
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (9): ride_id, rideable_type, started_at, ended_at, start_station_name, s...
-    dbl (4): start_lat, start_lng, end_lat, end_lng
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stderr}
-    Rows: 771688 Columns: 13
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (9): ride_id, rideable_type, started_at, ended_at, start_station_name, s...
-    dbl (4): start_lat, start_lng, end_lat, end_lng
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stderr}
-    Rows: 666363 Columns: 13
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (9): ride_id, rideable_type, started_at, ended_at, start_station_name, s...
-    dbl (4): start_lat, start_lng, end_lat, end_lng
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stderr}
-    Rows: 537108 Columns: 13
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (9): ride_id, rideable_type, started_at, ended_at, start_station_name, s...
-    dbl (4): start_lat, start_lng, end_lat, end_lng
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stderr}
-    Rows: 362512 Columns: 13
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (9): ride_id, rideable_type, started_at, ended_at, start_station_name, s...
-    dbl (4): start_lat, start_lng, end_lat, end_lng
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stderr}
-    Rows: 224060 Columns: 13
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (9): ride_id, rideable_type, started_at, ended_at, start_station_name, s...
-    dbl (4): start_lat, start_lng, end_lat, end_lng
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .display_data}
-
-A tibble: 6 × 13
-
-| ride_id &lt;chr&gt; | rideable_type &lt;chr&gt; | started_at &lt;chr&gt; | ended_at &lt;chr&gt; | start_station_name &lt;chr&gt; | start_station_id &lt;chr&gt; | end_station_name &lt;chr&gt; | end_station_id &lt;chr&gt; | start_lat &lt;dbl&gt; | start_lng &lt;dbl&gt; | end_lat &lt;dbl&gt; | end_lng &lt;dbl&gt; | member_casual &lt;chr&gt; |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| F96D5A74A3E41399 | electric_bike | 21-01-2023 20:05 | 21-01-2023 20:16 | Lincoln Ave &amp; Fullerton Ave   | TA1309000058 | Hampden Ct &amp; Diversey Ave      | 202480       | 41.92407 | -87.64628 | 41.93000 | -87.64000 | member |
-| 13CB7EB698CEDB88 | classic_bike  | 10-01-2023 15:37 | 10-01-2023 15:46 | Kimbark Ave &amp; 53rd St         | TA1309000037 | Greenwood Ave &amp; 47th St        | TA1308000002 | 41.79957 | -87.59475 | 41.80983 | -87.59938 | member |
-| BD88A2E670661CE5 | electric_bike | 02-01-2023 07:51 | 02-01-2023 08:05 | Western Ave &amp; Lunt Ave        | RP-005       | Valli Produce - Evanston Plaza | 599          | 42.00857 | -87.69048 | 42.03974 | -87.69941 | casual |
-| C90792D034FED968 | classic_bike  | 22-01-2023 10:52 | 22-01-2023 11:01 | Kimbark Ave &amp; 53rd St         | TA1309000037 | Greenwood Ave &amp; 47th St        | TA1308000002 | 41.79957 | -87.59475 | 41.80983 | -87.59938 | member |
-| 3397017529188E8A | classic_bike  | 12-01-2023 13:58 | 12-01-2023 14:13 | Kimbark Ave &amp; 53rd St         | TA1309000037 | Greenwood Ave &amp; 47th St        | TA1308000002 | 41.79957 | -87.59475 | 41.80983 | -87.59938 | member |
-| 58E68156DAE3E311 | electric_bike | 31-01-2023 07:18 | 31-01-2023 07:21 | Lakeview Ave &amp; Fullerton Pkwy | TA1309000019 | Hampden Ct &amp; Diversey Ave      | 202480       | 41.92607 | -87.63886 | 41.93000 | -87.64000 | member |
-:::
-:::
-
-::: {#3059283a .cell .markdown papermill="{\"duration\":1.8752e-2,\"end_time\":\"2026-07-18T08:29:43.551747\",\"exception\":false,\"start_time\":\"2026-07-18T08:29:43.532995\",\"status\":\"completed\"}" tags="[]"}
-### 2. DATA WRANGLE AND COMBINE INTO A SINGLE FILE {#2-data-wrangle-and-combine-into-a-single-file}
-:::
-
-::: {#8b48612d .cell .markdown papermill="{\"duration\":1.819e-2,\"end_time\":\"2026-07-18T08:29:43.588060\",\"exception\":false,\"start_time\":\"2026-07-18T08:29:43.569870\",\"status\":\"completed\"}" tags="[]"}
-Combined 12 csv files into 1 big files
-:::
-
-::: {#7b3a8f09 .cell .code execution_count="3" execution="{\"iopub.execute_input\":\"2026-07-18T08:29:43.628051Z\",\"iopub.status.busy\":\"2026-07-18T08:29:43.626450Z\",\"iopub.status.idle\":\"2026-07-18T08:29:49.238088Z\",\"shell.execute_reply\":\"2026-07-18T08:29:49.236138Z\"}" papermill="{\"duration\":5.635265,\"end_time\":\"2026-07-18T08:29:49.241454\",\"exception\":false,\"start_time\":\"2026-07-18T08:29:43.606189\",\"status\":\"completed\"}" tags="[]"}
-``` R
 library(dplyr)
 
 # Stack individual data frames into one big data frame
 all_trips <- bind_rows(db01,db02,db03,db04,db05,db06,db07,db08,db09,db10,db11,db12)
 
-#Verify the results by Refresh in the Environment pane
+# Verify the results by Refresh in the Environment pane
 
 # To get the total row count (length)
 nrow(all_trips)
@@ -662,19 +87,16 @@ nrow(all_trips)
 
 ::: {.output .display_data}
 5719787
-:::
-:::
 
-::: {#9c0be081 .cell .markdown papermill="{\"duration\":1.9284e-2,\"end_time\":\"2026-07-18T08:29:49.279663\",\"exception\":false,\"start_time\":\"2026-07-18T08:29:49.260379\",\"status\":\"completed\"}" tags="[]"}
-### 3. DATA TRANSFORM AND DATA CLEANING {#3-data-transform-and-data-cleaning}
-:::
 
-::: {#1222c08f .cell .markdown papermill="{\"duration\":1.982e-2,\"end_time\":\"2026-07-18T08:29:49.318164\",\"exception\":false,\"start_time\":\"2026-07-18T08:29:49.298344\",\"status\":\"completed\"}" tags="[]"}
+
+#====================================
+# 3. DATA TRANSFORM AND DATA CLEANING
+#====================================
+
+
 ### A. started_at and ended_at Date Match {#a-started_at-and-ended_at-date-match}
-:::
 
-::: {#033a12b0 .cell .code execution_count="4" execution="{\"iopub.execute_input\":\"2026-07-18T08:29:49.360266Z\",\"iopub.status.busy\":\"2026-07-18T08:29:49.358713Z\",\"iopub.status.idle\":\"2026-07-18T08:30:57.830148Z\",\"shell.execute_reply\":\"2026-07-18T08:30:57.828243Z\"}" papermill="{\"duration\":68.502349,\"end_time\":\"2026-07-18T08:30:57.840161\",\"exception\":false,\"start_time\":\"2026-07-18T08:29:49.337812\",\"status\":\"completed\"}" tags="[]"}
-``` R
 library(tidyverse)
 library(lubridate)
 
@@ -687,76 +109,6 @@ all_trips_clean
 
 # See a vertical summary of all columns and data types
 glimpse(all_trips_clean)
-```
-
-::: {.output .display_data}
-
-A spec_tbl_df: 5689757 × 13
-
-| ride_id &lt;chr&gt; | rideable_type &lt;chr&gt; | started_at &lt;chr&gt; | ended_at &lt;chr&gt; | start_station_name &lt;chr&gt; | start_station_id &lt;chr&gt; | end_station_name &lt;chr&gt; | end_station_id &lt;chr&gt; | start_lat &lt;dbl&gt; | start_lng &lt;dbl&gt; | end_lat &lt;dbl&gt; | end_lng &lt;dbl&gt; | member_casual &lt;chr&gt; |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| F96D5A74A3E41399 | electric_bike | 21-01-2023 20:05 | 21-01-2023 20:16 | Lincoln Ave &amp; Fullerton Ave   | TA1309000058 | Hampden Ct &amp; Diversey Ave      | 202480       | 41.92407 | -87.64628 | 41.93000 | -87.64000 | member |
-| 13CB7EB698CEDB88 | classic_bike  | 10-01-2023 15:37 | 10-01-2023 15:46 | Kimbark Ave &amp; 53rd St         | TA1309000037 | Greenwood Ave &amp; 47th St        | TA1308000002 | 41.79957 | -87.59475 | 41.80983 | -87.59938 | member |
-| BD88A2E670661CE5 | electric_bike | 02-01-2023 07:51 | 02-01-2023 08:05 | Western Ave &amp; Lunt Ave        | RP-005       | Valli Produce - Evanston Plaza | 599          | 42.00857 | -87.69048 | 42.03974 | -87.69941 | casual |
-| C90792D034FED968 | classic_bike  | 22-01-2023 10:52 | 22-01-2023 11:01 | Kimbark Ave &amp; 53rd St         | TA1309000037 | Greenwood Ave &amp; 47th St        | TA1308000002 | 41.79957 | -87.59475 | 41.80983 | -87.59938 | member |
-| 3397017529188E8A | classic_bike  | 12-01-2023 13:58 | 12-01-2023 14:13 | Kimbark Ave &amp; 53rd St         | TA1309000037 | Greenwood Ave &amp; 47th St        | TA1308000002 | 41.79957 | -87.59475 | 41.80983 | -87.59938 | member |
-| 58E68156DAE3E311 | electric_bike | 31-01-2023 07:18 | 31-01-2023 07:21 | Lakeview Ave &amp; Fullerton Pkwy | TA1309000019 | Hampden Ct &amp; Diversey Ave      | 202480       | 41.92607 | -87.63886 | 41.93000 | -87.64000 | member |
-| 2F7194B6012A98D4 | electric_bike | 15-01-2023 21:18 | 15-01-2023 21:32 | Kimbark Ave &amp; 53rd St         | TA1309000037 | Greenwood Ave &amp; 47th St        | TA1308000002 | 41.79955 | -87.59462 | 41.80983 | -87.59938 | member |
-| DB1CF84154D6A049 | classic_bike  | 25-01-2023 10:49 | 25-01-2023 10:58 | Kimbark Ave &amp; 53rd St         | TA1309000037 | Greenwood Ave &amp; 47th St        | TA1308000002 | 41.79957 | -87.59475 | 41.80983 | -87.59938 | member |
-| 34EAB943F88C4C5D | electric_bike | 25-01-2023 20:49 | 25-01-2023 21:02 | Kimbark Ave &amp; 53rd St         | TA1309000037 | Greenwood Ave &amp; 47th St        | TA1308000002 | 41.79959 | -87.59467 | 41.80983 | -87.59938 | member |
-| BC8AB1AA51DA9115 | classic_bike  | 06-01-2023 16:37 | 06-01-2023 16:49 | Kimbark Ave &amp; 53rd St         | TA1309000037 | Greenwood Ave &amp; 47th St        | TA1308000002 | 41.79957 | -87.59475 | 41.80983 | -87.59938 | member |
-| CBE4D3954EB194B7 | classic_bike  | 05-01-2023 17:31 | 05-01-2023 17:41 | Kimbark Ave &amp; 53rd St         | TA1309000037 | Greenwood Ave &amp; 47th St        | TA1308000002 | 41.79957 | -87.59475 | 41.80983 | -87.59938 | member |
-| 367CD42F84880491 | classic_bike  | 03-01-2023 17:32 | 03-01-2023 17:41 | Kimbark Ave &amp; 53rd St         | TA1309000037 | Greenwood Ave &amp; 47th St        | TA1308000002 | 41.79957 | -87.59475 | 41.80983 | -87.59938 | member |
-| F3344545150C3222 | electric_bike | 09-01-2023 19:11 | 09-01-2023 19:19 | Broadway &amp; Waveland Ave       | 13325        | Hampden Ct &amp; Diversey Ave      | 202480       | 41.94908 | -87.64860 | 41.93000 | -87.64000 | member |
-| 9DC70E5EE9D6A93F | electric_bike | 03-01-2023 20:25 | 03-01-2023 20:35 | Broadway &amp; Waveland Ave       | 13325        | Hampden Ct &amp; Diversey Ave      | 202480       | 41.94911 | -87.64863 | 41.93000 | -87.64000 | casual |
-| 0894DBBB4FA509E5 | electric_bike | 12-01-2023 22:12 | 12-01-2023 22:17 | Lincoln Park Conservatory     | LP-          | Hampden Ct &amp; Diversey Ave      | 202480       | 41.92407 | -87.63583 | 41.93000 | -87.64000 | member |
-| 1E27A12D6C9A7C60 | classic_bike  | 09-01-2023 21:09 | 09-01-2023 21:16 | Clark St &amp; Columbia Ave       | RP-008       | Warren Park West               | RP-001       | 42.00445 | -87.67240 | 42.00178 | -87.68883 | member |
-| 0B19B6A808BFE539 | electric_bike | 21-01-2023 09:13 | 21-01-2023 09:16 | Lakeview Ave &amp; Fullerton Pkwy | TA1309000019 | Hampden Ct &amp; Diversey Ave      | 202480       | 41.92589 | -87.63876 | 41.93000 | -87.64000 | member |
-| 689D537E5D034DA8 | electric_bike | 05-01-2023 17:28 | 05-01-2023 17:43 | Western Ave &amp; Lunt Ave        | RP-005       | Valli Produce - Evanston Plaza | 599          | 42.00861 | -87.69052 | 42.03974 | -87.69941 | casual |
-| 7BA57BAACF64EAE2 | electric_bike | 17-01-2023 17:17 | 17-01-2023 17:33 | McClurg Ct &amp; Ohio St          | TA1306000029 | Hampden Ct &amp; Diversey Ave      | 202480       | 41.89287 | -87.61720 | 41.93000 | -87.64000 | member |
-| E1C847B8FBA49482 | classic_bike  | 03-01-2023 18:18 | 03-01-2023 19:07 | McClurg Ct &amp; Ohio St          | TA1306000029 | Clark St &amp; Elmdale Ave         | KA1504000148 | 41.89259 | -87.61729 | 41.99086 | -87.66972 | member |
-| 88549285D389AA6B | electric_bike | 02-01-2023 17:32 | 02-01-2023 17:47 | Clarendon Ave &amp; Gordon Ter    | 13379        | Clark St &amp; Elmdale Ave         | KA1504000148 | 41.95773 | -87.64941 | 41.99086 | -87.66972 | member |
-| 06EF8DD39CF7170F | electric_bike | 01-01-2023 18:04 | 01-01-2023 18:09 | Clark St &amp; Berwyn Ave         | KA1504000146 | Clark St &amp; Elmdale Ave         | KA1504000148 | 41.97792 | -87.66806 | 41.99086 | -87.66972 | member |
-| A5CBC7142CA8FAD8 | classic_bike  | 02-01-2023 12:45 | 02-01-2023 12:53 | Clark St &amp; Berwyn Ave         | KA1504000146 | Clark St &amp; Elmdale Ave         | KA1504000148 | 41.97803 | -87.66856 | 41.99086 | -87.66972 | casual |
-| 836AA7376E9DA905 | classic_bike  | 17-01-2023 17:15 | 17-01-2023 17:44 | Clark St &amp; Newport St         | 632          | Warren Park West               | RP-001       | 41.94454 | -87.65468 | 42.00178 | -87.68883 | member |
-| 2B8E0781ED90C27C | electric_bike | 11-01-2023 17:03 | 11-01-2023 17:13 | Avondale Ave &amp; Irving Park Rd | 15624        | Campbell Ave &amp; Irving Park Rd  | 439          | 41.95318 | -87.73195 | 41.95000 | -87.69000 | casual |
-| 8BF68A18C282C01C | electric_bike | 16-01-2023 18:16 | 16-01-2023 18:24 | Wilton Ave &amp; Diversey Pkwy    | TA1306000014 | Hampden Ct &amp; Diversey Ave      | 202480       | 41.93250 | -87.65268 | 41.93000 | -87.64000 | member |
-| 325B1DEA4641D815 | electric_bike | 12-01-2023 07:36 | 12-01-2023 07:44 | Komensky Ave &amp; 55th St        | 347          | Pulaski Rd &amp; 51st St           | 343          | 41.79000 | -87.72000 | 41.80000 | -87.72000 | member |
-| A552D9830672F73A | electric_bike | 17-01-2023 12:46 | 17-01-2023 12:54 | Clark St &amp; Newport St         | 632          | Hampden Ct &amp; Diversey Ave      | 202480       | 41.94449 | -87.65477 | 41.93000 | -87.64000 | member |
-| 400D3C150A972867 | electric_bike | 24-01-2023 17:53 | 24-01-2023 17:58 | Clark St &amp; Columbia Ave       | RP-008       | Clark St &amp; Elmdale Ave         | KA1504000148 | 42.00446 | -87.67238 | 41.99086 | -87.66972 | casual |
-| 6037DB9543179602 | electric_bike | 13-01-2023 15:21 | 13-01-2023 15:26 | Lincoln Ave &amp; Fullerton Ave   | TA1309000058 | Hampden Ct &amp; Diversey Ave      | 202480       | 41.92427 | -87.64634 | 41.93000 | -87.64000 | member |
-| ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ | ⋮ |
-| BEA29580768C1860 | classic_bike  | 08-12-2023 17:32 | 08-12-2023 17:38 | Stave St &amp; Armitage Ave             | 13266        | Milwaukee Ave &amp; Wabansia Ave | 13243        | 41.91774 | -87.69139 | 41.91262 | -87.68139 | member |
-| 19A84AA53CF2F73D | electric_bike | 05-12-2023 07:27 | 05-12-2023 07:30 | State St &amp; Randolph St              | TA1305000029 | LaSalle St &amp; Washington St   | 13006        | 41.88501 | -87.62796 | 41.88266 | -87.63253 | member |
-| 0BB8BE7F36828383 | classic_bike  | 06-12-2023 06:43 | 06-12-2023 06:47 | Stave St &amp; Armitage Ave             | 13266        | Milwaukee Ave &amp; Wabansia Ave | 13243        | 41.91774 | -87.69139 | 41.91262 | -87.68139 | member |
-| 5EF36E585E6BB993 | classic_bike  | 16-12-2023 18:44 | 16-12-2023 18:48 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87475 | -87.64981 | 41.87464 | -87.65703 | member |
-| B270C5C8FD4F4850 | classic_bike  | 01-12-2023 21:17 | 01-12-2023 21:21 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87475 | -87.64981 | 41.87464 | -87.65703 | member |
-| 3C45AEFA28CEAFD4 | classic_bike  | 09-12-2023 19:09 | 09-12-2023 19:13 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87475 | -87.64981 | 41.87464 | -87.65703 | member |
-| 11AFDE89FFFF018D | classic_bike  | 26-12-2023 18:13 | 26-12-2023 18:18 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87475 | -87.64981 | 41.87464 | -87.65703 | member |
-| 6D427553ADD4E80C | classic_bike  | 29-12-2023 11:09 | 29-12-2023 11:13 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87475 | -87.64981 | 41.87464 | -87.65703 | member |
-| DC85C06F5E6E8EB3 | classic_bike  | 04-12-2023 12:24 | 04-12-2023 12:32 | Damen Ave/Coulter St                | PI00001      | Ashland Ave &amp; Archer Ave     | 15442        | 41.84920 | -87.67564 | 41.83921 | -87.66561 | member |
-| 742C83265811C76B | classic_bike  | 14-12-2023 17:39 | 14-12-2023 17:42 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87475 | -87.64981 | 41.87464 | -87.65703 | member |
-| 42AD67EB965D9369 | electric_bike | 01-12-2023 12:48 | 01-12-2023 13:02 | Racine Ave &amp; 18th St                | 13164        | Morgan St &amp; Lake St*         | chargingstx4 | 41.85829 | -87.65635 | 41.88549 | -87.65229 | member |
-| 52FF3FC5635F9561 | classic_bike  | 07-12-2023 11:39 | 07-12-2023 11:42 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87475 | -87.64981 | 41.87464 | -87.65703 | member |
-| 7C679A3BAE8CDCB4 | classic_bike  | 12-12-2023 21:39 | 12-12-2023 21:51 | Damen Ave &amp; Madison St              | 13134        | Morgan St &amp; Lake St*         | chargingstx4 | 41.88137 | -87.67493 | 41.88549 | -87.65229 | member |
-| 5169FBC5AC523376 | electric_bike | 06-12-2023 12:04 | 06-12-2023 12:15 | Racine Ave &amp; 18th St                | 13164        | LaSalle St &amp; Washington St   | 13006        | 41.85832 | -87.65650 | 41.88266 | -87.63253 | casual |
-| 790C9497DB0CF986 | electric_bike | 21-12-2023 13:55 | 21-12-2023 13:57 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87472 | -87.64988 | 41.87464 | -87.65703 | casual |
-| CCE83C38F4D91EFB | classic_bike  | 21-12-2023 13:38 | 21-12-2023 13:48 | MLK Jr Dr &amp; 47th St                 | TA1308000007 | Calumet Ave &amp; 35th St        | 13345        | 41.80985 | -87.61628 | 41.83138 | -87.61803 | casual |
-| 681FA19DB62A9988 | classic_bike  | 04-12-2023 19:23 | 04-12-2023 19:26 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87475 | -87.64981 | 41.87464 | -87.65703 | casual |
-| 8D66C459ECBCC549 | electric_bike | 02-12-2023 21:39 | 02-12-2023 21:53 | Damen Ave &amp; Madison St              | 13134        | Morgan St &amp; Lake St*         | chargingstx4 | 41.88140 | -87.67498 | 41.88549 | -87.65229 | casual |
-| E80184080CFFEB02 | classic_bike  | 23-12-2023 21:42 | 23-12-2023 21:55 | Damen Ave &amp; Madison St              | 13134        | Morgan St &amp; Lake St*         | chargingstx4 | 41.88137 | -87.67493 | 41.88549 | -87.65229 | casual |
-| F1D6F5B5528DE3C7 | classic_bike  | 23-12-2023 21:42 | 23-12-2023 21:55 | Damen Ave &amp; Madison St              | 13134        | Morgan St &amp; Lake St*         | chargingstx4 | 41.88137 | -87.67493 | 41.88549 | -87.65229 | casual |
-| D7BD84A380E35573 | classic_bike  | 10-12-2023 11:49 | 10-12-2023 12:28 | Mies van der Rohe Way &amp; Chicago Ave | 13338        | Milwaukee Ave &amp; Wabansia Ave | 13243        | 41.89694 | -87.62176 | 41.91262 | -87.68139 | member |
-| 522C5B99295B96DF | classic_bike  | 01-12-2023 11:48 | 01-12-2023 11:52 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87475 | -87.64981 | 41.87464 | -87.65703 | casual |
-| 1BB1798B0E4B35A0 | electric_bike | 19-12-2023 12:22 | 19-12-2023 12:24 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87478 | -87.64980 | 41.87464 | -87.65703 | member |
-| DC1C859F9939E0EA | classic_bike  | 17-12-2023 14:54 | 17-12-2023 15:14 | Racine Ave &amp; 18th St                | 13164        | Morgan St &amp; Lake St*         | chargingstx4 | 41.85817 | -87.65650 | 41.88549 | -87.65229 | member |
-| AB675DD0012CBD57 | electric_bike | 04-12-2023 23:34 | 04-12-2023 23:39 | Racine Ave &amp; 18th St                | 13164        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.85824 | -87.65638 | 41.87464 | -87.65703 | member |
-| F74DF9549B504A6B | electric_bike | 07-12-2023 13:15 | 07-12-2023 13:17 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87470 | -87.64980 | 41.87464 | -87.65703 | casual |
-| BCDA66E761CC1029 | classic_bike  | 08-12-2023 18:42 | 08-12-2023 18:45 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87475 | -87.64981 | 41.87464 | -87.65703 | casual |
-| D2CF330F9C266683 | classic_bike  | 05-12-2023 14:09 | 05-12-2023 14:13 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87475 | -87.64981 | 41.87464 | -87.65703 | member |
-| 3829A0D1E00EE970 | electric_bike | 02-12-2023 21:36 | 02-12-2023 21:53 | Damen Ave &amp; Madison St              | 13134        | Morgan St &amp; Lake St*         | chargingstx4 | 41.88140 | -87.67498 | 41.88549 | -87.65229 | casual |
-| A373F5B447AEA508 | classic_bike  | 11-12-2023 13:07 | 11-12-2023 13:11 | 900 W Harrison St                   | 13028        | Racine Ave &amp; Congress Pkwy   | TA1306000025 | 41.87475 | -87.64981 | 41.87464 | -87.65703 | member |
-:::
 
 ::: {.output .stream .stdout}
     Rows: 5,689,757
@@ -774,21 +126,16 @@ A spec_tbl_df: 5689757 × 13
     $ end_lat            <dbl> 41.93000, 41.80983, 42.03974, 41.80983, 41.80983, 4…
     $ end_lng            <dbl> -87.64000, -87.59938, -87.69941, -87.59938, -87.599…
     $ member_casual      <chr> "member", "member", "casual", "member", "member", "…
-:::
-:::
 
-::: {#d2c4b2cb .cell .markdown papermill="{\"duration\":1.9984e-2,\"end_time\":\"2026-07-18T08:30:57.879984\",\"exception\":false,\"start_time\":\"2026-07-18T08:30:57.860000\",\"status\":\"completed\"}" tags="[]"}
+
 ### B. Calculate ride_length into HH:MM:SS {#b-calculate-ride_length-into-hhmmss}
-:::
 
-::: {#572e264c .cell .code execution_count="5" execution="{\"iopub.execute_input\":\"2026-07-18T08:30:57.923680Z\",\"iopub.status.busy\":\"2026-07-18T08:30:57.921932Z\",\"iopub.status.idle\":\"2026-07-18T08:31:11.664190Z\",\"shell.execute_reply\":\"2026-07-18T08:31:11.662289Z\"}" papermill="{\"duration\":13.767092,\"end_time\":\"2026-07-18T08:31:11.666889\",\"exception\":false,\"start_time\":\"2026-07-18T08:30:57.899797\",\"status\":\"completed\"}" tags="[]"}
-``` R
 library(tidyverse)
 library(lubridate)
 library(hms)
 
 
-#Calculate ride_length and format as HH:MM:SS
+# Calculate ride_length and format as HH:MM:SS
 
 all_trips_clean <- all_trips_clean %>%
   mutate(
@@ -801,44 +148,10 @@ all_trips_clean <- all_trips_clean %>%
 all_trips_clean %>% 
   select(started_at, ended_at, ride_length) %>% 
   head(10)
-```
 
-::: {.output .stream .stderr}
 
-    Attaching package: ‘hms’
-:::
-
-::: {.output .stream .stderr}
-    The following object is masked from ‘package:lubridate’:
-
-        hms
-:::
-
-::: {.output .display_data}
-
-A tibble: 10 × 3
-
-| started_at &lt;dttm&gt; | ended_at &lt;dttm&gt; | ride_length &lt;time&gt; |
-|---|---|---|
-| 2023-01-21 20:05:00 | 2023-01-21 20:16:00 | 00:11:00 |
-| 2023-01-10 15:37:00 | 2023-01-10 15:46:00 | 00:09:00 |
-| 2023-01-02 07:51:00 | 2023-01-02 08:05:00 | 00:14:00 |
-| 2023-01-22 10:52:00 | 2023-01-22 11:01:00 | 00:09:00 |
-| 2023-01-12 13:58:00 | 2023-01-12 14:13:00 | 00:15:00 |
-| 2023-01-31 07:18:00 | 2023-01-31 07:21:00 | 00:03:00 |
-| 2023-01-15 21:18:00 | 2023-01-15 21:32:00 | 00:14:00 |
-| 2023-01-25 10:49:00 | 2023-01-25 10:58:00 | 00:09:00 |
-| 2023-01-25 20:49:00 | 2023-01-25 21:02:00 | 00:13:00 |
-| 2023-01-06 16:37:00 | 2023-01-06 16:49:00 | 00:12:00 |
-:::
-:::
-
-::: {#e60965a1 .cell .markdown papermill="{\"duration\":2.0781e-2,\"end_time\":\"2026-07-18T08:31:11.709429\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:11.688648\",\"status\":\"completed\"}" tags="[]"}
 ### C. Convert ride_length into positive and non-zero value {#c-convert-ride_length-into-positive-and-non-zero-value}
-:::
 
-::: {#4276cc77 .cell .code execution_count="6" execution="{\"iopub.execute_input\":\"2026-07-18T08:31:11.754030Z\",\"iopub.status.busy\":\"2026-07-18T08:31:11.752312Z\",\"iopub.status.idle\":\"2026-07-18T08:31:14.207230Z\",\"shell.execute_reply\":\"2026-07-18T08:31:14.205383Z\"}" papermill="{\"duration\":2.480072,\"end_time\":\"2026-07-18T08:31:14.210006\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:11.729934\",\"status\":\"completed\"}" tags="[]"}
-``` R
 library(tidyverse)
 
 # Filter for ride_length greater than or equal to 60 seconds (1 minute)
@@ -849,33 +162,10 @@ all_trips_v2 <- all_trips_clean %>%
 all_trips_v2 %>% 
   select(started_at, ended_at, ride_length) %>% 
   head(10)
-```
 
-::: {.output .display_data}
 
-A tibble: 10 × 3
-
-| started_at &lt;dttm&gt; | ended_at &lt;dttm&gt; | ride_length &lt;time&gt; |
-|---|---|---|
-| 2023-01-21 20:05:00 | 2023-01-21 20:16:00 | 00:11:00 |
-| 2023-01-10 15:37:00 | 2023-01-10 15:46:00 | 00:09:00 |
-| 2023-01-02 07:51:00 | 2023-01-02 08:05:00 | 00:14:00 |
-| 2023-01-22 10:52:00 | 2023-01-22 11:01:00 | 00:09:00 |
-| 2023-01-12 13:58:00 | 2023-01-12 14:13:00 | 00:15:00 |
-| 2023-01-31 07:18:00 | 2023-01-31 07:21:00 | 00:03:00 |
-| 2023-01-15 21:18:00 | 2023-01-15 21:32:00 | 00:14:00 |
-| 2023-01-25 10:49:00 | 2023-01-25 10:58:00 | 00:09:00 |
-| 2023-01-25 20:49:00 | 2023-01-25 21:02:00 | 00:13:00 |
-| 2023-01-06 16:37:00 | 2023-01-06 16:49:00 | 00:12:00 |
-:::
-:::
-
-::: {#cf8f15f3 .cell .markdown papermill="{\"duration\":2.049e-2,\"end_time\":\"2026-07-18T08:31:14.251447\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:14.230957\",\"status\":\"completed\"}" tags="[]"}
 ### D. Convert ride_length \[HH:MM:SS\] into minute format {#d-convert-ride_length-hhmmss-into-minute-format}
-:::
 
-::: {#e01d2043 .cell .code execution_count="7" execution="{\"iopub.execute_input\":\"2026-07-18T08:31:14.297157Z\",\"iopub.status.busy\":\"2026-07-18T08:31:14.295361Z\",\"iopub.status.idle\":\"2026-07-18T08:31:14.412851Z\",\"shell.execute_reply\":\"2026-07-18T08:31:14.410960Z\"}" papermill="{\"duration\":0.142817,\"end_time\":\"2026-07-18T08:31:14.415390\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:14.272573\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # Create a new column 'ride_length_min'
 
 
@@ -910,15 +200,10 @@ A tibble: 10 × 4
 | 2023-01-25 10:49:00 | 2023-01-25 10:58:00 | 00:09:00 |  9 |
 | 2023-01-25 20:49:00 | 2023-01-25 21:02:00 | 00:13:00 | 13 |
 | 2023-01-06 16:37:00 | 2023-01-06 16:49:00 | 00:12:00 | 12 |
-:::
-:::
 
-::: {#beca554a .cell .markdown papermill="{\"duration\":2.0719e-2,\"end_time\":\"2026-07-18T08:31:14.458009\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:14.437290\",\"status\":\"completed\"}" tags="[]"}
+
 ### E. Create a Date Column {#e-create-a-date-column}
-:::
 
-::: {#67d59bc5 .cell .code execution_count="8" execution="{\"iopub.execute_input\":\"2026-07-18T08:31:14.503798Z\",\"iopub.status.busy\":\"2026-07-18T08:31:14.502140Z\",\"iopub.status.idle\":\"2026-07-18T08:31:20.414081Z\",\"shell.execute_reply\":\"2026-07-18T08:31:20.412184Z\"}" papermill="{\"duration\":5.938054,\"end_time\":\"2026-07-18T08:31:20.416896\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:14.478842\",\"status\":\"completed\"}" tags="[]"}
-``` R
 library(tidyverse)
 
 all_trips_v2 <- all_trips_v2 %>%
@@ -947,22 +232,16 @@ A tibble: 10 × 2
 | 2023-01-25 10:49:00 | 25-01-2023 |
 | 2023-01-25 20:49:00 | 25-01-2023 |
 | 2023-01-06 16:37:00 | 06-01-2023 |
-:::
-:::
 
-::: {#71b74650 .cell .markdown papermill="{\"duration\":2.0792e-2,\"end_time\":\"2026-07-18T08:31:20.458881\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:20.438089\",\"status\":\"completed\"}" tags="[]"}
+
 ### F. Create a column day of week (for example WEEKDAY(started_at,1) where 1 is Sunday & 7 is Saturday {#f-create-a-column-day-of-week-for-example-weekdaystarted_at1-where-1-is-sunday--7-is-saturday}
-:::
 
-::: {#babcc906 .cell .code execution_count="9" execution="{\"iopub.execute_input\":\"2026-07-18T08:31:20.506825Z\",\"iopub.status.busy\":\"2026-07-18T08:31:20.505131Z\",\"iopub.status.idle\":\"2026-07-18T08:31:25.417142Z\",\"shell.execute_reply\":\"2026-07-18T08:31:25.415149Z\"}" papermill="{\"duration\":4.938564,\"end_time\":\"2026-07-18T08:31:25.419928\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:20.481364\",\"status\":\"completed\"}" tags="[]"}
-``` R
 library(tidyverse)
 library(lubridate)
 
 # Create the day_of_week column
 all_trips_v2 <- all_trips_v2 %>%
   mutate(day_of_week = wday(started_at))
-
 
 
 # Create a column day
@@ -1022,15 +301,10 @@ A tibble: 7 × 3
 | 5 | Thursday  | 842785 |
 | 6 | Friday    | 823982 |
 | 7 | Saturday  | 861978 |
-:::
-:::
 
-::: {#82d121f8 .cell .markdown papermill="{\"duration\":2.2469e-2,\"end_time\":\"2026-07-18T08:31:25.464901\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:25.442432\",\"status\":\"completed\"}" tags="[]"}
+
 ### G. Create a column with month number and name of the month {#g-create-a-column-with-month-number-and-name-of-the-month}
-:::
 
-::: {#1b064eea .cell .code execution_count="10" execution="{\"iopub.execute_input\":\"2026-07-18T08:31:25.511381Z\",\"iopub.status.busy\":\"2026-07-18T08:31:25.509739Z\",\"iopub.status.idle\":\"2026-07-18T08:31:33.690933Z\",\"shell.execute_reply\":\"2026-07-18T08:31:33.688439Z\"}" papermill="{\"duration\":8.208801,\"end_time\":\"2026-07-18T08:31:33.694849\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:25.486048\",\"status\":\"completed\"}" tags="[]"}
-``` R
 library(tidyverse)
 library(lubridate)
 
@@ -1104,10 +378,8 @@ A tibble: 1 × 1
 | n &lt;int&gt; |
 |---|
 | 5600814 |
-:::
-:::
 
-::: {#540c57df .cell .markdown papermill="{\"duration\":2.2785e-2,\"end_time\":\"2026-07-18T08:31:33.740425\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:33.717640\",\"status\":\"completed\"}" tags="[]"}
+
 ### Results
 
 **Initial Data Cleaning on MS-Excel CSV**
@@ -1124,27 +396,24 @@ A tibble: 1 × 1
 -   Removed rows (negative, \>23:59h, or next-day spillovers): 88,943
 
 **Total number of Rows For Analysis**: 5,600,814
-:::
 
-::: {#5aa0d52f .cell .markdown papermill="{\"duration\":2.1748e-2,\"end_time\":\"2026-07-18T08:31:33.784845\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:33.763097\",\"status\":\"completed\"}" tags="[]"}
-# **Phase 4: Analyze**
+
+
+# **ANALYZE**
 
 *After combining all 12 files into 1 file and stored the data and then
 clean the data as well as extract and transform the data successfully.
 Now start analysis as per instructions and requirement for this
 project.*
-:::
 
-::: {#a3524108 .cell .markdown papermill="{\"duration\":2.2223e-2,\"end_time\":\"2026-07-18T08:31:33.829573\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:33.807350\",\"status\":\"completed\"}" tags="[]"}
-## A. DESCRIPTIVE ANALYSIS {#a-descriptive-analysis}
-:::
+#=========================
+# A. DESCRIPTIVE ANALYSIS
+#=========================
 
-::: {#f6ea074b .cell .markdown papermill="{\"duration\":2.1567e-2,\"end_time\":\"2026-07-18T08:31:33.873279\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:33.851712\",\"status\":\"completed\"}" tags="[]"}
+
 #### 1. Calculate the mean median max min {#1-calculate-the-mean-median-max-min}
-:::
 
-::: {#795a52b8 .cell .code execution_count="11" execution="{\"iopub.execute_input\":\"2026-07-18T08:31:33.920916Z\",\"iopub.status.busy\":\"2026-07-18T08:31:33.919090Z\",\"iopub.status.idle\":\"2026-07-18T08:31:34.438210Z\",\"shell.execute_reply\":\"2026-07-18T08:31:34.435654Z\"}" papermill="{\"duration\":0.546292,\"end_time\":\"2026-07-18T08:31:34.441456\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:33.895164\",\"status\":\"completed\"}" tags="[]"}
-``` R
+
 # a. mean(all_trips_v2$ride_length) #straight average (total ride length / rides)
 
 mean(all_trips_v2$ride_length_min)
@@ -1209,15 +478,10 @@ A tibble: 1 × 4
 | Mean_Minutes &lt;dbl&gt; | Median_Minutes &lt;dbl&gt; | Max_Minutes &lt;dbl&gt; | Min_Minutes &lt;dbl&gt; |
 |---|---|---|---|
 | 14.72983 | 10 | 1373 | 1 |
-:::
-:::
 
-::: {#2c17c54f .cell .markdown papermill="{\"duration\":2.2982e-2,\"end_time\":\"2026-07-18T08:31:34.489046\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:34.466064\",\"status\":\"completed\"}" tags="[]"}
+
 #### You can condense the four lines above to one line using summary() on the specific attribute
-:::
 
-::: {#156a5a1f .cell .code execution_count="12" execution="{\"iopub.execute_input\":\"2026-07-18T08:31:34.538330Z\",\"iopub.status.busy\":\"2026-07-18T08:31:34.536633Z\",\"iopub.status.idle\":\"2026-07-18T08:31:34.854311Z\",\"shell.execute_reply\":\"2026-07-18T08:31:34.852016Z\"}" papermill="{\"duration\":0.345819,\"end_time\":\"2026-07-18T08:31:34.857623\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:34.511804\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # summary(all_trips_v2$ride_length)
 
 summary(all_trips_v2$ride_length_min)
@@ -1228,15 +492,9 @@ summary(all_trips_v2$ride_length_min)
 ::: {.output .display_data}
        Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
        1.00    6.00   10.00   14.73   17.00 1373.00 
-:::
-:::
 
-::: {#336e3214 .cell .markdown papermill="{\"duration\":2.287e-2,\"end_time\":\"2026-07-18T08:31:34.903793\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:34.880923\",\"status\":\"completed\"}" tags="[]"}
 #### 2. Total Number of rides Casual vs Members {#2-total-number-of-rides-casual-vs-members}
-:::
 
-::: {#16bc7751 .cell .code execution_count="13" execution="{\"iopub.execute_input\":\"2026-07-18T08:31:34.952855Z\",\"iopub.status.busy\":\"2026-07-18T08:31:34.951195Z\",\"iopub.status.idle\":\"2026-07-18T08:31:35.088706Z\",\"shell.execute_reply\":\"2026-07-18T08:31:35.086151Z\"}" papermill="{\"duration\":0.165707,\"end_time\":\"2026-07-18T08:31:35.092065\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:34.926358\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # Counts total rides for each user type
 
 library(tidyverse)
@@ -1257,15 +515,10 @@ A tibble: 2 × 3
 |---|---|---|
 | casual | 2009065 | 35.87095 |
 | member | 3591749 | 64.12905 |
-:::
-:::
 
-::: {#aab7e520 .cell .markdown papermill="{\"duration\":2.2615e-2,\"end_time\":\"2026-07-18T08:31:35.137905\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:35.115290\",\"status\":\"completed\"}" tags="[]"}
+
 #### 3. Compare Members and Casual users {#3-compare-members-and-casual-users}
-:::
 
-::: {#a117146d .cell .code execution_count="14" execution="{\"iopub.execute_input\":\"2026-07-18T08:31:35.186769Z\",\"iopub.status.busy\":\"2026-07-18T08:31:35.185117Z\",\"iopub.status.idle\":\"2026-07-18T08:31:50.615180Z\",\"shell.execute_reply\":\"2026-07-18T08:31:50.612670Z\"}" papermill="{\"duration\":15.458335,\"end_time\":\"2026-07-18T08:31:50.618692\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:35.160357\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # a. Compare Mean value from member vs casual (minute)
 
 aggregate(all_trips_v2$ride_length_min ~ all_trips_v2$member_casual, FUN = mean)
@@ -1274,14 +527,12 @@ aggregate(all_trips_v2$ride_length_min ~ all_trips_v2$member_casual, FUN = mean)
 # Mean member 11.98 
 
 
-
 # b. Compare Median value from member vs casual (minute)
 
 aggregate(all_trips_v2$ride_length_min ~ all_trips_v2$member_casual, FUN = median)
 
 # Median casual 12
 # Median member 9
-
 
 
 # c. Compare Max value from member vs casual (minute)
@@ -1359,15 +610,10 @@ A tibble: 2 × 5
 |---|---|---|---|---|
 | casual | 19.64567 | 12 | 1373 | 1 |
 | member | 11.98012 |  9 | 1356 | 1 |
-:::
-:::
 
-::: {#48d16120 .cell .markdown papermill="{\"duration\":2.4162e-2,\"end_time\":\"2026-07-18T08:31:50.667729\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:50.643567\",\"status\":\"completed\"}" tags="[]"}
+
 #### 4. See the average ride time by each day for members vs casual users {#4-see-the-average-ride-time-by-each-day-for-members-vs-casual-users}
-:::
 
-::: {#88045ced .cell .code execution_count="15" execution="{\"iopub.execute_input\":\"2026-07-18T08:31:50.721638Z\",\"iopub.status.busy\":\"2026-07-18T08:31:50.719983Z\",\"iopub.status.idle\":\"2026-07-18T08:31:59.372106Z\",\"shell.execute_reply\":\"2026-07-18T08:31:59.370234Z\"}" papermill="{\"duration\":8.681766,\"end_time\":\"2026-07-18T08:31:59.374595\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:50.692829\",\"status\":\"completed\"}" tags="[]"}
-``` R
 aggregate(all_trips_v2$ride_length_min ~ all_trips_v2$member_casual + all_trips_v2$day_of_week, FUN = mean)
 ```
 
@@ -1391,19 +637,15 @@ A data.frame: 14 × 3
 | member | 6 | 11.88902 |
 | casual | 7 | 22.35331 |
 | member | 7 | 13.27718 |
-:::
-:::
 
-::: {#fece058a .cell .markdown papermill="{\"duration\":2.4054e-2,\"end_time\":\"2026-07-18T08:31:59.422128\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:59.398074\",\"status\":\"completed\"}" tags="[]"}
-## B. Data Insights {#b-data-insights}
-:::
 
-::: {#98b03743 .cell .markdown papermill="{\"duration\":2.3606e-2,\"end_time\":\"2026-07-18T08:31:59.469708\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:59.446102\",\"status\":\"completed\"}" tags="[]"}
+#======================================
+## B. Data Insights
+#======================================
+
+
 #### 1. Analyze ridership data by type and day of the week {#1-analyze-ridership-data-by-type-and-day-of-the-week}
-:::
 
-::: {#492dd437 .cell .code execution_count="16" execution="{\"iopub.execute_input\":\"2026-07-18T08:31:59.521749Z\",\"iopub.status.busy\":\"2026-07-18T08:31:59.520112Z\",\"iopub.status.idle\":\"2026-07-18T08:32:05.953158Z\",\"shell.execute_reply\":\"2026-07-18T08:32:05.951312Z\"}" papermill="{\"duration\":6.461667,\"end_time\":\"2026-07-18T08:32:05.955663\",\"exception\":false,\"start_time\":\"2026-07-18T08:31:59.493996\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # Analyze ridership data by type and weekday
 
 all_trips_v2 %>%
@@ -1437,15 +679,9 @@ A tibble: 14 × 4
 | member | Thu | 578525 | 11.54030 |
 | member | Fri | 520599 | 11.88902 |
 | member | Sat | 462493 | 13.27718 |
-:::
-:::
 
-::: {#19a707c2 .cell .markdown papermill="{\"duration\":2.4151e-2,\"end_time\":\"2026-07-18T08:32:06.004186\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:05.980035\",\"status\":\"completed\"}" tags="[]"}
 #### 2. Monthly Analysis {#2-monthly-analysis}
-:::
 
-::: {#7575a04a .cell .code execution_count="17" execution="{\"iopub.execute_input\":\"2026-07-18T08:32:06.056008Z\",\"iopub.status.busy\":\"2026-07-18T08:32:06.054399Z\",\"iopub.status.idle\":\"2026-07-18T08:32:06.120692Z\",\"shell.execute_reply\":\"2026-07-18T08:32:06.118674Z\"}" papermill="{\"duration\":9.5499e-2,\"end_time\":\"2026-07-18T08:32:06.123574\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:06.028075\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # Monthly Distribution Percentage Share
 
 all_trips_v2 %>% 
@@ -1471,15 +707,10 @@ A tibble: 12 × 3
 | October   | 528186 |  9.430522 |
 | November  | 356875 |  6.371842 |
 | December  | 220429 |  3.935660 |
-:::
-:::
 
-::: {#2962dd21 .cell .markdown papermill="{\"duration\":2.6391e-2,\"end_time\":\"2026-07-18T08:32:06.174827\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:06.148436\",\"status\":\"completed\"}" tags="[]"}
+
 #### 3. Maximum and Minimum {#3-maximum-and-minimum}
-:::
 
-::: {#2d035962 .cell .code execution_count="18" execution="{\"iopub.execute_input\":\"2026-07-18T08:32:06.227230Z\",\"iopub.status.busy\":\"2026-07-18T08:32:06.225442Z\",\"iopub.status.idle\":\"2026-07-18T08:32:06.290165Z\",\"shell.execute_reply\":\"2026-07-18T08:32:06.288269Z\"}" papermill="{\"duration\":9.4077e-2,\"end_time\":\"2026-07-18T08:32:06.292922\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:06.198845\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # Maximum and Minimum Monthly analysis
 
 all_trips_v2 %>% 
@@ -1496,19 +727,13 @@ A tibble: 2 × 3
 |---|---|---|
 | January | 185927 |  3.319642 |
 | August  | 756000 | 13.498038 |
-:::
-:::
 
-::: {#7cfafafd .cell .markdown papermill="{\"duration\":2.446e-2,\"end_time\":\"2026-07-18T08:32:06.341796\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:06.317336\",\"status\":\"completed\"}" tags="[]"}
+
 ### 4. Rideable or Bike Types {#4-rideable-or-bike-types}
-:::
 
-::: {#5c8d5ac9 .cell .markdown execution="{\"iopub.execute_input\":\"2026-07-17T11:35:53.025601Z\",\"iopub.status.busy\":\"2026-07-17T11:35:53.023748Z\",\"iopub.status.idle\":\"2026-07-17T11:35:53.039324Z\",\"shell.execute_reply\":\"2026-07-17T11:35:53.037343Z\"}" papermill="{\"duration\":2.4758e-2,\"end_time\":\"2026-07-18T08:32:06.391399\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:06.366641\",\"status\":\"completed\"}" tags="[]"}
+
 #### a) Total number of Bike Types
-:::
 
-::: {#80fb9820 .cell .code execution_count="19" execution="{\"iopub.execute_input\":\"2026-07-18T08:32:06.445316Z\",\"iopub.status.busy\":\"2026-07-18T08:32:06.443565Z\",\"iopub.status.idle\":\"2026-07-18T08:32:06.561555Z\",\"shell.execute_reply\":\"2026-07-18T08:32:06.559674Z\"}" papermill="{\"duration\":0.148354,\"end_time\":\"2026-07-18T08:32:06.564093\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:06.415739\",\"status\":\"completed\"}" tags="[]"}
-``` R
 library(tidyverse)
 
 # Get total counts of each bike type
@@ -1525,15 +750,9 @@ A tibble: 3 × 2
 | classic_bike  | 2655617 |
 | docked_bike   |   74580 |
 | electric_bike | 2870617 |
-:::
-:::
 
-::: {#d56c0337 .cell .markdown papermill="{\"duration\":2.5777e-2,\"end_time\":\"2026-07-18T08:32:06.614274\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:06.588497\",\"status\":\"completed\"}" tags="[]"}
 #### b) Bike Types Rides by Month
-:::
 
-::: {#4c518e45 .cell .code execution_count="20" execution="{\"iopub.execute_input\":\"2026-07-18T08:32:06.668047Z\",\"iopub.status.busy\":\"2026-07-18T08:32:06.666152Z\",\"iopub.status.idle\":\"2026-07-18T08:32:07.344849Z\",\"shell.execute_reply\":\"2026-07-18T08:32:07.342402Z\"}" papermill="{\"duration\":0.708689,\"end_time\":\"2026-07-18T08:32:07.347490\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:06.638801\",\"status\":\"completed\"}" tags="[]"}
-``` R
 library(tidyverse)
 
 # Calculate monthly counts by bike type and user type
@@ -1561,35 +780,38 @@ print(monthly_bike_summary)
      8 February   docked_bike   casual               2124
      9 February   electric_bike casual              24576
     10 February   electric_bike member              70590
-    # ℹ 46 more rows
-:::
-:::
 
-::: {#7322f2a2 .cell .markdown papermill="{\"duration\":2.5127e-2,\"end_time\":\"2026-07-18T08:32:07.397621\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:07.372494\",\"status\":\"completed\"}" tags="[]"}
+
 #### c) Bike Types Rides on Day of the Week
-:::
 
-::: {#e6745892 .cell .code execution_count="21" execution="{\"iopub.execute_input\":\"2026-07-18T08:32:07.452012Z\",\"iopub.status.busy\":\"2026-07-18T08:32:07.450242Z\",\"iopub.status.idle\":\"2026-07-18T08:32:14.260000Z\",\"shell.execute_reply\":\"2026-07-18T08:32:14.257593Z\"}" papermill="{\"duration\":6.840542,\"end_time\":\"2026-07-18T08:32:14.263073\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:07.422531\",\"status\":\"completed\"}" tags="[]"}
-``` R
 library(tidyverse)
 library(lubridate)
 
 # Complete multi-variable breakdown
+
 bike_time_summary <- all_trips_v2 %>%
-  # 1. Create proper ordered time variables
+  
+# 1. Create proper ordered time variables
   mutate(
     weekday = wday(started_at, label = TRUE),
     month_name = fct_reorder(month_name, month_num)
   ) %>%
-  # 2. Group by all four requested metrics
+  
+# 2. Group by all four requested metrics
   group_by(rideable_type, member_casual, weekday, month_name) %>%
-  # 3. Calculate total rides
+  
+
+# 3. Calculate total rides
   summarise(
     number_of_rides = n(),
     .groups = "drop" # Keeps your notebook environment clean
   ) %>%
-  # 4. Arrange logically to read the data easily
+  
+
+# 4. Arrange logically to read the data easily
   arrange(rideable_type, member_casual, month_name, weekday)
+
+
 
 # View the final summary table in your notebook
 print(bike_time_summary)
@@ -1610,19 +832,15 @@ print(bike_time_summary)
      9 classic_bike  casual        Mon     February              2359
     10 classic_bike  casual        Tue     February              2176
     # ℹ 382 more rows
-:::
-:::
 
-::: {#94cb1696 .cell .markdown papermill="{\"duration\":2.479e-2,\"end_time\":\"2026-07-18T08:32:14.312702\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:14.287912\",\"status\":\"completed\"}" tags="[]"}
-## C. Visualization {#c-visualization}
-:::
 
-::: {#0ab71477 .cell .markdown papermill="{\"duration\":2.5205e-2,\"end_time\":\"2026-07-18T08:32:14.362690\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:14.337485\",\"status\":\"completed\"}" tags="[]"}
+#=======================
+# C. Visualization
+#=======================
+
 ## 1. Percentage Share: Total Number of Rides {#1-percentage-share-total-number-of-rides}
-:::
 
-::: {#ea2ddf30 .cell .code execution_count="22" execution="{\"iopub.execute_input\":\"2026-07-18T08:32:14.419283Z\",\"iopub.status.busy\":\"2026-07-18T08:32:14.417626Z\",\"iopub.status.idle\":\"2026-07-18T08:32:15.203154Z\",\"shell.execute_reply\":\"2026-07-18T08:32:15.201236Z\"}" jupyter="{\"source_hidden\":true}" papermill="{\"duration\":0.816426,\"end_time\":\"2026-07-18T08:32:15.205566\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:14.389140\",\"status\":\"completed\"}" tags="[]"}
-``` R
+
 # Number of Rides by the users with percentage
 
 library(tidyverse)
@@ -1648,24 +866,14 @@ ggplot(pie_data, aes(x = "", y = total_rides, fill = member_casual)) +
     title = "Proportion of Total Rides: Members vs. Casual Riders",
     fill = "User Type"
   )
-```
 
-::: {.output .display_data}
-![](vertopal_68f82faf196b4c25b9c1367ffb3cca4c/36ee075083bcdddf29356c3239dacf8ec1c3c170.png){height="420"
-width="420"}
-:::
-:::
 
-::: {#e534f486 .cell .markdown papermill="{\"duration\":2.656e-2,\"end_time\":\"2026-07-18T08:32:15.258180\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:15.231620\",\"status\":\"completed\"}" tags="[]"}
 ## 2. Day of the Week {#2-day-of-the-week}
-:::
 
-::: {#6549e3d4 .cell .markdown papermill="{\"duration\":2.6986e-2,\"end_time\":\"2026-07-18T08:32:15.311788\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:15.284802\",\"status\":\"completed\"}" tags="[]"}
+
 #### a) Number of rides by rider type
-:::
 
-::: {#aa2ec98d .cell .code execution_count="23" execution="{\"iopub.execute_input\":\"2026-07-18T08:32:15.369023Z\",\"iopub.status.busy\":\"2026-07-18T08:32:15.366989Z\",\"iopub.status.idle\":\"2026-07-18T08:32:22.170451Z\",\"shell.execute_reply\":\"2026-07-18T08:32:22.168498Z\"}" jupyter="{\"source_hidden\":true}" papermill="{\"duration\":6.835183,\"end_time\":\"2026-07-18T08:32:22.173060\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:15.337877\",\"status\":\"completed\"}" tags="[]"}
-``` R
+
 # Number of rides by the users
 
 all_trips_v2 %>%
@@ -1686,15 +894,8 @@ all_trips_v2 %>%
     y = "Number of Rides",
     fill = "User Type"
   )
-```
 
-::: {.output .display_data}
-![](vertopal_68f82faf196b4c25b9c1367ffb3cca4c/2019b9e5f646fe1598a42efa929edf7658832a8b.png){height="420"
-width="420"}
-:::
-:::
 
-::: {#19545a02 .cell .markdown papermill="{\"duration\":2.7823e-2,\"end_time\":\"2026-07-18T08:32:22.228175\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:22.200352\",\"status\":\"completed\"}" tags="[]"}
 ### Visual Results: Number of Rides
 
 -   **Members Dominate Volume:** The columns for member riders will be
@@ -1709,14 +910,10 @@ width="420"}
     throughout the week and peaks dramatically on Saturday and Sunday.
     On weekends, casual ride volume often matches or even surpasses
     member ride volume.
-:::
 
-::: {#7de8a802 .cell .markdown papermill="{\"duration\":2.588e-2,\"end_time\":\"2026-07-18T08:32:22.280058\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:22.254178\",\"status\":\"completed\"}" tags="[]"}
+
 #### b) Create a visualization for average duration
-:::
 
-::: {#554dcb31 .cell .code execution_count="24" execution="{\"iopub.execute_input\":\"2026-07-18T08:32:22.336970Z\",\"iopub.status.busy\":\"2026-07-18T08:32:22.335172Z\",\"iopub.status.idle\":\"2026-07-18T08:32:28.904302Z\",\"shell.execute_reply\":\"2026-07-18T08:32:28.902305Z\"}" jupyter="{\"source_hidden\":true}" papermill="{\"duration\":6.600616,\"end_time\":\"2026-07-18T08:32:28.907163\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:22.306547\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # Average ride duration in minute by the users in Categoty
 
 all_trips_v2 %>%
@@ -1738,15 +935,8 @@ all_trips_v2 %>%
     y = "Average Duration (minutes)",
     fill = "User Type"
   )
-```
 
-::: {.output .display_data}
-![](vertopal_68f82faf196b4c25b9c1367ffb3cca4c/61b931e2783eafd0e2f663f1cdf5102a8d51968f.png){height="420"
-width="420"}
-:::
-:::
 
-::: {#50fb8fa5 .cell .markdown papermill="{\"duration\":2.8103e-2,\"end_time\":\"2026-07-18T08:32:28.962862\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:28.934759\",\"status\":\"completed\"}" tags="[]"}
 ### Visual Results: Average Duration Casual vs Member
 
 -   **Casual Riders Dominate Duration:** The columns for casual riders
@@ -1761,19 +951,13 @@ width="420"}
 
 -   **Consistent Members:** The columns for member riders will look very
     flat and consistent from Monday to Sunday. Their average duration
-    stays short and steady, usually hovering around 10--13 minutes.
-:::
 
-::: {#b6deef51 .cell .markdown papermill="{\"duration\":2.7009e-2,\"end_time\":\"2026-07-18T08:32:29.016958\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:28.989949\",\"status\":\"completed\"}" tags="[]"}
+
 ## 3. Seasonal or Monthly wise Analysis {#3-seasonal-or-monthly-wise-analysis}
-:::
 
-::: {#76eafc77 .cell .markdown papermill="{\"duration\":2.6999e-2,\"end_time\":\"2026-07-18T08:32:29.071266\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:29.044267\",\"status\":\"completed\"}" tags="[]"}
+
 #### a) Monthly Time-Series Plot
-:::
 
-::: {#be46f4a7 .cell .code execution_count="25" execution="{\"iopub.execute_input\":\"2026-07-18T08:32:29.129589Z\",\"iopub.status.busy\":\"2026-07-18T08:32:29.127638Z\",\"iopub.status.idle\":\"2026-07-18T08:32:29.416459Z\",\"shell.execute_reply\":\"2026-07-18T08:32:29.413539Z\"}" jupyter="{\"source_hidden\":true}" papermill="{\"duration\":0.322016,\"end_time\":\"2026-07-18T08:32:29.420048\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:29.098032\",\"status\":\"completed\"}" tags="[]"}
-``` R
 #  Montly wise Rides
 
 library(tidyverse)
@@ -1790,15 +974,8 @@ all_trips_v2 %>%
     x = "Month",
     y = "Total Trips"
   )
-```
 
-::: {.output .display_data}
-![](vertopal_68f82faf196b4c25b9c1367ffb3cca4c/bbd25024659ed53f9c424af864ab174282d07672.png){height="420"
-width="420"}
-:::
-:::
 
-::: {#e12ee7a6 .cell .markdown papermill="{\"duration\":2.8909e-2,\"end_time\":\"2026-07-18T08:32:29.478482\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:29.449573\",\"status\":\"completed\"}" tags="[]"}
 ### Visual Results:
 
 -   **The Summer Peak (Inverted U-Shape):** The blue line will form a
@@ -1815,14 +992,10 @@ width="420"}
     appear in alphabetical order (April, August, December\...) instead
     of chronological order (January, February, March\...), the line will
     look messy and zig-zagged.
-:::
 
-::: {#6db90e40 .cell .markdown papermill="{\"duration\":2.9102e-2,\"end_time\":\"2026-07-18T08:32:29.536224\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:29.507122\",\"status\":\"completed\"}" tags="[]"}
+
 #### b) Compare number of ride
-:::
 
-::: {#15fb79c3 .cell .code execution_count="26" execution="{\"iopub.execute_input\":\"2026-07-18T08:32:29.596263Z\",\"iopub.status.busy\":\"2026-07-18T08:32:29.594694Z\",\"iopub.status.idle\":\"2026-07-18T08:32:30.447563Z\",\"shell.execute_reply\":\"2026-07-18T08:32:30.444488Z\"}" jupyter="{\"source_hidden\":true}" papermill="{\"duration\":0.886524,\"end_time\":\"2026-07-18T08:32:30.451059\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:29.564535\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # Compare between the memebers Casual vs Membr
 
 library(tidyverse)
@@ -1845,27 +1018,15 @@ all_trips_v2 %>%
     y = "Total Trips",
     color = "User Type"
   )
-```
 
-::: {.output .display_data}
-![](vertopal_68f82faf196b4c25b9c1367ffb3cca4c/e3d61e4080f86c1eb3415e713d40d9462c7abf1e.png){height="420"
-width="420"}
-:::
-:::
-
-::: {#83eea33f .cell .markdown papermill="{\"duration\":3.0504e-2,\"end_time\":\"2026-07-18T08:32:30.513352\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:30.482848\",\"status\":\"completed\"}" tags="[]"}
 ### Visual Results: {#visual-results}
 
 **Users:** Both Members and Casual drops rides as per season but compare
 to number of rides, Members users are more activate than Casual.
-:::
 
-::: {#e83ce43e .cell .markdown papermill="{\"duration\":3.0045e-2,\"end_time\":\"2026-07-18T08:32:30.573484\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:30.543439\",\"status\":\"completed\"}" tags="[]"}
+
 ## 4. Hourly wise Analysis {#4-hourly-wise-analysis}
-:::
 
-::: {#dcaba758 .cell .code execution_count="27" execution="{\"iopub.execute_input\":\"2026-07-18T08:32:30.637024Z\",\"iopub.status.busy\":\"2026-07-18T08:32:30.635345Z\",\"iopub.status.idle\":\"2026-07-18T08:32:32.255259Z\",\"shell.execute_reply\":\"2026-07-18T08:32:32.252094Z\"}" jupyter="{\"source_hidden\":true}" papermill="{\"duration\":1.655472,\"end_time\":\"2026-07-18T08:32:32.258820\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:30.603348\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # Hourly wise ride duration
 
 
@@ -1888,28 +1049,14 @@ all_trips_v2 %>%
     y = "Total Number of Rides",
     color = "User Type"
   )
-```
 
-::: {.output .display_data}
-![](vertopal_68f82faf196b4c25b9c1367ffb3cca4c/7426faaf370924fd04bfe8ac680dda880f4c46aa.png){height="420"
-width="420"}
-:::
-:::
 
-::: {#4803614d .cell .markdown papermill="{\"duration\":3.1522e-2,\"end_time\":\"2026-07-18T08:32:32.322527\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:32.291005\",\"status\":\"completed\"}" tags="[]"}
-### Visual Results: {#visual-results}
+### Visual Results:
 
 **Hourly:** Members peak sharply at 08:00 and 17:00 (work/school
-commute). Casual peaks smoothly around 14:00 to 16:00 (afternoon
-leisure).
-:::
 
-::: {#e961ffa5 .cell .markdown papermill="{\"duration\":3.1336e-2,\"end_time\":\"2026-07-18T08:32:32.384824\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:32.353488\",\"status\":\"completed\"}" tags="[]"}
 ## 5. Rideable or Bike Types {#5-rideable-or-bike-types}
-:::
 
-::: {#e3fecce1 .cell .code execution_count="28" execution="{\"iopub.execute_input\":\"2026-07-18T08:32:32.451297Z\",\"iopub.status.busy\":\"2026-07-18T08:32:32.449562Z\",\"iopub.status.idle\":\"2026-07-18T08:32:32.853501Z\",\"shell.execute_reply\":\"2026-07-18T08:32:32.850615Z\"}" jupyter="{\"source_hidden\":true}" papermill="{\"duration\":0.441098,\"end_time\":\"2026-07-18T08:32:32.856914\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:32.415816\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # Rideable or Bike Trends
 
 ggplot(monthly_bike_summary, aes(x = month_name, y = total_rides, fill = rideable_type)) +
@@ -1925,16 +1072,8 @@ ggplot(monthly_bike_summary, aes(x = month_name, y = total_rides, fill = rideabl
     y = "Total Trips",
     fill = "Bike Type"
   )
-```
 
-::: {.output .display_data}
-![](vertopal_68f82faf196b4c25b9c1367ffb3cca4c/67b75d920fb1376e60e27a04afe834f17c109c59.png){height="420"
-width="420"}
-:::
-:::
-
-::: {#b2bc65ef .cell .markdown papermill="{\"duration\":3.2258e-2,\"end_time\":\"2026-07-18T08:32:32.922036\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:32.889778\",\"status\":\"completed\"}" tags="[]"}
-### Visual Results: {#visual-results}
+### Visual Results:
 
 -   **The \"Docked Bike\"**: You will see that Members almost never use
     docked bikes. The docked bike bars only appear prominently in the
@@ -1952,27 +1091,22 @@ width="420"}
     the electric and classic bars grow equally for casual riders as the
     week progresses from Monday to Sunday, while members stay strictly
     uniform.
-:::
 
-::: {#89030914 .cell .markdown papermill="{\"duration\":3.2545e-2,\"end_time\":\"2026-07-18T08:32:32.986696\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:32.954151\",\"status\":\"completed\"}" tags="[]"}
-# **Phase 5: Share**
+
+
+# **SHARE**
 
 *After Descriptive analysis my primary goal is to answer the guiding
 questions using the evidence in my uncovered in Python and visualized in
 Tableau.*
-:::
 
-::: {#916f3603 .cell .markdown papermill="{\"duration\":3.4268e-2,\"end_time\":\"2026-07-18T08:32:33.053372\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:33.019104\",\"status\":\"completed\"}" tags="[]"}
 #### Dashboard: Tableau Public Link
-:::
 
-::: {#59b23b58 .cell .markdown papermill="{\"duration\":3.3265e-2,\"end_time\":\"2026-07-18T08:32:33.120643\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:33.087378\",\"status\":\"completed\"}" tags="[]"}
-[Cyclistic
 Dashboard](https://public.tableau.com/app/profile/satish.kumar6456/viz/GoogleDataAnalyticsCaseStudy1CyclisticBikeShareProjectDashboard/Dashboard1)
-:::
 
-::: {#b82ecfe5 .cell .markdown papermill="{\"duration\":3.3474e-2,\"end_time\":\"2026-07-18T08:32:33.187592\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:33.154118\",\"status\":\"completed\"}" tags="[]"}
-# **Phase 6: Act**
+
+
+# **ACT**
 
 *The analysis of 5.6 million clean bike trips proves that annual members
 and casual riders operate on two completely distinct user models.*
@@ -1980,13 +1114,9 @@ and casual riders operate on two completely distinct user models.*
 Annual Members
 
 Casual Members
-:::
 
-::: {#2ab3211d .cell .markdown papermill="{\"duration\":3.4605e-2,\"end_time\":\"2026-07-18T08:32:33.255259\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:33.220654\",\"status\":\"completed\"}" tags="[]"}
 ### **Conclusion**
-:::
 
-::: {#84eaab8b .cell .markdown papermill="{\"duration\":3.3939e-2,\"end_time\":\"2026-07-18T08:32:33.322839\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:33.288900\",\"status\":\"completed\"}" tags="[]"}
 The analysis of **5.6 million trips** concludes that annual members and
 casual riders use Cyclistic bikes for entirely different purposes.
 **Annual members (64.13%)** and **Casual riders (35.87%)** This analysis
@@ -1995,13 +1125,9 @@ behavioral patterns of Annual Members and Casual Riders. The final
 results reveal two distinct consumer segments: Members use the service
 as a functional, daily utility for workplace commuting, while Casual
 Riders use it as a flexible, weather-dependent leisure activity.
-:::
 
-::: {#7204b59a .cell .markdown papermill="{\"duration\":3.3322e-2,\"end_time\":\"2026-07-18T08:32:33.389581\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:33.356259\",\"status\":\"completed\"}" tags="[]"}
 ### **Key Findings**
-:::
 
-::: {#32ad2505 .cell .markdown papermill="{\"duration\":3.2984e-2,\"end_time\":\"2026-07-18T08:32:33.455961\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:33.422977\",\"status\":\"completed\"}" tags="[]"}
 1.  **Trip Volume vs. Duration ParadoxMembers account** for the highest
     volume of individual trips, but their rides are consistently short
     (average 10--13 minutes).Casual Riders take fewer individual trips
@@ -2035,16 +1161,11 @@ Riders use it as a flexible, weather-dependent leisure activity.
     January.
 
 -   **Bike Preferences:** Electric bikes are the top choice overall.
-:::
 
-::: {#d9f0caef .cell .markdown papermill="{\"duration\":3.282e-2,\"end_time\":\"2026-07-18T08:32:33.521886\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:33.489066\",\"status\":\"completed\"}" tags="[]"}
-:::
 
-::: {#4828bfe7 .cell .markdown papermill="{\"duration\":3.3203e-2,\"end_time\":\"2026-07-18T08:32:33.589652\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:33.556449\",\"status\":\"completed\"}" tags="[]"}
-### **Recommendations & Suggestions** {#recommendations--suggestions}
-:::
+### **Recommendations & Suggestions**
 
-::: {#6ec80db5 .cell .markdown papermill="{\"duration\":3.3603e-2,\"end_time\":\"2026-07-18T08:32:33.656860\",\"exception\":false,\"start_time\":\"2026-07-18T08:32:33.623257\",\"status\":\"completed\"}" tags="[]"}
+
 -   **Launch a \"Weekend Warrior\" Membership:** Create a seasonal or
     weekend-only annual subscription pass to target leisure users
     directly.
@@ -2061,4 +1182,3 @@ Riders use it as a flexible, weather-dependent leisure activity.
 -   **Introduce Gamified Milestone Rewards:** Offer casual riders app
     badges or ride discounts for completing longer summer weekend
     routes.
-:::
