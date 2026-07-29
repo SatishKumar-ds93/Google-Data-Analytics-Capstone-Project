@@ -465,7 +465,7 @@ all_trips_v2 %>%
     Max_Minutes = max(ride_length_min, na.rm = TRUE),
     Min_Minutes = min(ride_length_min, na.rm = TRUE)
   )
-```
+
 
 ::: {.output .display_data}
 14.7298274857904
@@ -504,6 +504,7 @@ summary(all_trips_v2$ride_length_min)
 ::: {.output .display_data}
        Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
        1.00    6.00   10.00   14.73   17.00 1373.00 
+
 
 #### 2. Total Number of rides Casual vs Members {#2-total-number-of-rides-casual-vs-members}
 
@@ -626,7 +627,7 @@ A tibble: 2 × 5
 #### 4. See the average ride time by each day for members vs casual users {#4-see-the-average-ride-time-by-each-day-for-members-vs-casual-users}
 
 aggregate(all_trips_v2$ride_length_min ~ all_trips_v2$member_casual + all_trips_v2$day_of_week, FUN = mean)
-```
+
 
 ::: {.output .display_data}
 
@@ -668,7 +669,7 @@ all_trips_v2 %>%
     .groups = "drop"
   ) %>%
   arrange(member_casual, weekday)
-```
+
 
 ::: {.output .display_data}
 
@@ -842,7 +843,7 @@ print(bike_time_summary)
      8 classic_bike  casual        Sun     February              4069
      9 classic_bike  casual        Mon     February              2359
     10 classic_bike  casual        Tue     February              2176
-    # ℹ 382 more rows
+    
 
 
 #=======================
@@ -857,6 +858,7 @@ print(bike_time_summary)
 library(tidyverse)
 
 # 1. Prepare the data
+
 pie_data <- all_trips_v2 %>% 
   group_by(member_casual) %>% 
   summarise(
@@ -865,6 +867,7 @@ pie_data <- all_trips_v2 %>%
   )
 
 # 2. Create the pie chart
+
 ggplot(pie_data, aes(x = "", y = total_rides, fill = member_casual)) +
   geom_col(width = 1, color = "white") +
   coord_polar("y", start = 0) +
