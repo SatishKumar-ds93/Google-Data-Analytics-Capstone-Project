@@ -447,9 +447,9 @@ Noted: *Stored those data for future use those have Zero Durations, Not removed 
 
 3.	**ride_length_minute**: convert ride_length [01:30:00] format into minute [75] by putting formula in Custom Column. Go to Add>Custom Column. Put formula, = ride_length * 1440
 
-4.**minute**: extracted to identify peak commute times vs. leisure times.
+4. **minute**: extracted to identify peak commute times vs. leisure times.
 
-5.**hour**: extracted to identify peak commute times vs. leisure times.
+5. **hour**: extracted to identify peak commute times vs. leisure times.
 
 
 #### ADD NEW COLUMN with DATE EXTRACTION
