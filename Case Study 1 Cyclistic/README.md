@@ -105,7 +105,7 @@ This analysis will provide the necessary insights to move into the data preparat
 
 
 
-#### Deliverable
+### Deliverable
 
 ● A clear statement of the business task
 
@@ -120,7 +120,7 @@ This document outlines the **Prepare** phase of the data analysis for the Cyclis
 
 Guiding questions
 
-● Where is your data located?
+### ● Where is your data located?
 
 **Data Location & Acquisition**
 
@@ -146,7 +146,7 @@ The individual monthly .CSV files will be downloaded, unzipped, and stored local
 
 The data is stored in CSV files. Each file contains one month data. Thus, a total of 12 .CSV files.
 
-● How is the data organized?
+### ● How is the data organized?
 
 **Data Organization and Structure**
 
@@ -180,7 +180,7 @@ The data is structured and organized into individual monthly CSV files. Each fil
 
 •	member_casual: The primary variable identifying the user type as either "member" (annual) or "casual" (single/day pass)
 
-#### ● Are there issues with bias or credibility in this data? Does your data ROCCC? 
+### ● Are there issues with bias or credibility in this data? Does your data ROCCC? 
 
 **Data Credibility and Bias Assessment (ROCCC)**
 
@@ -206,7 +206,7 @@ The data meets the criteria for high-quality data (ROCCC - Reliable, Original, C
 
 •	This data does not contain data about the use of reclining bikes, hand tricycles, and cargo bikes. It is said that about 8% of total riders use assistive options.
 
-● How are you addressing licensing, privacy, security, and accessibility? 
+### ● How are you addressing licensing, privacy, security, and accessibility? 
 
 Licensing, Privacy, and Security
 
@@ -219,7 +219,7 @@ Licensing, Privacy, and Security
 •	Security & Accessibility: The data will be stored securely on a local machine or a private cloud drive. It is accessible to the analysis team members collaborating on the project.
 
 
-- How did you verify the data’s integrity? 
+### ● How did you verify the data’s integrity? 
 
 To verify the integrity of the data using the specific schema provided (which includes fields like **rideable_type**, **started_at**, and **member_casual**), 
 
@@ -268,7 +268,7 @@ o	This pinpoints specific locations where marketing efforts to convert casual ri
 
 By analyzing these variables side-by-side for both groups, we gain the compelling data insights required to form targeted marketing strategies and recommendations that will eventually be presented to the Cyclistic executive team.
 
-- Are there any problems with the data? 
+### ● Are there any problems with the data? 
 
 Based on the provided data schema and case study prompt, there are a few problems and significant limitations inherent in the public dataset that must be acknowledged during the analysis:
 
@@ -375,7 +375,7 @@ The data meets the criteria, downloaded the annual data (12 zip files) and store
 
 Guiding questions 
 
-● What tools are you choosing and why? 
+### ● What tools are you choosing and why? 
 
 Excel was used for the initial "Prepare" inspection and initial data cleaning and transformation steps, but it cannot handle the combined volume of 12 months of data (which typically exceeds **5 million rows**). SQL/R allows for efficient merging (UNION), handling of null values, and complex transformations that would crash standard spreadsheet software.
 
@@ -387,7 +387,7 @@ Excel was used for the initial "Prepare" inspection and initial data cleaning an
 
 Tools Used: **MS-Excel and Power Query Editor**
 
-● Have you ensured your data’s integrity? 
+### ● Have you ensured your data’s integrity? 
 
 **To maintain integrity during processing**:
 
@@ -403,7 +403,7 @@ Tools Used: **MS-Excel and Power Query Editor**
 ## MS-Excel & Power Query Editor
 
 
-● What steps have you taken to ensure that your data is clean? 
+### ● What steps have you taken to ensure that your data is clean? 
 
 ### Data Cleaning & Transformation Steps
 
@@ -478,7 +478,7 @@ Noted: *Stored those data for future use those have Zero Durations, Not removed 
 
 •	Checked DISTINCT (member_casual) to ensure only "member" and "casual" exist in the final dataset.
 
-● Have you documented your cleaning process so you can review and share those results?
+### ● Have you documented your cleaning process so you can review and share those results?
 
 
 ### Results
@@ -488,5 +488,99 @@ Total Rows Count ride_ID (raw data or before data cleaning): 5719787
 Final Rows Count after Data Cleaning (including 0 duration ride_ID): **5373822**
 
 Final Rows Count after Data Cleaning (excluding 0 duration ride_lD): **5288107**
+
+
+### ● Key tasks
+
+
+● Check the data for errors.
+
+**DELETE Bad Data Columns**: remove unnecessary bad data rows from the column ride_id 
+
+**Remove Bad Data Columns**: start_station_id and end_station_id, end_date.
+
+**REMOVE Errors Columns**: remove errors rows from ride_length due to negative values.
+
+**Unfiltered time duration in ride_length columns**: unfiltered rows whose value is 00:00:00 (1min to 24hrs).
+
+
+
+● Choose your tools.
+
+**Data Collecting**: MS-Excel
+**Data Exploration**: MS-Excel & Power Query Editor
+**Data Combining**:  MS-Excel Power Query Editor (MS Power BI, Tableau, Big-Query SQL, R)
+**Data Transformation**: MS-Excel Power Query Editor (MS Power BI, Tableau, Big Query-SQL, R)
+**Data Cleaning**: Power Query Editor (MS Power BI, Tableau, Big Query-SQL, R)
+**Data Statistics and Insight**: Big-Query SQL, R)
+**Data Visualization**: MS Power BI and Tableau
+
+
+● Transform the data so you can work with it effectively.
+
+For Data Combing and Data Transformation **MS Power BI Query Editor** is the easiest and simple process to organized the data.
+
+Other Options to transform the 12 data csv files: **Tableau & SQL**
+
+
+
+● Document the cleaning process
+
+For Data Cleaning **MS Power BI Query Editor** and **Tableau** is the best option.
+
+
+
+
+### Deliverable
+ 
+● Documentation of any cleaning or manipulation of data
+
+Query Editor used to combine the various datasets into one dataset and clean it.
+
+Total Rows Count ride_ID (raw data or before data cleaning): 5719787
+Final Rows Count after Data Cleaning (including 0 duration ride_ID): **5373822**
+Final Rows Count after Data Cleaning (excluding 0 duration ride_lD): **5288107**
+
+#### Key columns relevant to the analysis include: Total **20 Columns**
+
+**•	ride_id**: A unique identifier for each trip.
+
+**•	rideable_type**: The type of bike used (e.g., classic bike, electric bike, docked bike).
+
+**•	day_of_week**: day of the week from the started_at column (e.g., 1 = Sunday, 7 = Saturday).
+
+**•	day**: name of the day (e.g Sunday, Monday)
+
+**•	month**: extracted to analyze seasonality by started_at DATE column. (eg. 1)
+
+**•	name_of_the_month**: extracted to analyze seasonality by started_at DATE column. (eg. January)
+
+**•	date**: date of started_at column added
+
+**•	started_at**: Datetime stamps for the start of the ride.
+
+**•	ended_at**: Datetime stamps for the end of the ride.
+
+**•	ride_length**: difference between ended_at and started_at in the time format [HH:MM:SS]
+
+**•	ride_length_min**: the time format
+
+**•	minute**: extracted to identify peak commute times vs. leisure times.
+
+**•	hour**: extracted to identify peak commute times vs. leisure times.
+
+**•	start_station_name**: Name of the start stations.
+
+**•	end_station_name**: Name of the end stations.
+
+**•	start_lat**: Latitudes Geographical coordinates for start mapping routes. 
+
+**•	start_lng**: Longitudes Geographical coordinates for end mapping routes.
+
+**•	end_lat**: Latitudes Geographical coordinates for end mapping routes.
+
+**•	end_lng**: Longitudes Geographical coordinates for end mapping routes.
+
+**•	member_casual**: The primary variable identifying the user type as either "member" (annual) or "casual" (single/day pass).
 
 
