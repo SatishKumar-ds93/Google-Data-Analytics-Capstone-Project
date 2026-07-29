@@ -267,7 +267,9 @@ Licensing, Privacy, and Security
 •	Licensing: The data is provided under a specific license. This agreement allows for analysis and use as source material in reports for non-commercial purposes but prohibits redistributing the data as a standalone product or attempting to correlate the data with user identities.
 
 
-**Link**: ![](https://divvybikes.com/data-license-agreement)
+**Link**: 
+
+![licence-agreement](https://divvybikes.com/data-license-agreement)
 
 
 •	Security & Accessibility: The data will be stored securely on a local machine or a private cloud drive. It is accessible to the analysis team members collaborating on the project.
@@ -372,7 +374,8 @@ Download the file from this link [](https://divvy-tripdata.s3.amazonaws.com/inde
 
 As per the case study instructions, I will use the previous **12 months** of data (typically encompassing monthly zip files, for example, from **Jan 2023 to Dec 2023**, depending on the current date of execution) to capture recent trends and seasonality.
 
-•	Unzip all **12 files**.
+•	Unzip all **12 files**
+
 •	Separate **CSV** data into another folder
 
 
@@ -447,7 +450,9 @@ The data meets the criteria, downloaded the annual data (12 zip files) and store
 
 
 
-## Phase 3:  Process: combining the 12 files into 1 for data transformation and cleaning.
+## Phase 3:  Process: 
+
+*combining the 12 files into 1 for data transformation and cleaning.*
 
 
 ### Case Study Roadmap - Process
@@ -490,6 +495,7 @@ Tools Used: **MS-Excel and Power Query Editor**
 
 
 ### ● What steps have you taken to ensure that your data is clean? 
+
 
 ## Data Cleaning & Transformation Steps
 
@@ -537,7 +543,7 @@ As per the given instructions, I created the following calculated fields:
 
 2.	**Remove errors**: Negative Durations, removed any rows where ended_at was before to started_at. (e.g., 1 minute to 24 hours). Remove Errors in **ride_length** column.
 
-Noted: *Stored those data for future use those have Zero Durations, Not removed rows where ended_at was equal to started_. [00:00:00]*
+**Noted**: *Stored those data for future use those have Zero Durations, Not removed rows where ended_at was equal to started_. [00:00:00]*
 
 3.	**ride_length_minute**: convert ride_length [01:30:00] format into minute [75] by putting formula in Custom Column. Go to Add>Custom Column. Put formula, = ride_length * 1440
 
