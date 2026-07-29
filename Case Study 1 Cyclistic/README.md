@@ -269,7 +269,7 @@ Licensing, Privacy, and Security
 
 **Link**: 
 
-![licence-agreement](https://divvybikes.com/data-license-agreement)
+[licence-agreement](https://divvybikes.com/data-license-agreement)
 
 
 •	Security & Accessibility: The data will be stored securely on a local machine or a private cloud drive. It is accessible to the analysis team members collaborating on the project.
