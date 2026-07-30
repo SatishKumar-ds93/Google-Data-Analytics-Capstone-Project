@@ -135,6 +135,8 @@ Since Tableau does not have a native "duration" data type, follow these steps to
 If Tableau has already recognized your ride_length as a Date/Time field (showing a calendar icon), use this shorter formula
  
 
+## 4. Data Analyze
+
 - **ride_length_min**
 
 (DATEPART(‘hour’, [ride_length]) * 60) + (DATEPART(‘hour’, [ride_length]) * 60) +  (DATEPART(‘hour’, [ride_length]) / 60) 
@@ -176,6 +178,13 @@ IF [ride_length] > 0 THEN [ride_length] ELSE NULL END.
 
 
 
+## 5. Data Share
+
+- Dashboard link:
+
+[Dashboard](https://public.tableau.com/app/profile/satish.kumar6456/viz/GoogleDataAnalyticsCaseStudy1CyclisticBikeShareProjectDashboard/Dashboard1)
+
+  
 
 
 
