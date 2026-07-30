@@ -1,9 +1,59 @@
-## Data Uploading & Combining
+# HOW TO INSTALL TABLEAU PUBLIC DESKTOP
+
+Installing Tableau Public Desktop is a straightforward process that does not require a paid license key. 
+
+### Step 1: Download the Installer
+
+1.	Visit the official Tableau Public Download Page.
+
+2.	Enter your email address in the provided field and click Download the App.
+
+3.	The website will automatically detect your operating system and begin downloading the appropriate .exe file (for Windows) or .dmg file (for Mac). 
+
+### Step 2: Run the Installation
+
+#### For Windows:
+
+•	Locate the downloaded file (usually in your "Downloads" folder) and **double-click** it.
+
+•	Check the box to **accept the license agreement**.
+
+•	(Optional) Click Customize to change the installation location or disable desktop shortcuts.
+
+•	Click Install. You may need to grant administrator approval when prompted.
+
+#### For Mac:
+
+•	Open the **Disk Image (.dmg)** file and double-click the **Installer Package (.pkg).**
+
+•	Follow the guided prompts to complete the installation.
+
+•	If you see a security warning about "malicious software," 
+
+Go to **System Preferences** > **Security & Privacy** 
+
+Click **Allow** for Tableau.
+
+
+### Step 3: Registration and First Launch
+
+1.	Once installation is complete, **launch Tableau Public** from your Start menu or Applications folder.
+
+2.	A registration form will appear. Fill in your details (name, business email, country) and
+
+3.	Click **Activate Tableau** to register your free copy.
+
+4.	You can now start creating visualizations by connecting to data sources like Excel or Google Sheets.
+
+
+
+
+## 1. Data Uploading & Combining
 
 *To combine multiple CSV files from a single folder into Tableau Public Desktop, you should use the **Wildcard Union** feature. This allows you to stack all 12 files into one single data source automatically, provided they have the same column structure.*
 
 
-### 1. Uploading
+### Uploading
 
 Step-by-Step Upload Process
 
