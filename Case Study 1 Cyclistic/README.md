@@ -450,7 +450,7 @@ The data meets the criteria, downloaded the annual data (12 zip files) and store
 
 
 
-## Phase 3:  Process: 
+## Phase 3:  Process
 
 *combining the 12 files into 1 for data transformation and cleaning.*
 
@@ -699,4 +699,199 @@ Final Rows Count after Data Cleaning (excluding 0 duration ride_lD): **5288107**
 
 **•	member_casual**: The primary variable identifying the user type as either "member" (annual) or "casual" (single/day pass).
 
+
+## Phase 4: Analyze
+
+*combining all 12 files into 1 file and stored the data after data transformation and cleaning. Now start analysis as per instructions and requirement.*
+
+### Case Study Roadmap - Analyze
+
+
+Guiding questions 
+
+### ● How Should you organize your data to perform analysis on it? 
+
+Once you have combined and cleaned your 12 CSV files into a single master file, you should organize your data according to "Tidy_Data" with rename such as “cleaned_data” to ensure it is optimized for analysis across MS Power BI, Big Query SQL, and R Studio.
+
+Data Cleaning Table name and Total number of Rows
+
+•	Big Query-SQL: cyclistic.cleaned_annual_trips- 5606188
+•	R Studio: all_trips_v2- 5600814
+
+Descriptive Analysis:  BIG Query Editor, R Studio
+Visualization: MS Power BI, Tableau
+
+### ● Has your data been properly formatted? 
+
+In Process phase all the data formatted correctly as per given instructions:
+
+•	All the 12 CSV files combined in 1 file for data transformation and data cleaning.
+•	Calculate the ride_length with minute format without negative or 0 values.
+•	Create a column for Date format(dd:mm:yyy) and Calculate Day of Week (1=Sunday & 7=Saturday)
+
+
+### ● What surprise did you discover in the data?
+
+	Based on the instructions the data calculation done by 2 methods
+
+1.	Descriptive
+2.	Visualization
+
+
+
+## Phase 5: Share
+
+*After Descriptive analysis my primary goal is to answer the guiding
+questions using the evidence in my uncovered in Python and visualized in
+Tableau.*
+
+#### Dashboard: Tableau Public Link
+
+[Dashboard]("https://public.tableau.com/app/profile/satish.kumar6456/viz/GoogleDataAnalyticsCaseStudy1CyclisticBikeShareProjectDashboard/Dashboard1")
+
+
+Share: Share of your Google Data Analytics Capstone project, your primary goal is to answer the guiding questions using the evidence you uncovered in Python and visualized in Tableau.
+
+Since your audience is the Cyclistic executive team (Lily Moreno and the board), your answers must be clear, data-driven, and focused on business value.
+
+
+### Case Study Roadmap - Share
+
+
+Guiding questions 
+
+### ●  Were you able to answer the question of how annual members and casual riders use Cyclistic bikes differently?
+
+#### 1. What to write:
+
+Yes. The data revealed distinct operational, behavioral, and temporal differences between annual members and casual riders. Annual members primarily use Cyclistic as a dependable commuter utility, while casual riders utilize it for leisure, tourism, and weekend recreation.
+
+#### 2. What story does your data tell?
+
+•	What to write: The data tells a story of two entirely different customer personas:
+
+**o	The Commuter (Members)**: Their trip counts spike sharply around standard office rush hours (8:00 AM and 5:00 PM) from Monday to Friday. Their trip durations are short, consistent, and predictable (typically averaging 10–13 minutes), showing they value efficiency and travel fixed routes.
+
+**o	The Leisure Seeker (Casuals)**: Their demand surges on weekends (Friday through Sunday) and during afternoon leisure hours. Their trips last significantly longer on average (usually 20–25+ minutes) and peak heavily during summer months (June to August), indicating recreational and tourist use.
+
+
+#### 3. How do your findings relate to your original question?**
+
+**•	What to write:** The findings directly address the original business objective: identifying how to convert casual riders into annual members. By proving that casual riders take longer trips and ride primarily on weekends, we now know that a successful marketing campaign must target weekend/leisure habits rather than daily commuting needs.
+
+
+#### 4. Who is your audience? What is the best way to communicate with them?
+
+**•	What to write**: The primary audience is Lily Moreno (Director of Marketing) and the Cyclistic Executive Committee. The best way to communicate with them is through a high-level, polished slide presentation accompanied by an interactive Tableau dashboard. They care about high-level strategic takeaways, revenue potential, and actionable recommendations, not complex code. Technical data cleaning steps should be kept in the appendix.
+
+
+#### 5.	Can data visualization help you share your findings? [1]
+
+**•	What to write**: Yes. Visualizations are essential to make over 5.6 million rows of data instantly understandable. Instead of looking at raw numbers, the executive team can use charts to immediately spot patterns:
+
+o	A **dual-line chart** clearly highlights the opposing weekday vs. weekend patterns.
+o	A **stacked bar chart** demonstrates how casual riders dominate the summer months.
+o	A **side-by-side bar chart** shows the massive difference in trip durations
+
+
+#### 6.	Is your presentation accessible to your audience?
+
+**•	What to write**: 
+
+Yes. To ensure accessibility, the presentation and Tableau dashboard utilize high-contrast color palettes that are color-blind friendly (avoiding overlapping red/green indicators). All charts include clear, descriptive titles, properly labeled axes with units (e.g., "Trip Duration in Minutes"), and visible data labels to remove any ambiguity.
+
+
+## Deliverable Summary
+
+When you submit this phase, structure your document or presentation slide notes using this clean layout:
+
+### •	Executive Summary: 
+
+A 3-sentence summary stating that members ride for utility (weekdays, fast trips) while casuals ride for leisure (weekends, long summer trips).
+
+### •	Key Findings (The Evidence):
+
+**o	Volume**: Members make up the majority of total trips, but casuals peak on weekends.
+**o	Duration**: Casual riders consistently maintain double the average ride length of members.
+**o	Seasonality**: Casual riding is heavily weather-dependent, spiking dramatically in July.
+
+
+
+## Phase 6: Act
+
+*The analysis of 5.6 million clean bike trips proves that annual members
+and casual riders operate on two completely distinct user models.*
+
+Annual Members
+
+Casual Members
+
+
+### **Conclusion**
+
+The analysis of **5.6 million trips** concludes that annual members and
+casual riders use Cyclistic bikes for entirely different purposes.
+**Annual members (64.13%)** and **Casual riders (35.87%)** This analysis
+evaluates a full year of bike-sharing dataset trends, comparing the
+behavioral patterns of Annual Members and Casual Riders. The final
+results reveal two distinct consumer segments: Members use the service
+as a functional, daily utility for workplace commuting, while Casual
+Riders use it as a flexible, weather-dependent leisure activity.
+
+### **Key Findings**
+
+1.  **Trip Volume vs. Duration ParadoxMembers account** for the highest
+    volume of individual trips, but their rides are consistently short
+    (average 10--13 minutes).Casual Riders take fewer individual trips
+    overall, but their trip duration is significantly longer (often
+    double or triple that of members, averaging 25--30+ minutes).
+
+2.  **Weekly & Hourly Rush PatternsMembers peak** heavily from Monday to
+    Friday during traditional commute hours (08:00 AM and 05:00 PM).
+    Their weekend volume drops.Casual Riders dominate the weekend
+    (Saturday and Sunday), with trip volumes building steadily
+    throughout the afternoon, peaking between 02:00 PM and 04:00 PM.
+
+3.  **Extreme Weather SeasonalityCasual ridership** is highly volatile
+    and climate-dependent. It peaks dramatically in summer (July and
+    August) and drops close to zero during cold winter months (January
+    and February).Member ridership is resilient. While it decreases in
+    winter, a baseline volume of members continues to use the bikes for
+    routine transit year-round.
+
+-   **Trip Durations:** Casual journeys average 19.65 minutes, nearly
+    doubling the 11.98-minute average of members.
+
+-   **Peak Rush Hours:** Members spike at 8:00 AM and 5:00 PM weekdays;
+    casual traffic builds steadily on weekend afternoons.
+
+-   **Busiest Service Days:** Thursday is the peak day for members,
+    whereas Saturday heavily dominates for casual riders.
+
+-   **High Seasonality:** Casual demand is highly climate-dependent,
+    surging drastically from June to August and bottoming out in
+    January.
+
+-   **Bike Preferences:** Electric bikes are the top choice overall.
+
+
+### **Recommendations & Suggestions**
+
+
+-   **Launch a \"Weekend Warrior\" Membership:** Create a seasonal or
+    weekend-only annual subscription pass to target leisure users
+    directly.
+
+-   **Deploy Value-Based App Notifications:** Send casual riders push
+    notifications showing how much they would save by upgrading.
+
+-   **Run Geofenced Summer Campaigns:** Target casual users via digital
+    ads near parks and tourist corridors from June to August.
+
+-   **Optimize Saturday Fleet Layouts:** Position classic and electric
+    bikes at high-demand recreational stations on Friday nights.
+
+-   **Introduce Gamified Milestone Rewards:** Offer casual riders app
+    badges or ride discounts for completing longer summer weekend
+    routes.
 
