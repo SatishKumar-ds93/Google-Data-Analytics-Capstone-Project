@@ -747,7 +747,7 @@ Tableau.*
 
 #### Dashboard: Tableau Public Link
 
-[Dashboard]("https://public.tableau.com/app/profile/satish.kumar6456/viz/GoogleDataAnalyticsCaseStudy1CyclisticBikeShareProjectDashboard/Dashboard1")
+[Dashboard](https://public.tableau.com/app/profile/satish.kumar6456/viz/GoogleDataAnalyticsCaseStudy1CyclisticBikeShareProjectDashboard/Dashboard1)
 
 
 Share: Share of your Google Data Analytics Capstone project, your primary goal is to answer the guiding questions using the evidence you uncovered in Python and visualized in Tableau.
