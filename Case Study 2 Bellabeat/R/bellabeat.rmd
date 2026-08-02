@@ -407,7 +407,7 @@ daily_activity_cleaned <- read_csv(paste0(folder_path,"/dailyActivity_merged.csv
 # to check the format
 
 head(daily_activity_cleaned)
-```
+
 
 ::: {.output .stream .stderr}
     Rows: 940 Columns: 15
