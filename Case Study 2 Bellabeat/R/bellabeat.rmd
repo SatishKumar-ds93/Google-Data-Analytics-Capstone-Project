@@ -65,7 +65,7 @@ weight_loginfo           <- read_csv(paste0(folder_path, "/weightLogInfo_merged.
 # Step 4: Verify the first file loaded properly
 
 head(daily_activity)
-```
+
 
 ::: {.output .stream .stderr}
     Rows: 940 Columns: 15
@@ -1070,7 +1070,7 @@ analysis as per instructions and requirement.
 combined_data %>%
   select(TotalSteps, TotalDistance, VeryActiveMinutes, SedentaryMinutes, TotalMinutesAsleep) %>%
   summary()
-```
+
 
 ::: {.output .display_data}
        TotalSteps    TotalDistance    VeryActiveMinutes SedentaryMinutes
