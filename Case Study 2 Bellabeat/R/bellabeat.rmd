@@ -1,249 +1,9 @@
----
-jupyter:
-  kernelspec:
-    display_name: R
-    language: R
-    name: ir
-  language_info:
-    codemirror_mode: r
-    file_extension: .r
-    mimetype: text/x-r-source
-    name: R
-    pygments_lexer: r
-    version: 4.4.0
-  nbformat: 4
-  nbformat_minor: 5
-  papermill:
-    default_parameters: {}
-    duration: 34.167179
-    end_time: "2026-07-18T14:51:09.684316"
-    environment_variables: {}
-    input_path: \_\_notebook\_\_.ipynb
-    output_path: \_\_notebook\_\_.ipynb
-    parameters: {}
-    start_time: "2026-07-18T14:50:35.517137"
-    version: 2.6.0
----
-
-::: {#d4e37bf5 .cell .markdown papermill="{\"duration\":1.2429e-2,\"end_time\":\"2026-07-18T14:50:38.583962\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.571533\",\"status\":\"completed\"}" tags="[]"}
-## **Capstone Project: Bellabeat Fitness Tracker Analysis using R**
-
-Case Study 2: How Can a Wellness Technology Company Play It Smart?
-:::
-
-::: {#70a714cc .cell .markdown papermill="{\"duration\":1.1089e-2,\"end_time\":\"2026-07-18T14:50:38.606729\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.595640\",\"status\":\"completed\"}" tags="[]"}
-### **Project Overview:**
-
-Welcome to the Bellabeat data analysis case study. This case study is
-the Capstone Project of Google Data Analytics Professional Certificate.
-This project follows the structured data analysis process (Ask, Prepare,
-Process, Analyze, Share, and Act) to answer the key business questions
-of Bellabeat, a high-tech manufacturer of health-focused products for
-women.
-:::
-
-::: {#0b86d866 .cell .markdown papermill="{\"duration\":1.1587e-2,\"end_time\":\"2026-07-18T14:50:38.629358\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.617771\",\"status\":\"completed\"}" tags="[]"}
-The Scenario:
-
-I am working as a **Junior Data Analyst** at Bellabeat, a health-focused
-smart device company for women. My task is to analyze consumer smart
-device fitness data to unlock new global growth opportunities. This will
-present our insights and marketing recommendations to the executive
-team.
-:::
-
-::: {#179dce40 .cell .markdown papermill="{\"duration\":1.1009e-2,\"end_time\":\"2026-07-18T14:50:38.651317\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.640308\",\"status\":\"completed\"}" tags="[]"}
-Key Characters:
-
-**Urška Sršen:** Cofounder and Chief Creative Officer.
-
-**Sando Mur:** Cofounder, mathematician, and executive team member.
-
-**Marketing Analytics Team:** Your team, responsible for data-driven
-marketing strategy.
-:::
-
-::: {#d3a92f93 .cell .markdown papermill="{\"duration\":1.0881e-2,\"end_time\":\"2026-07-18T14:50:38.673083\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.662202\",\"status\":\"completed\"}" tags="[]"}
-#### **Products:**
-
-Bellabeat App: The central hub tracking activity, sleep, stress,
-menstrual cycles, and habits.
-
-Leaf: A classic wellness tracker worn as a bracelet, necklace, or clip.
-
-Time: A traditional-looking wellness watch with smart tracking features.
-
-Spring: A smart water bottle that monitors daily hydration levels.
-
-Bellabeat Membership: A subscription service offering personalized 24/7
-health and wellness guidance.
-:::
-
-::: {#0c60b8fd .cell .markdown papermill="{\"duration\":1.0906e-2,\"end_time\":\"2026-07-18T14:50:38.694927\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.684021\",\"status\":\"completed\"}" tags="[]"}
-### **About the Company**
-
-Founded in 2013 by Urška Sršen and Sando Mur, Bellabeat is a tech-driven
-wellness company that designs beautiful smart products for women. The
-company collects data on activity, sleep, stress, and reproductive
-health to empower women with deeper insights into their daily habits.
-
-By 2016, Bellabeat expanded globally, selling its products through its
-own e-commerce website and multiple online retailers. While the company
-utilizes traditional advertising like TV and billboards, its primary
-focus is digital marketing. Bellabeat invests year-round in Google
-Search, maintains highly active social media channels (Facebook,
-Instagram, and Twitter), and runs video and display ad campaigns on
-YouTube and the Google Display Network.
-:::
-
-::: {#2ad24e57 .cell .markdown papermill="{\"duration\":1.0725e-2,\"end_time\":\"2026-07-18T14:50:38.716600\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.705875\",\"status\":\"completed\"}" tags="[]"}
-# **Phase 1: Ask**
-
-The goal is to analyze smart device usage data in order to gain insights
-into how consumers use non-Bellabeat Smart Devices.
-:::
-
-::: {#0685ec24 .cell .markdown papermill="{\"duration\":1.1067e-2,\"end_time\":\"2026-07-18T14:50:38.738347\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.727280\",\"status\":\"completed\"}" tags="[]"}
-### **A. Problem Statement** {#a-problem-statement}
-
-The core problem is that Bellabeat needs to better understand how
-consumers engage with smart devices in their everyday lives to unlock
-new growth opportunities. Currently, the company needs to bridge the gap
-between general consumer behavior (found in non-Bellabeat data) and
-their own product marketing. By identifying these external trends, I am
-solving the problem of how to position Bellabeat products more
-effectively in a competitive global market.
-:::
-
-::: {#98b7659b .cell .markdown papermill="{\"duration\":1.0825e-2,\"end_time\":\"2026-07-18T14:50:38.761171\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.750346\",\"status\":\"completed\"}" tags="[]"}
-**Business Objectives:**
-
-1.  What are some trends in smart device usage?
-2.  How could these trends apply to Bellabeat customers?
-3.  How could these trends help influence Bellabeat marketing strategy?
-:::
-
-::: {#c7c83087 .cell .markdown papermill="{\"duration\":1.0897e-2,\"end_time\":\"2026-07-18T14:50:38.782895\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.771998\",\"status\":\"completed\"}" tags="[]"}
-**Deliverables:**
-
-Sršen asks me to analyze smart device and produce a report:
-
-1.  A clear summary of the business task
-2.  A description of all data sources used
-3.  Documentation of any cleaning or manipulation of data
-4.  A summary of your analysis
-5.  Supporting visualizations and key findings
-6.  Your top high-level content recommendations based on your analysis.
-:::
-
-::: {#29d9c6c6 .cell .markdown papermill="{\"duration\":1.0953e-2,\"end_time\":\"2026-07-18T14:50:38.804639\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.793686\",\"status\":\"completed\"}" tags="[]"}
-### **B. Business Tasks:** {#b-business-tasks}
-
-1.  What are some trends in smart device usage? (e.g., peak activity
-    times, average sleep duration, or common sedentary periods).
-
-2.  How could these trends apply to Bellabeat customers? (e.g., do
-    Bellabeat's target female users likely share these habits?).
-
-3.  How could these trends help influence Bellabeat marketing strategy?
-    (e.g., using data to personalize app notifications or design
-    targeted campaigns).
-:::
-
-::: {#b54790da .cell .markdown papermill="{\"duration\":1.0807e-2,\"end_time\":\"2026-07-18T14:50:38.826274\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.815467\",\"status\":\"completed\"}" tags="[]"}
-#### **Business Decision**
-
-Insights from this data will drive business decisions in three key ways:
-
-**1. Product Positioning:** If the data shows high sedentary behavior
-during work hours, Bellabeat can market the Leaf or Time as a tool for
-\"desk-break\" reminders.
-
-**2. Digital Strategy:** If activity peaks on weekends, the marketing
-team can schedule social media ads or app notifications for those
-specific high-engagement times.
-
-**3. Membership Value:** Insights into sleep or stress patterns can help
-the executive team decide which personalized content to prioritize for
-the Bellabeat subscription service.
-:::
-
-::: {#50cce014 .cell .markdown papermill="{\"duration\":1.0813e-2,\"end_time\":\"2026-07-18T14:50:38.847953\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.837140\",\"status\":\"completed\"}" tags="[]"}
-**Key Tasks**
-
-The business task is to identify and analyze consumer usage trends from
-non-Bellabeat smart devices to uncover health and wellness patterns.
-These findings will be used to provide high-level recommendations for
-Bellabeat's marketing strategy, specifically aimed at improving product
-positioning for women by aligning Bellabeat\'s features with real-world
-consumer habits.
-:::
-
-::: {#1a951d5b .cell .markdown papermill="{\"duration\":1.0751e-2,\"end_time\":\"2026-07-18T14:50:38.869578\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.858827\",\"status\":\"completed\"}" tags="[]"}
-### **C. Key Stakeholders** {#c-key-stakeholders}
-:::
-
-::: {#b18fd368 .cell .markdown papermill="{\"duration\":1.0685e-2,\"end_time\":\"2026-07-18T14:50:38.891311\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.880626\",\"status\":\"completed\"}" tags="[]"}
-**Urška Sršen:** Cofounder and CCO; needs insights to drive creative and
-marketing direction.
-
-**Sando Mur:** Cofounder and Executive Team member; interested in the
-mathematical/data-driven growth opportunities.
-
-**Marketing Analytics Team:** Your peers who will help integrate these
-findings into broader campaigns.
-
-**Me:** as a Junior Analyst
-:::
-
-::: {#06b3fa02 .cell .markdown papermill="{\"duration\":1.085e-2,\"end_time\":\"2026-07-18T14:50:38.912957\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.902107\",\"status\":\"completed\"}" tags="[]"}
-# **Phase 2: Prepare**
-
-To move into the Prepare phase, we need to evaluate the quality and
-structure of the FitBit dataset to ensure our analysis is reliable.
-:::
-
-::: {#82f315d9 .cell .markdown papermill="{\"duration\":1.083e-2,\"end_time\":\"2026-07-18T14:50:38.934538\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.923708\",\"status\":\"completed\"}" tags="[]"}
-### Download Location
-:::
-
-::: {#a897dcd9 .cell .markdown papermill="{\"duration\":1.0808e-2,\"end_time\":\"2026-07-18T14:50:38.956123\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.945315\",\"status\":\"completed\"}" tags="[]"}
-[Fitbit Fitness Tracker
-Data](http:///kaggle/input/datasets/satishkr93/fitbit-fitness-track-data)
-:::
-
-::: {#bff5ccbb .cell .markdown papermill="{\"duration\":1.0784e-2,\"end_time\":\"2026-07-18T14:50:38.977869\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.967085\",\"status\":\"completed\"}" tags="[]"}
-### Data Source Overview¶
-
-It is in a long format across 18 CSV files, tracking daily, hourly, and
-minute-level metrics.
-
-**• Storage:** 18 CSV files containing wide and long format data.
-
-**• Content:** Daily activity, steps, calories, heart rate, and sleep
-monitoring.
-
-**• Sample Size:** 33 Fitbit users (consented).
-
-**• User ID:** It is structured in a long format (each row is a point in
-time per user ID)
-
-**• Generated by respondents from a distributed survey via:** Amazon
-Mechanical Turk
-
-**• Time Period:** Between 12 April 2016 to 12 May 2016.
-:::
-
-::: {#4dc9e0c7 .cell .markdown papermill="{\"duration\":1.0704e-2,\"end_time\":\"2026-07-18T14:50:38.999323\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:38.988619\",\"status\":\"completed\"}" tags="[]"}
 ### Import the important packages
-:::
 
-::: {#ae2a3cad .cell .code execution_count="1" execution="{\"iopub.execute_input\":\"2026-07-18T14:50:39.025003Z\",\"iopub.status.busy\":\"2026-07-18T14:50:39.022975Z\",\"iopub.status.idle\":\"2026-07-18T14:50:53.360283Z\",\"shell.execute_reply\":\"2026-07-18T14:50:53.358380Z\"}" papermill="{\"duration\":14.353243,\"end_time\":\"2026-07-18T14:50:53.363367\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:39.010124\",\"status\":\"completed\"}" tags="[]"}
-``` R
 install.packages("tidyverse")
 library(tidyverse)
 library(lubridate) # to fix date/time format
-```
+
 
 ::: {.output .stream .stderr}
     Installing package into ‘/usr/local/lib/R/site-library’
@@ -267,25 +27,19 @@ library(lubridate) # to fix date/time format
 :::
 :::
 
-::: {#788fe30a .cell .markdown papermill="{\"duration\":1.1244e-2,\"end_time\":\"2026-07-18T14:50:53.420037\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:53.408793\",\"status\":\"completed\"}" tags="[]"}
-# **Phase 3: Process**
+# **Phase: Process**
 
 combining some files into 1 for data transformation and cleaning.
-:::
 
-::: {#2292cb66 .cell .markdown papermill="{\"duration\":1.0984e-2,\"end_time\":\"2026-07-18T14:50:53.442481\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:53.431497\",\"status\":\"completed\"}" tags="[]"}
 ## 1. Data Collection {#1-data-collection}
-:::
 
-::: {#4071d819 .cell .code execution_count="2" execution="{\"iopub.execute_input\":\"2026-07-18T14:50:53.509041Z\",\"iopub.status.busy\":\"2026-07-18T14:50:53.466572Z\",\"iopub.status.idle\":\"2026-07-18T14:51:00.514751Z\",\"shell.execute_reply\":\"2026-07-18T14:51:00.512922Z\"}" papermill="{\"duration\":7.063784,\"end_time\":\"2026-07-18T14:51:00.517330\",\"exception\":false,\"start_time\":\"2026-07-18T14:50:53.453546\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # Step 1: Import the library
 
 library(tidyverse)
 
 # Step 2: Import the File Path
 
-folder_path <- "/kaggle/input/datasets/satishkr93/fitbit-fitness-track-data/mturkfitbit_export_4.12.16-5.12.16_csv"
+folder_path <- "/YourFolderPathName/fitbit-fitness-track-data/mturkfitbit_export_4.12.16-5.12.16_csv"
 
 #Step 3: Upload all the 18 CSV File
 
@@ -635,16 +389,11 @@ A tibble: 6 × 15
 :::
 :::
 
-::: {#66ccb5a6 .cell .markdown papermill="{\"duration\":1.5273e-2,\"end_time\":\"2026-07-18T14:51:00.547989\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:00.532716\",\"status\":\"completed\"}" tags="[]"}
+
 ## 2. Data Extraction and Organization {#2-data-extraction-and-organization}
-:::
 
-::: {#dcfe02d6 .cell .markdown papermill="{\"duration\":1.4596e-2,\"end_time\":\"2026-07-18T14:51:00.577211\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:00.562615\",\"status\":\"completed\"}" tags="[]"}
 #### A. DATE Format Change {#a-date-format-change}
-:::
 
-::: {#6031e185 .cell .code execution_count="3" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:00.609818Z\",\"iopub.status.busy\":\"2026-07-18T14:51:00.608248Z\",\"iopub.status.idle\":\"2026-07-18T14:51:00.734053Z\",\"shell.execute_reply\":\"2026-07-18T14:51:00.732238Z\"}" papermill="{\"duration\":0.144557,\"end_time\":\"2026-07-18T14:51:00.736344\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:00.591787\",\"status\":\"completed\"}" tags="[]"}
-``` R
 library(lubridate)
 
 
@@ -669,15 +418,6 @@ head(daily_activity_cleaned)
     Delimiter: ","
     chr  (1): ActivityDate
     dbl (14): Id, TotalSteps, TotalDistance, TrackerDistance, LoggedActivitiesDi...
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .display_data}
 
 A tibble: 6 × 15
 
@@ -689,11 +429,8 @@ A tibble: 6 × 15
 | 1503960366 | 04/15/2016 |  9762 | 6.28 | 6.28 | 0 | 2.14 | 1.26 | 2.83 | 0 | 29 | 34 | 209 |  726 | 1745 |
 | 1503960366 | 04/16/2016 | 12669 | 8.16 | 8.16 | 0 | 2.71 | 0.41 | 5.04 | 0 | 36 | 10 | 221 |  773 | 1863 |
 | 1503960366 | 04/17/2016 |  9705 | 6.48 | 6.48 | 0 | 3.19 | 0.78 | 2.51 | 0 | 38 | 20 | 164 |  539 | 1728 |
-:::
-:::
 
-::: {#c9f0d5ff .cell .code execution_count="4" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:00.770397Z\",\"iopub.status.busy\":\"2026-07-18T14:51:00.768843Z\",\"iopub.status.idle\":\"2026-07-18T14:51:00.862306Z\",\"shell.execute_reply\":\"2026-07-18T14:51:00.860645Z\"}" papermill="{\"duration\":0.112729,\"end_time\":\"2026-07-18T14:51:00.864570\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:00.751841\",\"status\":\"completed\"}" tags="[]"}
-``` R
+
 # b) daily_calories
 
 daily_calories_cleaned <- read_csv(paste0(folder_path,"/dailyCalories_merged.csv")) %>%
@@ -704,7 +441,7 @@ daily_calories_cleaned <- read_csv(paste0(folder_path,"/dailyCalories_merged.csv
 # to check the format
 
 head(daily_calories_cleaned)
-```
+
 
 ::: {.output .stream .stderr}
     Rows: 940 Columns: 3
@@ -715,15 +452,7 @@ head(daily_calories_cleaned)
     Delimiter: ","
     chr (1): ActivityDay
     dbl (2): Id, Calories
-:::
 
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .display_data}
 
 A tibble: 6 × 3
 
@@ -735,11 +464,7 @@ A tibble: 6 × 3
 | 1503960366 | 04/15/2016 | 1745 |
 | 1503960366 | 04/16/2016 | 1863 |
 | 1503960366 | 04/17/2016 | 1728 |
-:::
-:::
 
-::: {#9910a8fa .cell .code execution_count="5" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:00.899086Z\",\"iopub.status.busy\":\"2026-07-18T14:51:00.897555Z\",\"iopub.status.idle\":\"2026-07-18T14:51:01.049237Z\",\"shell.execute_reply\":\"2026-07-18T14:51:01.046733Z\"}" papermill="{\"duration\":0.172098,\"end_time\":\"2026-07-18T14:51:01.052194\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:00.880096\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # c) daily_intensities
 
 daily_intensities_cleaned <- read_csv(paste0(folder_path, "/dailyIntensities_merged.csv")) %>%
@@ -750,7 +475,7 @@ daily_intensities_cleaned <- read_csv(paste0(folder_path, "/dailyIntensities_mer
 # Noted: Go to the environment to view directly to the table
 
 head(daily_intensities_cleaned)
-```
+
 
 ::: {.output .stream .stderr}
     Rows: 940 Columns: 10
@@ -761,15 +486,6 @@ head(daily_intensities_cleaned)
     Delimiter: ","
     chr (1): ActivityDay
     dbl (9): Id, SedentaryMinutes, LightlyActiveMinutes, FairlyActiveMinutes, Ve...
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .display_data}
 
 A tibble: 6 × 10
 
@@ -781,11 +497,8 @@ A tibble: 6 × 10
 | 1503960366 | 04/15/2016 |  726 | 209 | 34 | 29 | 0 | 2.83 | 1.26 | 2.14 |
 | 1503960366 | 04/16/2016 |  773 | 221 | 10 | 36 | 0 | 5.04 | 0.41 | 2.71 |
 | 1503960366 | 04/17/2016 |  539 | 164 | 20 | 38 | 0 | 2.51 | 0.78 | 3.19 |
-:::
-:::
 
-::: {#9e130cb0 .cell .code execution_count="6" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:01.086860Z\",\"iopub.status.busy\":\"2026-07-18T14:51:01.085282Z\",\"iopub.status.idle\":\"2026-07-18T14:51:01.175805Z\",\"shell.execute_reply\":\"2026-07-18T14:51:01.173975Z\"}" papermill="{\"duration\":0.110369,\"end_time\":\"2026-07-18T14:51:01.178226\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:01.067857\",\"status\":\"completed\"}" tags="[]"}
-``` R
+
 # d) daily_steps
 
 daily_steps_cleaned <- read_csv(paste0(folder_path,"/dailySteps_merged.csv")) %>%
@@ -796,7 +509,7 @@ daily_steps_cleaned <- read_csv(paste0(folder_path,"/dailySteps_merged.csv")) %>
 # to check the format
 
 head(daily_steps_cleaned)
-```
+
 
 ::: {.output .stream .stderr}
     Rows: 940 Columns: 3
@@ -807,15 +520,6 @@ head(daily_steps_cleaned)
     Delimiter: ","
     chr (1): ActivityDay
     dbl (2): Id, StepTotal
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .display_data}
 
 A tibble: 6 × 3
 
@@ -827,15 +531,11 @@ A tibble: 6 × 3
 | 1503960366 | 04/15/2016 |  9762 |
 | 1503960366 | 04/16/2016 | 12669 |
 | 1503960366 | 04/17/2016 |  9705 |
-:::
-:::
 
-::: {#34a61e1a .cell .markdown papermill="{\"duration\":1.5866e-2,\"end_time\":\"2026-07-18T14:51:01.210372\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:01.194506\",\"status\":\"completed\"}" tags="[]"}
+
 #### B. DATE TIME EXTRACT AND FORMAT {#b-date-time-extract-and-format}
-:::
 
-::: {#b4ed6235 .cell .code execution_count="7" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:01.249851Z\",\"iopub.status.busy\":\"2026-07-18T14:51:01.248311Z\",\"iopub.status.idle\":\"2026-07-18T14:51:01.664805Z\",\"shell.execute_reply\":\"2026-07-18T14:51:01.662831Z\"}" papermill="{\"duration\":0.440887,\"end_time\":\"2026-07-18T14:51:01.667604\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:01.226717\",\"status\":\"completed\"}" tags="[]"}
-``` R
+
 # a) hourly_calories
 
 library(tidyverse)
@@ -859,7 +559,7 @@ hourly_calories <- hourly_calories %>%
 
 # Step5: View the first 6 rows as a formatted table
 head(hourly_calories)
-```
+
 
 ::: {.output .stream .stderr}
     Rows: 22099 Columns: 3
@@ -872,13 +572,6 @@ head(hourly_calories)
     dbl (2): Id, Calories
 :::
 
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .display_data}
 
 A tibble: 6 × 4
 
@@ -890,11 +583,8 @@ A tibble: 6 × 4
 | 1503960366 | 03:00:00 | 47 | 04/12/2016 |
 | 1503960366 | 04:00:00 | 48 | 04/12/2016 |
 | 1503960366 | 05:00:00 | 48 | 04/12/2016 |
-:::
-:::
 
-::: {#fd727f4f .cell .code execution_count="8" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:01.704047Z\",\"iopub.status.busy\":\"2026-07-18T14:51:01.702503Z\",\"iopub.status.idle\":\"2026-07-18T14:51:01.922411Z\",\"shell.execute_reply\":\"2026-07-18T14:51:01.920606Z\"}" papermill="{\"duration\":0.240368,\"end_time\":\"2026-07-18T14:51:01.924722\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:01.684354\",\"status\":\"completed\"}" tags="[]"}
-``` R
+
 # b) hourly_intensities
 
 library(tidyverse)
@@ -918,26 +608,12 @@ hourly_intensities <- hourly_intensities %>%
 
 # Step5: View the first 6 rows as a formatted table
 head(hourly_intensities)
-```
+
 
 ::: {.output .stream .stderr}
     Rows: 22099 Columns: 4
 :::
 
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (1): ActivityHour
-    dbl (3): Id, TotalIntensity, AverageIntensity
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .display_data}
 
 A tibble: 6 × 5
 
@@ -949,11 +625,8 @@ A tibble: 6 × 5
 | 1503960366 | 03:00:00 |  0 | 0.000000 | 04/12/2016 |
 | 1503960366 | 04:00:00 |  0 | 0.000000 | 04/12/2016 |
 | 1503960366 | 05:00:00 |  0 | 0.000000 | 04/12/2016 |
-:::
-:::
 
-::: {#828ebfac .cell .code execution_count="9" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:01.961779Z\",\"iopub.status.busy\":\"2026-07-18T14:51:01.960167Z\",\"iopub.status.idle\":\"2026-07-18T14:51:02.219738Z\",\"shell.execute_reply\":\"2026-07-18T14:51:02.218114Z\"}" papermill="{\"duration\":0.281411,\"end_time\":\"2026-07-18T14:51:02.222795\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:01.941384\",\"status\":\"completed\"}" tags="[]"}
-``` R
+
 # c) hourly_steps
 
 library(tidyverse)
@@ -977,29 +650,13 @@ hourly_steps <- hourly_steps %>%
 
 # Step5: Verify
 head(hourly_steps)
-```
+
 
 ::: {.output .stream .stderr}
     Rows: 22099 Columns: 3
 :::
 
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (1): ActivityHour
-    dbl (2): Id, StepTotal
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .display_data}
-
 A tibble: 6 × 4
-
 | Id &lt;dbl&gt; | ActivityHour &lt;chr&gt; | StepTotal &lt;dbl&gt; | ActivityDate &lt;chr&gt; |
 |---|---|---|---|
 | 1503960366 | 00:00:00 | 373 | 04/12/2016 |
@@ -1008,15 +665,10 @@ A tibble: 6 × 4
 | 1503960366 | 03:00:00 |   0 | 04/12/2016 |
 | 1503960366 | 04:00:00 |   0 | 04/12/2016 |
 | 1503960366 | 05:00:00 |   0 | 04/12/2016 |
-:::
-:::
 
-::: {#db41ecf2 .cell .markdown papermill="{\"duration\":1.7742e-2,\"end_time\":\"2026-07-18T14:51:02.258915\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:02.241173\",\"status\":\"completed\"}" tags="[]"}
+
 #### C. MINUTE SLEEP and WEIGHT LOGINFO {#c-minute-sleep-and-weight-loginfo}
-:::
 
-::: {#5d3cc432 .cell .code execution_count="10" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:02.296819Z\",\"iopub.status.busy\":\"2026-07-18T14:51:02.295093Z\",\"iopub.status.idle\":\"2026-07-18T14:51:03.624976Z\",\"shell.execute_reply\":\"2026-07-18T14:51:03.623156Z\"}" papermill="{\"duration\":1.351539,\"end_time\":\"2026-07-18T14:51:03.627295\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:02.275756\",\"status\":\"completed\"}" tags="[]"}
-``` R
 library(tidyverse)
 
 # a) minute_sleep
@@ -1077,30 +729,10 @@ sleep_day <- read_csv(paste0(folder_path, "/sleepDay_merged.csv")) %>%
 # Step3: Verify
 print("--- SLEEP DAY PREVIEW ---")
 head(sleep_day)
-```
+
 
 ::: {.output .stream .stderr}
     Rows: 188521 Columns: 4
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (1): date
-    dbl (3): Id, value, logId
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stdout}
-    [1] "--- MINUTE SLEEP PREVIEW ---"
-:::
-
-::: {.output .display_data}
 
 A tibble: 6 × 6
 
@@ -1112,31 +744,7 @@ A tibble: 6 × 6
 | 1503960366 | 2016-04-12 02:50:00 | 1 | 11380564589 | 04/12/2016 | 02:50 |
 | 1503960366 | 2016-04-12 02:51:00 | 1 | 11380564589 | 04/12/2016 | 02:51 |
 | 1503960366 | 2016-04-12 02:52:00 | 1 | 11380564589 | 04/12/2016 | 02:52 |
-:::
 
-::: {.output .stream .stderr}
-    Rows: 67 Columns: 8
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (1): Date
-    dbl (6): Id, WeightKg, WeightPounds, Fat, BMI, LogId
-    lgl (1): IsManualReport
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stdout}
-    [1] "--- WEIGHT LOGINFO PREVIEW ---"
-:::
-
-::: {.output .display_data}
 
 A tibble: 6 × 9
 
@@ -1148,30 +756,7 @@ A tibble: 6 × 9
 | 2873212765 | 2016-04-21 23:59:59 |  56.7 | 125.0021 | NA | 21.45 |  TRUE | 1.46128e+12 | 04/21/2016 |
 | 2873212765 | 2016-05-12 23:59:00 |  57.3 | 126.3249 | NA | 21.69 |  TRUE | 1.46310e+12 | 05/12/2016 |
 | 4319703577 | 2016-04-17 23:59:59 |  72.4 | 159.6147 | 25 | 27.45 |  TRUE | 1.46094e+12 | 04/17/2016 |
-:::
 
-::: {.output .stream .stderr}
-    Rows: 413 Columns: 5
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (1): SleepDay
-    dbl (4): Id, TotalSleepRecords, TotalMinutesAsleep, TotalTimeInBed
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stdout}
-    [1] "--- SLEEP DAY PREVIEW ---"
-:::
-
-::: {.output .display_data}
 
 A tibble: 6 × 5
 
@@ -1183,15 +768,11 @@ A tibble: 6 × 5
 | 1503960366 | 04/16/2016 | 2 | 340 | 367 |
 | 1503960366 | 04/17/2016 | 1 | 700 | 712 |
 | 1503960366 | 04/19/2016 | 1 | 304 | 320 |
-:::
-:::
 
-::: {#8f0f4257 .cell .markdown papermill="{\"duration\":1.8034e-2,\"end_time\":\"2026-07-18T14:51:03.663730\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:03.645696\",\"status\":\"completed\"}" tags="[]"}
+
 #### D. Change Log ID scientific notation into numerical format {#d-change-log-id-scientific-notation-into-numerical-format}
-:::
 
-::: {#9d94b8fd .cell .code execution_count="11" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:03.703733Z\",\"iopub.status.busy\":\"2026-07-18T14:51:03.702090Z\",\"iopub.status.idle\":\"2026-07-18T14:51:03.818379Z\",\"shell.execute_reply\":\"2026-07-18T14:51:03.816712Z\"}" papermill="{\"duration\":0.138659,\"end_time\":\"2026-07-18T14:51:03.820589\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:03.681930\",\"status\":\"completed\"}" tags="[]"}
-``` R
+
 # Change Log ID scientific notation into numerical format
 
 # Step1: Turn off scientific notation for the current R session
@@ -1204,27 +785,7 @@ weight_loginfo <- read_csv(paste0(folder_path, "/weightLogInfo_merged.csv")) %>%
 # Check the results
 
 head(weight_loginfo)
-```
 
-::: {.output .stream .stderr}
-    Rows: 67 Columns: 8
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (1): Date
-    dbl (6): Id, WeightKg, WeightPounds, Fat, BMI, LogId
-    lgl (1): IsManualReport
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .display_data}
 
 A tibble: 6 × 8
 
@@ -1236,23 +797,14 @@ A tibble: 6 × 8
 | 2873212765 | 4/21/2016 11:59:59 PM |  56.7 | 125.0021 | NA | 21.45 |  TRUE | 1461280000000 |
 | 2873212765 | 05-12-2016 23:59      |  57.3 | 126.3249 | NA | 21.69 |  TRUE | 1463100000000 |
 | 4319703577 | 4/17/2016 11:59:59 PM |  72.4 | 159.6147 | 25 | 27.45 |  TRUE | 1460940000000 |
-:::
-:::
 
-::: {#130ec0c7 .cell .markdown papermill="{\"duration\":1.9087e-2,\"end_time\":\"2026-07-18T14:51:03.858309\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:03.839222\",\"status\":\"completed\"}" tags="[]"}
+
 ## 3. Data Transformation {#3-data-transformation}
-:::
 
-::: {#61ee676e .cell .markdown papermill="{\"duration\":1.8445e-2,\"end_time\":\"2026-07-18T14:51:03.895322\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:03.876877\",\"status\":\"completed\"}" tags="[]"}
 *Before Data Transformation check the column name, it should be same*
-:::
 
-::: {#ee528dcc .cell .markdown papermill="{\"duration\":1.8356e-2,\"end_time\":\"2026-07-18T14:51:03.932282\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:03.913926\",\"status\":\"completed\"}" tags="[]"}
 #### A. Rename or change the column name StepTotal to TotalSteps to match or combine in daily_activity_clean {#a-rename-or-change-the-column-name-steptotal-to-totalsteps-to-match-or-combine-in-daily_activity_clean}
-:::
 
-::: {#411c11ac .cell .code execution_count="12" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:03.973258Z\",\"iopub.status.busy\":\"2026-07-18T14:51:03.971735Z\",\"iopub.status.idle\":\"2026-07-18T14:51:04.137549Z\",\"shell.execute_reply\":\"2026-07-18T14:51:04.135834Z\"}" papermill="{\"duration\":0.188785,\"end_time\":\"2026-07-18T14:51:04.139870\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:03.951085\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # library(tidyverse)
 
 # a) Rename TotalSteps in daily_steps_clean
@@ -1272,34 +824,6 @@ hourly_steps <- read_csv(paste0(folder_path, "/hourlySteps_merged.csv")) %>%
 message("\n--- HOURLY STEPS COLUMNS ---")
 print(colnames(hourly_steps))        # Shows just the column names to verify the rename
 head(hourly_steps, 3)                # Shows a brief 3-row preview of the actual table
-```
-
-::: {.output .stream .stderr}
-    Rows: 940 Columns: 3
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (1): ActivityDay
-    dbl (2): Id, StepTotal
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stderr}
-    --- DAILY STEPS CLEANED COLUMNS ---
-:::
-
-::: {.output .stream .stdout}
-    [1] "Id"          "ActivityDay" "TotalSteps" 
-:::
-
-::: {.output .display_data}
 
 A tibble: 3 × 3
 
@@ -1308,35 +832,8 @@ A tibble: 3 × 3
 | 1503960366 | 04-12-2016 | 13162 |
 | 1503960366 | 4/13/2016  | 10735 |
 | 1503960366 | 4/14/2016  | 10460 |
-:::
-
-::: {.output .stream .stderr}
-    Rows: 22099 Columns: 3
-:::
-
-::: {.output .stream .stderr}
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (1): ActivityHour
-    dbl (2): Id, StepTotal
-:::
-
-::: {.output .stream .stderr}
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-:::
-
-::: {.output .stream .stderr}
 
     --- HOURLY STEPS COLUMNS ---
-:::
-
-::: {.output .stream .stdout}
-    [1] "Id"           "ActivityHour" "TotalSteps"  
-:::
-
-::: {.output .display_data}
 
 A tibble: 3 × 3
 
@@ -1345,15 +842,10 @@ A tibble: 3 × 3
 | 1503960366 | 04-12-2016 00:00 | 373 |
 | 1503960366 | 04-12-2016 01:00 | 160 |
 | 1503960366 | 04-12-2016 02:00 | 151 |
-:::
-:::
 
-::: {#bbc4b560 .cell .markdown papermill="{\"duration\":2.2241e-2,\"end_time\":\"2026-07-18T14:51:04.186062\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:04.163821\",\"status\":\"completed\"}" tags="[]"}
+
 #### B. Distinct Count {#b-distinct-count}
-:::
 
-::: {#1195aff9 .cell .code execution_count="13" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:04.229303Z\",\"iopub.status.busy\":\"2026-07-18T14:51:04.227586Z\",\"iopub.status.idle\":\"2026-07-18T14:51:04.341896Z\",\"shell.execute_reply\":\"2026-07-18T14:51:04.339938Z\"}" papermill="{\"duration\":0.138473,\"end_time\":\"2026-07-18T14:51:04.344234\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:04.205761\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # DISTINCT COUNT as Unique ID
 
 # Get the specific count of unique IDs
@@ -1377,7 +869,7 @@ hourly_intensities %>%
 
 hourly_steps %>%
   summarise(unique_users = n_distinct(Id))
-```
+
 
 ::: {.output .display_data}
 
@@ -1440,25 +932,15 @@ A tibble: 1 × 1
 | unique_users &lt;int&gt; |
 |---|
 | 33 |
-:::
-:::
 
-::: {#3206d070 .cell .markdown papermill="{\"duration\":2.5451e-2,\"end_time\":\"2026-07-18T14:51:04.391159\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:04.365708\",\"status\":\"completed\"}" tags="[]"}
 #### Result: 33
 
 ##### Hence all have 33 Distinct Count or Unique ID
-:::
 
-::: {#2f2fe403 .cell .markdown papermill="{\"duration\":2.9268e-2,\"end_time\":\"2026-07-18T14:51:04.452974\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:04.423706\",\"status\":\"completed\"}" tags="[]"}
 ## 4. Data Combining and Cleaning {#4-data-combining-and-cleaning}
-:::
 
-::: {#d926d87d .cell .markdown papermill="{\"duration\":2.0356e-2,\"end_time\":\"2026-07-18T14:51:04.495381\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:04.475025\",\"status\":\"completed\"}" tags="[]"}
 #### A. Combine the data {#a-combine-the-data}
-:::
 
-::: {#70ccb74d .cell .code execution_count="14" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:04.540146Z\",\"iopub.status.busy\":\"2026-07-18T14:51:04.538662Z\",\"iopub.status.idle\":\"2026-07-18T14:51:04.596651Z\",\"shell.execute_reply\":\"2026-07-18T14:51:04.594824Z\"}" papermill="{\"duration\":8.2926e-2,\"end_time\":\"2026-07-18T14:51:04.599022\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:04.516096\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # COMBINED DATA daily_activity_cleaned, sleep_day
 
 # Merging daily activity and sleep
@@ -1466,9 +948,7 @@ combined_data <- left_join(daily_activity_cleaned, sleep_day, by = c("Id", "Acti
 
 # Preview the combined data
 head(combined_data)
-```
 
-::: {.output .display_data}
 
 A tibble: 6 × 18
 
@@ -1480,15 +960,11 @@ A tibble: 6 × 18
 | 1503960366 | 04/15/2016 |  9762 | 6.28 | 6.28 | 0 | 2.14 | 1.26 | 2.83 | 0 | 29 | 34 | 209 |  726 | 1745 |  1 | 412 | 442 |
 | 1503960366 | 04/16/2016 | 12669 | 8.16 | 8.16 | 0 | 2.71 | 0.41 | 5.04 | 0 | 36 | 10 | 221 |  773 | 1863 |  2 | 340 | 367 |
 | 1503960366 | 04/17/2016 |  9705 | 6.48 | 6.48 | 0 | 3.19 | 0.78 | 2.51 | 0 | 38 | 20 | 164 |  539 | 1728 |  1 | 700 | 712 |
-:::
-:::
 
-::: {#ecf38c25 .cell .markdown papermill="{\"duration\":2.0814e-2,\"end_time\":\"2026-07-18T14:51:04.641149\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:04.620335\",\"status\":\"completed\"}" tags="[]"}
+
 #### B. Remove Duplicate {#b-remove-duplicate}
-:::
 
-::: {#d40573a0 .cell .code execution_count="15" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:04.686375Z\",\"iopub.status.busy\":\"2026-07-18T14:51:04.684812Z\",\"iopub.status.idle\":\"2026-07-18T14:51:04.727035Z\",\"shell.execute_reply\":\"2026-07-18T14:51:04.725355Z\"}" papermill="{\"duration\":6.726e-2,\"end_time\":\"2026-07-18T14:51:04.729309\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:04.662049\",\"status\":\"completed\"}" tags="[]"}
-``` R
+
 # a) Count the number of duplicate rows
 
 sum(duplicated(combined_data))
@@ -1502,7 +978,7 @@ combined_data <- combined_data %>%
 
 # Verify duplicates are gone (this should return 0)
 sum(duplicated(combined_data))
-```
+
 
 ::: {.output .display_data}
 3
@@ -1511,14 +987,10 @@ sum(duplicated(combined_data))
 ::: {.output .display_data}
 0
 :::
-:::
 
-::: {#68d793b2 .cell .markdown papermill="{\"duration\":2.1022e-2,\"end_time\":\"2026-07-18T14:51:04.771913\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:04.750891\",\"status\":\"completed\"}" tags="[]"}
+
 #### Day of Week
-:::
 
-::: {#bf400e42 .cell .code execution_count="16" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:04.818101Z\",\"iopub.status.busy\":\"2026-07-18T14:51:04.816587Z\",\"iopub.status.idle\":\"2026-07-18T14:51:04.885987Z\",\"shell.execute_reply\":\"2026-07-18T14:51:04.884303Z\"}" papermill="{\"duration\":9.5088e-2,\"end_time\":\"2026-07-18T14:51:04.888303\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:04.793215\",\"status\":\"completed\"}" tags="[]"}
-``` R
 library(tidyverse)
 library(lubridate) # for fix datetime format
 
@@ -1532,6 +1004,7 @@ combined_data <- combined_data %>%
 # ==============================================================================
 
 message("--- PREVIEW OF NEW WEEKDAY COLUMN ---")
+
 # View just the ID, Date, and the new Weekday column for the first 6 rows
 combined_data %>% 
   select(Id, ActivityDate, Weekday) %>% 
@@ -1541,7 +1014,7 @@ message("\n--- ROW COUNT PER WEEKDAY ---")
 # Bonus View: Count how many records you have for each day of the week
 combined_data %>% 
   count(Weekday)
-```
+
 
 ::: {.output .stream .stderr}
     --- PREVIEW OF NEW WEEKDAY COLUMN ---
@@ -1579,27 +1052,19 @@ A tibble: 7 × 2
 | Thursday  | 147 |
 | Friday    | 126 |
 | Saturday  | 124 |
-:::
-:::
 
-::: {#9169f8c7 .cell .markdown papermill="{\"duration\":2.2093e-2,\"end_time\":\"2026-07-18T14:51:04.932028\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:04.909935\",\"status\":\"completed\"}" tags="[]"}
-# **Phase 4: Analyze**
+
+# **Phase: Analyze**
 
 after data processing, combining & extraction all 18 files into 1 file
 and stored the data after data transformation and cleaning. Now start
 analysis as per instructions and requirement.
-:::
 
-::: {#bc6ea12a .cell .markdown papermill="{\"duration\":2.1685e-2,\"end_time\":\"2026-07-18T14:51:04.975648\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:04.953963\",\"status\":\"completed\"}" tags="[]"}
+
 ## 1. Summary Statistics {#1-summary-statistics}
-:::
 
-::: {#e3fe371c .cell .markdown papermill="{\"duration\":2.201e-2,\"end_time\":\"2026-07-18T14:51:05.019232\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:04.997222\",\"status\":\"completed\"}" tags="[]"}
 #### A. General Statistics {#a-general-statistics}
-:::
 
-::: {#b3481a67 .cell .code execution_count="17" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:05.066284Z\",\"iopub.status.busy\":\"2026-07-18T14:51:05.064678Z\",\"iopub.status.idle\":\"2026-07-18T14:51:05.089413Z\",\"shell.execute_reply\":\"2026-07-18T14:51:05.087645Z\"}" papermill="{\"duration\":5.0909e-2,\"end_time\":\"2026-07-18T14:51:05.091862\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:05.040953\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # 1. Combined and find the general statistics
 
 combined_data %>%
@@ -1624,15 +1089,9 @@ combined_data %>%
      3rd Qu.:490.0     
      Max.   :796.0     
      NA's   :530       
-:::
-:::
 
-::: {#7bff2092 .cell .markdown papermill="{\"duration\":2.2312e-2,\"end_time\":\"2026-07-18T14:51:05.136219\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:05.113907\",\"status\":\"completed\"}" tags="[]"}
 #### B. Activity by Day of the Week {#b-activity-by-day-of-the-week}
-:::
 
-::: {#bf91d1e2 .cell .code execution_count="18" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:05.183980Z\",\"iopub.status.busy\":\"2026-07-18T14:51:05.182433Z\",\"iopub.status.idle\":\"2026-07-18T14:51:05.238420Z\",\"shell.execute_reply\":\"2026-07-18T14:51:05.236696Z\"}" papermill="{\"duration\":8.2595e-2,\"end_time\":\"2026-07-18T14:51:05.240796\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:05.158201\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # 2. Activity by day of the week
 
 combined_data %>%
@@ -1642,9 +1101,7 @@ combined_data %>%
     Avg_Sleep = mean(TotalMinutesAsleep, na.rm = TRUE),
     Avg_Sedentary = mean(SedentaryMinutes)
   )
-```
 
-::: {.output .display_data}
 
 A tibble: 7 × 4
 
@@ -1657,15 +1114,11 @@ A tibble: 7 × 4
 | Thursday  | 7405.837 | 401.2969 |  961.9932 |
 | Friday    | 7448.230 | 405.4211 | 1000.3095 |
 | Saturday  | 8152.976 | 419.0702 |  964.2823 |
-:::
-:::
 
-::: {#0a1ccd87 .cell .markdown papermill="{\"duration\":2.2005e-2,\"end_time\":\"2026-07-18T14:51:05.286090\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:05.264085\",\"status\":\"completed\"}" tags="[]"}
+
 #### C. User Type Categorization {#c-user-type-categorization}
-:::
 
-::: {#ae372d05 .cell .code execution_count="19" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:05.334469Z\",\"iopub.status.busy\":\"2026-07-18T14:51:05.332837Z\",\"iopub.status.idle\":\"2026-07-18T14:51:05.372097Z\",\"shell.execute_reply\":\"2026-07-18T14:51:05.370326Z\"}" papermill="{\"duration\":6.6072e-2,\"end_time\":\"2026-07-18T14:51:05.374633\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:05.308561\",\"status\":\"completed\"}" tags="[]"}
-``` R
+
 # 3. Categorization
 
 combined_data %>%
@@ -1678,9 +1131,6 @@ combined_data %>%
   group_by(User_Type) %>%
   summarise(Total = n()) %>%
   mutate(Percentage = Total / sum(Total) * 100)
-```
-
-::: {.output .display_data}
 
 A tibble: 4 × 3
 
@@ -1690,27 +1140,18 @@ A tibble: 4 × 3
 | Lightly Active | 204 | 21.70213 |
 | Sedentary      | 303 | 32.23404 |
 | Very Active    | 176 | 18.72340 |
-:::
-:::
 
-::: {#8831bfc3 .cell .markdown papermill="{\"duration\":2.2779e-2,\"end_time\":\"2026-07-18T14:51:05.419517\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:05.396738\",\"status\":\"completed\"}" tags="[]"}
-# **Phase 5: Share**
+# **Phase: Share**
 
 Once we have completed our analysis, I create the data visualizations on
 Tableau Public Desktop. The visualizations should clearly communicate
 the high-level insights and recommendations.
-:::
 
-::: {#8b297907 .cell .markdown papermill="{\"duration\":2.2555e-2,\"end_time\":\"2026-07-18T14:51:05.464122\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:05.441567\",\"status\":\"completed\"}" tags="[]"}
+
 ## 1. Data Visualization {#1-data-visualization}
-:::
 
-::: {#1ffa7dc9 .cell .markdown papermill="{\"duration\":2.2323e-2,\"end_time\":\"2026-07-18T14:51:05.508512\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:05.486189\",\"status\":\"completed\"}" tags="[]"}
 #### A. Daily Activity: Most Active Days by users {#a-daily-activity-most-active-days-by-users}
-:::
 
-::: {#42fae2d0 .cell .code execution_count="20" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:05.556738Z\",\"iopub.status.busy\":\"2026-07-18T14:51:05.555157Z\",\"iopub.status.idle\":\"2026-07-18T14:51:06.515163Z\",\"shell.execute_reply\":\"2026-07-18T14:51:06.513210Z\"}" papermill="{\"duration\":0.986736,\"end_time\":\"2026-07-18T14:51:06.517513\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:05.530777\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # 1. Daily Activity: Most Active Days by users
 
 
@@ -1739,20 +1180,8 @@ ggplot(data = combined_data, aes(x = Weekday, y = FairlyActiveMinutes, fill = We
        y = "Minutes") +
   theme_minimal() +
   theme(legend.position = "none")
-```
 
-::: {.output .display_data}
-![](vertopal_597d4c36187b4fea8ebfce4158bfc00d/6082f8b244ee2cee7b2b80ca4d38266750d58534.png){height="420"
-width="420"}
-:::
 
-::: {.output .display_data}
-![](vertopal_597d4c36187b4fea8ebfce4158bfc00d/dfbc74dc196516cfa15f0adbc8f2b52d2c758705.png){height="420"
-width="420"}
-:::
-:::
-
-::: {#d4ff50ba .cell .markdown papermill="{\"duration\":2.3628e-2,\"end_time\":\"2026-07-18T14:51:06.564113\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:06.540485\",\"status\":\"completed\"}" tags="[]"}
 ### Visual Results
 
 -   **Step Volume:** Plot A (TotalSteps) tracks the absolute volume of
@@ -1766,14 +1195,10 @@ width="420"}
     weekends (**Saturday and Sunday**). Saturday, in particular, emerges
     as the peak day for moderate physical intensity
     (**FairlyActiveMinutes**).
-:::
 
-::: {#a597dd27 .cell .markdown papermill="{\"duration\":2.33e-2,\"end_time\":\"2026-07-18T14:51:06.611110\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:06.587810\",\"status\":\"completed\"}" tags="[]"}
+
 #### B. Correlation {#b-correlation}
-:::
 
-::: {#6627e6b8 .cell .code execution_count="21" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:06.661206Z\",\"iopub.status.busy\":\"2026-07-18T14:51:06.659617Z\",\"iopub.status.idle\":\"2026-07-18T14:51:08.292336Z\",\"shell.execute_reply\":\"2026-07-18T14:51:08.290380Z\"}" papermill="{\"duration\":1.66139,\"end_time\":\"2026-07-18T14:51:08.295807\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:06.634417\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # 2. Correlation: Does more activity lead to better sleep?
 
 ggplot(data = combined_data, aes(x = TotalSteps, y = TotalMinutesAsleep)) +
@@ -1781,31 +1206,8 @@ ggplot(data = combined_data, aes(x = TotalSteps, y = TotalMinutesAsleep)) +
   geom_smooth(method = "lm", color = "red") + 
   labs(title = "Daily Steps vs. Minutes Asleep", x = "Total Steps", y = "Minutes Asleep") +
   theme_light()
-```
 
-::: {.output .stream .stderr}
-    `geom_smooth()` using formula = 'y ~ x'
-:::
 
-::: {.output .stream .stderr}
-    Warning message:
-    “Removed 530 rows containing non-finite outside the scale range
-    (`stat_smooth()`).”
-:::
-
-::: {.output .stream .stderr}
-    Warning message:
-    “Removed 530 rows containing missing values or values outside the scale range
-    (`geom_point()`).”
-:::
-
-::: {.output .display_data}
-![](vertopal_597d4c36187b4fea8ebfce4158bfc00d/f42eb915070f990d314348e98e2df034731c2e71.png){height="420"
-width="420"}
-:::
-:::
-
-::: {#8ff7ea40 .cell .markdown papermill="{\"duration\":2.7471e-2,\"end_time\":\"2026-07-18T14:51:08.350083\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:08.322612\",\"status\":\"completed\"}" tags="[]"}
 ### Visual Results: {#visual-results}
 
 -   **Direction of Relationship:** The red linear regression line
@@ -1825,20 +1227,17 @@ steps and minutes asleep.
     (geom_point) show individual daily logs. The spread of these points
     reveals how much variation exists---
 
+
 **For example**, if users who take 10,000 steps have wildly different
 sleep times, the relationship is weak.
 
 -   **Outlier Identification**: The plot instantly exposes behavioral
     anomalies, such as days with high step counts but minimal sleep, or
     sedentary days with excessive sleep.
-:::
 
-::: {#cf6f3b43 .cell .markdown papermill="{\"duration\":2.6878e-2,\"end_time\":\"2026-07-18T14:51:08.404731\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:08.377853\",\"status\":\"completed\"}" tags="[]"}
+
 #### C. Sedentary vs Active {#c-sedentary-vs-active}
-:::
 
-::: {#98dd7327 .cell .code execution_count="22" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:08.463589Z\",\"iopub.status.busy\":\"2026-07-18T14:51:08.461578Z\",\"iopub.status.idle\":\"2026-07-18T14:51:08.751319Z\",\"shell.execute_reply\":\"2026-07-18T14:51:08.749390Z\"}" papermill="{\"duration\":0.323139,\"end_time\":\"2026-07-18T14:51:08.754502\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:08.431363\",\"status\":\"completed\"}" tags="[]"}
-``` R
 # 3. Sedentary vs Active: How do users spend their day
 
 ggplot(data = combined_data) +
@@ -1846,15 +1245,8 @@ ggplot(data = combined_data) +
   labs(title = "Very Active Minutes vs. Sedentary Minutes", 
        x = "Very Active Minutes", y = "Sedentary Minutes") +
   theme_minimal()
-```
 
-::: {.output .display_data}
-![](vertopal_597d4c36187b4fea8ebfce4158bfc00d/ca3b9eec55a111e9b8d08f1944af0aaa2fdae22e.png){height="420"
-width="420"}
-:::
-:::
 
-::: {#95f03593 .cell .markdown papermill="{\"duration\":2.9942e-2,\"end_time\":\"2026-07-18T14:51:08.813666\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:08.783724\",\"status\":\"completed\"}" tags="[]"}
 ### Visual Results {#visual-results}
 
 -   **Time Trade-Off (Inverse Relationship)**: The plot visualizes the
@@ -1872,14 +1264,11 @@ width="420"}
     **outliers**---such as users who have **high sedentary** times but
     still manage to log significant active minutes. This reveals that
     intense workouts and prolonged sitting can coexist in a single day.
-:::
 
-::: {#d08a85ed .cell .markdown papermill="{\"duration\":2.9261e-2,\"end_time\":\"2026-07-18T14:51:08.872175\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:08.842914\",\"status\":\"completed\"}" tags="[]"}
+
 #### D. Distribution of Sleep Time {#d-distribution-of-sleep-time}
-:::
 
-::: {#7aade72b .cell .code execution_count="23" execution="{\"iopub.execute_input\":\"2026-07-18T14:51:08.935692Z\",\"iopub.status.busy\":\"2026-07-18T14:51:08.934049Z\",\"iopub.status.idle\":\"2026-07-18T14:51:09.162812Z\",\"shell.execute_reply\":\"2026-07-18T14:51:09.160843Z\"}" papermill="{\"duration\":0.26345,\"end_time\":\"2026-07-18T14:51:09.165256\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:08.901806\",\"status\":\"completed\"}" tags="[]"}
-``` R
+
 # 4. Distribution of Sleep Time
 
 ggplot(data = sleep_day, aes(x = TotalMinutesAsleep)) +
@@ -1892,15 +1281,8 @@ ggplot(data = sleep_day, aes(x = TotalMinutesAsleep)) +
        y = "Number of Records") +
   annotate("text", x = 520, y = 40, label = "7-Hour Goal", color = "#4B4B4B") +
   theme_minimal()
-```
 
-::: {.output .display_data}
-![](vertopal_597d4c36187b4fea8ebfce4158bfc00d/70eb2980ba11549eba24dab8424e35ce745c7f1c.png){height="420"
-width="420"}
-:::
-:::
 
-::: {#d03e548e .cell .markdown papermill="{\"duration\":3.0847e-2,\"end_time\":\"2026-07-18T14:51:09.228511\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:09.197664\",\"status\":\"completed\"}" tags="[]"}
 ### Visual Results: {#visual-results}
 
 -   **The 7-Hour Goal Benchmark:** The vertical dashed line at **420
@@ -1916,22 +1298,16 @@ width="420"}
     line clearly isolate the volume of logs where users fall short of
     recommended sleep durations**, exposing potential chronic fatigue
     trends.
-:::
 
-::: {#4eafe845 .cell .markdown papermill="{\"duration\":3.1832e-2,\"end_time\":\"2026-07-18T14:51:09.290886\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:09.259054\",\"status\":\"completed\"}" tags="[]"}
+
 ## 2. Dashboard: Tableau Public Share Link {#2-dashboard-tableau-public-share-link}
-:::
 
-::: {#c0ca4273 .cell .markdown papermill="{\"duration\":3.0255e-2,\"end_time\":\"2026-07-18T14:51:09.353204\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:09.322949\",\"status\":\"completed\"}" tags="[]"}
 [Bellabeat
 Dashboard](https://public.tableau.com/app/profile/satish.kumar6456/viz/GoogleDataAnalyticsCaseStudy2BellabeatProjectDashboard/Dashboard1)
-:::
 
-::: {#a48b2b79 .cell .markdown papermill="{\"duration\":3.0209e-2,\"end_time\":\"2026-07-18T14:51:09.413471\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:09.383262\",\"status\":\"completed\"}" tags="[]"}
-# **Phase 6: Act**
-:::
 
-::: {#a1c9fc96 .cell .markdown papermill="{\"duration\":3.005e-2,\"end_time\":\"2026-07-18T14:51:09.474216\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:09.444166\",\"status\":\"completed\"}" tags="[]"}
+# **Phase: Act**
+
 ### **Conclusion¶**
 
 The Bellabeat data analysis reveals that while users successfully
@@ -1957,9 +1333,7 @@ rigid \"gym tracker.\" Instead, Bellabeat must market its ecosystem
 directly to its female audience as a premium, beautifully designed
 \"Habit Automator\" that seamlessly bridges the gap between daily
 activity, rest, and lifestyle routines without requiring manual effort.
-:::
 
-::: {#10b6e1ab .cell .markdown papermill="{\"duration\":2.9701e-2,\"end_time\":\"2026-07-18T14:51:09.534066\",\"exception\":false,\"start_time\":\"2026-07-18T14:51:09.504365\",\"status\":\"completed\"}" tags="[]"}
 ### **Key Findings**
 
 -   16 Hours Sitting: Users spend 81% of their day sitting down
@@ -2001,4 +1375,3 @@ activity, rest, and lifestyle routines without requiring manual effort.
     analysis between daily step counts and total minutes asleep
     indicates that extreme values on either end (being highly sedentary
     or excessively over-exercising) can destabilize consistent rest.
-:::
