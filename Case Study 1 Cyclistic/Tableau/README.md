@@ -4,7 +4,7 @@ Installing Tableau Public Desktop is a straightforward process that does not req
 
 ### Step 1: Download the Installer
 
-1.	Visit the official Tableau Public Download Page.
+1.	Visit the official [Tableau Public Download](https://www.tableau.com/products/public/download)
 
 2.	Enter your email address in the provided field and click Download the App.
 
