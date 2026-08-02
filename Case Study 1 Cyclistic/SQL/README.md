@@ -1,4 +1,4 @@
-## DATASBASE
+## DATABASE
 
 To create a new dataset and import multiple CSV files from a folder in **Google Cloud Storage** into a single **Big Query** table, follow these steps:
 
@@ -80,5 +80,5 @@ Run apply after query ends.
  
 
 
-DATA COMBINING
+Next Go to DATA COMBINING
 
