@@ -587,17 +587,17 @@ Based on the instructions the data calculation done by 2 methods
 
 Guiding questions 
 
-#### 1. Where you able to answer the business questions? 
+### 1. Where you able to answer the business questions? 
 
 Yes. By merging the datasets, we identified how activity levels directly impact sleep quality and weight trends, which helps define a marketing strategy for Bellabeat products.
 
 
-#### 2. What story does your data tell?
+### 2. What story does your data tell?
 
 The data tells a story of "The Active-Rest Gap." Most users are highly active but fail to meet sleep or weight-logging consistency. There is a clear drop-off in data logging as the "effort" of the task increases (from 940 activity logs to only 67 weight logs).
 
 
-#### 3. How do your findings relate to your original question?**
+### 3. How do your findings relate to your original question?**
 
 The findings from your data combination directly address the original business task: identifying trends in smart device usage to inform Bellabeat’s marketing strategy.
 
@@ -633,12 +633,12 @@ The final objective was to use these insights for growth opportunities.
 
 
 
-#### 4. Who is your audience? What is the best way to communicate with them?
+### 4. Who is your audience? What is the best way to communicate with them?
 
 The Bellabeat Executive Team. The best way to communicate is through high-level visual summaries (Tableau) followed by actionable business recommendations.
 
 
-#### 5.	Can data visualization help you share your findings? [1]
+### 5.	Can data visualization help you share your findings? [1]
 
 Yes, data visualization is essential for the **Share** phase of your Bellabeat project. It transforms your combined datasets into a compelling narrative that stakeholders can understand at a glance.
 
@@ -663,7 +663,7 @@ Here is how visualization specifically helps you share your findings:
 
 
 
-#### 6.	Is your presentation accessible to your audience?
+### 6.	Is your presentation accessible to your audience?
 
 **Accessibility & Final Presentation**
 
@@ -704,7 +704,7 @@ A 3-sentence summary stating that members ride for utility (weekdays, fast trips
 
 In Tableau, create these four specific charts to tell the story:
 
-#### A. The Activity Breakdown (Pie/Donut Chart)
+### A. The Activity Breakdown (Pie/Donut Chart)
 
 **•	What it shows**: The ratio of Very, Fairly, and Lightly active minutes.
 
@@ -712,7 +712,7 @@ In Tableau, create these four specific charts to tell the story:
 
 **•	Recommendation**: Use "Bellabeat Ivy" to nudge users to turn "Light" activity into "Fairly Active" bursts.
 
-#### B. Steps vs. Calories (Scatter Plot)
+### B. Steps vs. Calories (Scatter Plot)
 
 **•	What it shows**: Put Total Steps on the X-axis and Calories on the Y-axis.
 
@@ -720,7 +720,7 @@ In Tableau, create these four specific charts to tell the story:
 
 **•	Recommendation**: Use gamification in the Bellabeat app to reward hitting the 10,000-step threshold.
 
-#### C. Sleep Quality vs. Day of the Week (Bar Chart)
+### C. Sleep Quality vs. Day of the Week (Bar Chart)
 
 **•	What it shows**: Weekday on X-axis, Minutes Asleep on Y-axis.
 
@@ -728,7 +728,7 @@ In Tableau, create these four specific charts to tell the story:
 
 **•	Recommendation**: Personalized "Wind Down" alerts on nights where data shows the user typically gets less sleep.
 
-#### D.	Data Completion Funnel (Highlight Table)
+### D.	Data Completion Funnel (Highlight Table)
 
 **•	What it shows**: A visual count of Activity records (940) vs. Sleep (413) vs. Weight (67).
 
@@ -789,5 +789,3 @@ The Data:** The distribution of sleep time shows a healthy peak around the 7-to-
 **4. Hardware Ecosystem**: Automate Friction PointsThe Strategy: Remove manual data logging, which currently causes massive data scarcity (only 8 users logged weight).The Execution: Ensure the Bellabeat Leaf and Time watch lines focus 100% on automatic exercise recognition. Partner with or develop an elegant, white-labeled smart scale that automatically syncs body metrics directly into the app via Bluetooth, completely removing the frustration of manual typing.
 
 **5. User Retention**: Proactive "Battery Guard" NotificationsThe Strategy: Eliminate "dead tracking days" caused by uncharged devices left on nightstands.The Execution: Program a high-value phone notification loop that triggers a gentle alert (e.g., "Your Leaf is at 12%—let's charge it while you shower so you don't miss your evening sleep streaks!") to maximize tracking consistency.
-
-
