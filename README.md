@@ -1,5 +1,5 @@
 # Google-Data-Analytics-Capstone-Project
-The Google Data Analytics Capstone is the final, hands-on project required to complete the Google Data Analytics Professional Certificate. Its purpose is to let you build a real-world case study for the job portfolio by solving a business problem from start to finish.
+The Google Data Analytics Capstone is the final, hands-on project required to complete the [Google Data Analytics Professional Certificate](https://www.coursera.org/professional-certificates/google-data-analytics?utm_content=ad_b2c_india_26-03_salary-lofi_x_gg_x_en&utm_medium=sem&utm_source=gg&utm_campaign=b2c_india_google-data-analytics_google_ftcof_professional-certificates_cx_dr_bau_gg_sem_pr_in_all_m_hyb_24-03_x&campaignid=21072698316&adgroupid=161255255682&device=c&keyword=google%20data%20analytics%20professional%20certificate&matchtype=p&network=g&devicemodel=&creativeid=801286515254&assetgroupid=&targetid=aud-2425154208156:kwd-1211882590305&extensionid=&placement=&gad_source=1&gad_campaignid=21072698316&gbraid=0AAAAADdKX6aMj8SSjr8tqv0pwqTQt0RKm&gclid=CjwKCAjw4dDTBhAqEiwAkHYmSkIg9yFSKZo8E9o9hhdgISTnD6IBfYhttTGOSaMttaKuYs1oDh3lpBoCKqwQAvD_BwE). Its purpose is to let you build a real-world case study for the job portfolio by solving a business problem from start to finish.
 
 ### Case Study 1: How does a bike-share navigate speedy success?
 
