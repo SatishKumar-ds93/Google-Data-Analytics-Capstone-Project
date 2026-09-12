@@ -449,6 +449,12 @@ The data meets the criteria for high-quality data (ROCCC - Reliable, Original, C
 The data meets the criteria, downloaded the annual data (12 zip files) and stored into new folder and save as into **.CSV format** for data organising and future use of data transformation and data cleaning.
 
 
+#### Noted
+
+*Before jumping to the next phase check my Kaggle Page*
+
+[Google Data Analytics Capstone Project using Python: Cyclistic](https://www.kaggle.com/code/satishkr93/google-data-analytics-capstone-project-cyclistic)
+
 
 ## Phase 3:  Process
 
@@ -721,6 +727,11 @@ Data Cleaning Table name and Total number of Rows
 Descriptive Analysis:  BIG Query Editor, R Studio
 Visualization: MS Power BI, Tableau
 
+##### Before Data Cleaning
+
+![Before Data Cleaning](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/1.png?raw=true)
+
+
 ### ● Has your data been properly formatted? 
 
 In Process phase all the data formatted correctly as per given instructions:
@@ -737,6 +748,101 @@ In Process phase all the data formatted correctly as per given instructions:
 1.	Descriptive
 2.	Visualization
 
+##### After Data Cleaning
+
+![Total Rows](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/2.png?raw=true)
+
+##### Results
+
+Initial Data Cleaning on MS-Excel CSV
+
+Actual Data Total Row Counts: 5719896
+After Remove Duplicate or Unecessary Values Total Row Counts: **5719787**
+
+After Data Cleaning Total Row Counts:
+
+Initial row count: **5,689,757**
+Cleaned row count: **5,600,814**
+Removed rows (negative, >23:59h, or next-day spillovers): 88,943
+Total number of Rows For Analysis: **5,600,814**
+
+#### Mean Median Mode by Casual vs Annual Member
+
+![Mean Media Mode](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/mean%20median%20mode.png?raw=true)
+
+
+#### Monthly wise total rides
+
+![Monthly wise](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/3.png?raw=true)
+
+
+#### Day of Week
+
+![day of week](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/day%20of%20week%20avg%20ride%20len%20min.png?raw=true)
+
+
+##### Day wise
+
+![day wise](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/day%20wise.png?raw=true)
+
+
+##### Busiest Month
+
+![busy month](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/4.png?raw=true)
+
+
+#### Casual vs Annual Member
+
+![casual vs member](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/6.png?raw=true)
+
+
+##### Percentage Share
+
+![percentage share](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/7.png?raw=true)
+
+
+####  Bike Types
+
+![Bike Types](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/5.png?raw=true)
+
+### Data Visualization
+
+
+#### A. Total Annual Rides on Day of week
+
+![annual](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/8.png?raw=true)
+
+
+#### B. Average Duration in minute on Day of the Week
+
+![avg duration](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/9.png?raw=true)
+
+#### C. Monthly wise Total Rides
+
+![montly wise](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/10.png?raw=true)
+
+
+#### D. Monthly Rides analysis: Casual vs Member
+
+![Monthly rides](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/11.png?raw=true)
+
+
+#### E. Time-series analysis
+
+![time](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/12.png?raw=true)
+
+
+
+#### F. Bike Type Analysis
+
+![monthly](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%201%20Cyclistic/Images/13.png?raw=true)
+
+
+#### Noted:
+
+*To know more about insights Go to my Kaggle Page*
+
+[Google Data Analytics Capstone Project: Cyclistic](https://www.kaggle.com/code/satishkr93/google-data-analytics-capstone-project-cyclistic)
 
 
 ## Phase 5: Share
