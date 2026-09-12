@@ -130,6 +130,11 @@ The goal is to analyze FitBit consumer data to identify trends in smart device u
 
 *"The business task is to identify and analyze consumer usage trends from non-Bellabeat smart devices to uncover health and wellness patterns. These findings will be used to provide high-level recommendations for Bellabeat’s marketing strategy, specifically aimed at improving product positioning for women by aligning Bellabeat's features with real-world consumer habits."*
 
+#### Noted
+
+Before jumping to the next phase you can check more insights on my Kaggle page
+
+[Google Data Analytics Capstone Project: Cyclistic using Python](https://www.kaggle.com/code/satishkr93/google-data-analytics-capstone-project-cyclistic)
 
 ## Phase 2: Prepare
 
@@ -552,12 +557,19 @@ Data Cleaning Table name and Total number of Rows
 
 •	**R Studio**: 940 rows
 
+##### Unique users count
+
+![distinct](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/Unique%20users%20count.png?raw=true)
+
+##### Total number of rows
+
+![Total rows](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/0.png?raw=true)
 
 Statistics Analysis:  **MS Excel Pivot Table, BIG Query SQL, R Studio**
 
 Visualization: **R Studio and Tableau**
 
-
+![General Statistics](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/1.png?raw=true)
 
 ### ● Has your data been properly formatted? 
 
@@ -571,11 +583,82 @@ Based on the instructions the data calculation done by 2 methods
 **1.	Statistics**
 **2.	Visualization**
 
+##### Activity Day of week
 
+![Activity Day of week](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/2.png?raw=true)
+
+##### Activity Percentage Share
+
+![Activity Percentage Share](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/3.png?raw=true)
 
 ## Phase 5: Share
 
 *Once we have completed our analysis, I create the data visualizations on Tableau Public Desktop. The visualizations should clearly communicate the high-level insights and recommendations.*
+
+##### A. Average Total Steps by Day of week
+
+![Bar Graph](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/4.png?raw=true)
+
+##### B. Average Moderate Activity in Minute by Day of Week
+
+![Bar Graph](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/5.png?raw=true)
+
+##### Visual Results¶
+
+**Step Volume**: Plot A (TotalSteps) tracks the absolute volume of movement
+
+The spike in moderate activity on Saturdays suggests that users utilize their free weekend time for intentional workouts, outdoor walks, or sports, rather than incidental movement.
+
+**Weekend Peak**: Users show a distinct behavioral shift during the weekends (Saturday and Sunday). Saturday, in particular, emerges as the peak day for moderate physical intensity (FairlyActiveMinutes).
+
+##### C. Daily Min vs Min Asleep
+
+![Min Asleep](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/6.png?raw=true)
+
+##### Visual Results:¶
+
+**Direction of Relationship**: The red linear regression line (method = "lm") shows the overarching trend between physical activity and sleep duration.
+
+a) If the red line slopes downward, it indicates a negative correlation (more steps relate to less sleep).
+
+b) If it slopes upward, it indicates a positive correlation (more steps relate to better/more sleep).
+
+c) If it is flat, there is no linear relationship between daily steps and minutes asleep.
+
+**Data Density and Variation**: The individual blue points (geom_point) show individual daily logs. 
+
+The spread of these points reveals how much variation exists—
+
+For example, if users who take 10,000 steps have wildly different sleep times, the relationship is weak.
+
+**Outlier Identification**: The plot instantly exposes behavioral anomalies, such as days with high step counts but minimal sleep, or sedentary days with excessive sleep.
+
+
+##### D. Sedentary vs Active
+
+![Sed vs Act](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/7.png?raw=true)
+
+##### Visual Results¶
+
+**Time Trade-Off (Inverse Relationship)**: The plot visualizes the direct trade-off in a user's daily budget of time. You will likely observe a negative trend where higher VeryActiveMinutes correspond to lower SedentaryMinutes.
+
+**User Clustering**: The density of the green points (geom_point) shows where most users fall. Typically, a high concentration of points near the top-left axis highlights a heavily sedentary lifestyle, with very few minutes spent in high-intensity activity.
+
+**The "Active Sedentary" Phenomenon**: The plot identifies outliers—such as users who have high sedentary times but still manage to log significant active minutes. This reveals that intense workouts and prolonged sitting can coexist in a single day.
+
+
+##### E. Distribution of Total Sleep Time
+
+![Dis Total Sleep Time](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/8.png?raw=true)
+
+##### Visual Results:
+
+**The 7-Hour Goal Benchmark**: The vertical dashed line at 420 minutes serves as a clear visual baseline for healthy sleep (7 hours).
+
+**Concentration of Sleep Data**: Because the subtitle notes that "most users are reaching the 7-hour sleep goal," the histogram bins peak to the right of the 420-minute line. This indicates a normal distribution centered around 7 to 8 hours of sleep.
+
+**Sleep Deficit Identification**: Bins to the left of the dashed line clearly isolate the volume of logs where users fall short of recommended sleep durations, exposing potential chronic fatigue trends.
+
 
 #### Dashboard: Tableau Public Link
 
