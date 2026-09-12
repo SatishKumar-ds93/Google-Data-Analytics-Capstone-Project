@@ -591,9 +591,6 @@ Based on the instructions the data calculation done by 2 methods
 
 ![Activity Percentage Share](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/3.png?raw=true)
 
-## Phase 5: Share
-
-*Once we have completed our analysis, I create the data visualizations on Tableau Public Desktop. The visualizations should clearly communicate the high-level insights and recommendations.*
 
 ##### A. Average Total Steps by Day of week
 
@@ -666,6 +663,13 @@ For example, if users who take 10,000 steps have wildly different sleep times, t
 *To know more insights go to my Kaggle page*
 
 [Google Data Analytics Capstone Project: Bellabeat using Python](https://www.kaggle.com/code/satishkr93/google-data-analytics-capstone-project-bellabeat)
+
+
+
+## Phase 5: Share
+
+*Once we have completed our analysis, I create the data visualizations on Tableau Public Desktop. The visualizations should clearly communicate the high-level insights and recommendations.*
+
 
 ### Case Study Roadmap - Share
 
