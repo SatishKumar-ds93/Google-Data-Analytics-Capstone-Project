@@ -134,7 +134,7 @@ The goal is to analyze FitBit consumer data to identify trends in smart device u
 
 *Before jumping to the next phase you can check more insights on my Kaggle page*
 
-[Google Data Analytics Capstone Project: Cyclistic using Python](https://www.kaggle.com/code/satishkr93/google-data-analytics-capstone-project-cyclistic)
+[Google Data Analytics Capstone Project: Bellabeat using Python](https://www.kaggle.com/code/satishkr93/google-data-analytics-capstone-project-bellabeat)
 
 ## Phase 2: Prepare
 
@@ -665,7 +665,7 @@ For example, if users who take 10,000 steps have wildly different sleep times, t
 
 *To know more insights go to my Kaggle page*
 
-[Google Data Analytics Capstone Project: Cyclistic using Python](https://www.kaggle.com/code/satishkr93/google-data-analytics-capstone-project-cyclistic)
+[Google Data Analytics Capstone Project: Bellabeat using Python](https://www.kaggle.com/code/satishkr93/google-data-analytics-capstone-project-bellabeat)
 
 ### Case Study Roadmap - Share
 
