@@ -132,7 +132,7 @@ The goal is to analyze FitBit consumer data to identify trends in smart device u
 
 #### Noted
 
-Before jumping to the next phase you can check more insights on my Kaggle page
+*Before jumping to the next phase you can check more insights on my Kaggle page*
 
 [Google Data Analytics Capstone Project: Cyclistic using Python](https://www.kaggle.com/code/satishkr93/google-data-analytics-capstone-project-cyclistic)
 
@@ -603,7 +603,7 @@ Based on the instructions the data calculation done by 2 methods
 
 ![Bar Graph](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/5.png?raw=true)
 
-##### Visual Results¶
+#### Visual Results¶
 
 **Step Volume**: Plot A (TotalSteps) tracks the absolute volume of movement
 
@@ -615,7 +615,7 @@ The spike in moderate activity on Saturdays suggests that users utilize their fr
 
 ![Min Asleep](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/6.png?raw=true)
 
-##### Visual Results:¶
+#### Visual Results:¶
 
 **Direction of Relationship**: The red linear regression line (method = "lm") shows the overarching trend between physical activity and sleep duration.
 
@@ -638,7 +638,7 @@ For example, if users who take 10,000 steps have wildly different sleep times, t
 
 ![Sed vs Act](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/7.png?raw=true)
 
-##### Visual Results¶
+#### Visual Results¶
 
 **Time Trade-Off (Inverse Relationship)**: The plot visualizes the direct trade-off in a user's daily budget of time. You will likely observe a negative trend where higher VeryActiveMinutes correspond to lower SedentaryMinutes.
 
@@ -651,7 +651,7 @@ For example, if users who take 10,000 steps have wildly different sleep times, t
 
 ![Dis Total Sleep Time](https://github.com/SatishKumar-ds93/Google-Data-Analytics-Capstone-Project/blob/main/Case%20Study%202%20Bellabeat/Imgaes/8.png?raw=true)
 
-##### Visual Results:
+#### Visual Results:
 
 **The 7-Hour Goal Benchmark**: The vertical dashed line at 420 minutes serves as a clear visual baseline for healthy sleep (7 hours).
 
@@ -660,14 +660,19 @@ For example, if users who take 10,000 steps have wildly different sleep times, t
 **Sleep Deficit Identification**: Bins to the left of the dashed line clearly isolate the volume of logs where users fall short of recommended sleep durations, exposing potential chronic fatigue trends.
 
 
-#### Dashboard: Tableau Public Link
 
-[Dashboard](https://public.tableau.com/app/profile/satish.kumar6456/viz/GoogleDataAnalyticsCaseStudy2BellabeatProjectDashboard/Dashboard1)
+#### Noted
 
+*To know more insights go to my Kaggle page*
+
+[Google Data Analytics Capstone Project: Cyclistic using Python](https://www.kaggle.com/code/satishkr93/google-data-analytics-capstone-project-cyclistic)
 
 ### Case Study Roadmap - Share
 
 
+### **Dashboard: Tableau Public Link**
+
+[Dashboard](https://public.tableau.com/app/profile/satish.kumar6456/viz/GoogleDataAnalyticsCaseStudy2BellabeatProjectDashboard/Dashboard1)
 Guiding questions 
 
 ### 1. Where you able to answer the business questions? 
